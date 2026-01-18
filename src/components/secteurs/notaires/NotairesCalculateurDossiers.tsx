@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Euro, FolderX, FileQuestion } from "lucide-react";
+import { ArrowRight, Euro, FolderX, FileQuestion, CheckCircle, Clock } from "lucide-react";
 
 export const NotairesCalculateurDossiers = () => {
     const [actesMois, setActesMois] = useState([30]);
