@@ -97,7 +97,7 @@ const RenovationPage = () => {
     const statsData = {
         sectorName: "Rénovation",
         stats: [
-            { value: "60%", label: "de RDV si rappel {" < "} 1h, 25% si rappel {" > "} 4h", highlight: true },
+            { value: "60%", label: "de RDV si rappel < 1h, 25% si rappel > 4h", highlight: true },
             { value: "38%", label: "de prospects abandonnent si pas de retour sous 2h" },
             { value: "45k€", label: "panier moyen rénovation complète" },
         ],
@@ -129,7 +129,7 @@ const RenovationPage = () => {
         sectorName: "Rénovation",
         headline: "Prêt à convertir 60% de vos prospects en chantiers ?",
         subheadline: "Ne laissez plus un prospect refroidir. Rappelez en moins de 15 minutes.",
-        trustIndicators: ["Rappel {" < "} 15 min", "Qualification auto", "Mise en place 48h"],
+        trustIndicators: ["Rappel < 15 min", "Qualification auto", "Mise en place 48h"],
         ctaText: "Demander ma démo gratuite",
     };
 
