@@ -12,7 +12,7 @@ export default function BioThanks() {
 
   useBioPage({
     title: `Inscription confirmée | ${bioConfig.identity.name}`,
-    description: "Merci pour votre inscription à la note Synapse.",
+    description: "Merci pour votre inscription aux contenus IA.",
     canonicalPath: "/bio/merci",
     pageId: "bio-thanks",
   });
@@ -28,14 +28,12 @@ export default function BioThanks() {
         <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/55">
           {bioConfig.newsletter.doubleOptIn
             ? "Ouvrez l’email de confirmation et validez votre inscription. Vous recevrez ensuite des cas d’usage concrets et des idées d’automatisation directement applicables."
-            : "Vous recevrez bientôt la prochaine note Synapse avec des cas d’usage concrets et des idées d’automatisation directement applicables."}
+            : "Vous recevrez bientôt des cas d’usage concrets, des solutions sur mesure et des idées d’IA directement applicables."}
         </p>
 
         <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:flex-row">
           <a
             href="https://koalendar.com/e/meet-with-synapse"
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={() => trackBioEvent("booking_click", { placement: "thank-you" })}
             className="inline-flex min-h-[3.25rem] flex-1 items-center justify-center gap-2 rounded-2xl bg-white px-5 text-sm font-bold text-[#0a0a0d] transition hover:bg-violet-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
           >

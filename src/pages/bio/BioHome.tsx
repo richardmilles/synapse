@@ -54,8 +54,8 @@ export default function BioHome() {
           <a
             key={link.id}
             href={link.href}
-            target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            target={link.href.startsWith("http") && link.id !== "book-call" ? "_blank" : undefined}
+            rel={link.href.startsWith("http") && link.id !== "book-call" ? "noopener noreferrer" : undefined}
             onClick={() => trackBioEvent("link_click", { linkId: link.id, destination: link.href })}
             className={`bio-link group flex min-h-[4.5rem] items-center gap-3 rounded-2xl border px-4 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 ${
               link.featured

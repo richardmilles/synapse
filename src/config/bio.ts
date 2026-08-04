@@ -23,8 +23,6 @@ export type BioOffer = {
   title: string;
   problem: string;
   deliverables: string[];
-  ctaLabel: string;
-  ctaHref: string;
 };
 
 /**
@@ -36,20 +34,20 @@ export const bioConfig = {
   identity: {
     name: "Nerva Vidal",
     handle: "@nerva.vi",
-    eyebrow: "Créateur · IA · Automatisation",
-    positioning: "Des systèmes simples pour gagner du temps, mieux vendre et faire grandir votre entreprise.",
+    eyebrow: "IA · Solutions sur mesure · Agents autonomes",
+    positioning: "Je conçois des solutions sur mesure et des agents IA pour automatiser une partie de votre activité et rendre votre entreprise plus autonome.",
   },
   seo: {
-    title: "Nerva Vidal | IA et automatisation",
+    title: "Nerva Vidal | Solutions sur mesure et agents IA",
     description:
-      "Conseils, ressources et solutions pour automatiser les tâches répétitives et faire grandir votre entreprise.",
+      "Solutions numériques sur mesure, automatisations et agents IA conçus pour rendre votre entreprise plus efficace et autonome.",
     shareImage: "/logo-new.png",
   },
   primaryLinks: [
     {
       id: "book-call",
       label: "Réserver un appel",
-      description: "30 minutes pour identifier votre meilleur levier d’automatisation",
+      description: "30 minutes pour identifier la solution la plus utile à votre activité",
       href: "https://koalendar.com/e/meet-with-synapse",
       icon: "calendar",
       enabled: true,
@@ -96,20 +94,19 @@ export const bioConfig = {
     },
   ] satisfies BioLink[],
   presentation: {
-    eyebrow: "Le temps est votre ressource la plus rare",
-    title: "Votre entreprise perd encore des heures sur des tâches qu’une machine peut gérer.",
-    body: "Synapse transforme les opérations lentes, manuelles et dispersées en systèmes simples qui travaillent avec vos équipes.",
+    eyebrow: "Des solutions pensées pour votre activité",
+    title: "Faites travailler la technologie au service de votre entreprise.",
+    body: "Je développe des solutions sur mesure et vous accompagne dans l’implémentation d’agents IA capables de prendre en charge une partie de vos opérations avec les garde-fous adaptés.",
     ctaLabel: "Voir les offres",
     ctaHref: "/bio/offres",
   },
   newsletter: {
-    eyebrow: "La note Synapse",
+    eyebrow: "L’essentiel IA",
     title: "Une idée utile sur l’IA, chaque semaine.",
     promise:
       "Des cas concrets, des automatisations applicables et aucun jargon inutile. Désinscription en un clic.",
     submitLabel: "Recevoir la prochaine note",
-    consentLabel:
-      "J’accepte de recevoir les emails de Synapse et j’ai lu la politique de confidentialité.",
+    consentLabel: "J’accepte de recevoir des emails.",
     doubleOptIn: false,
   },
   offers: [
@@ -124,36 +121,30 @@ export const bioConfig = {
         "Priorisation par impact, coût et risque",
         "Feuille de route opérationnelle sur 90 jours",
       ],
-      ctaLabel: "Parler de votre contexte",
-      ctaHref: "https://koalendar.com/e/meet-with-synapse",
     },
     {
-      id: "automation",
-      eyebrow: "02 · Automatiser",
-      title: "Automatisations sur mesure",
+      id: "custom-solutions",
+      eyebrow: "02 · Construire",
+      title: "Solutions numériques sur mesure",
       problem:
-        "Vos équipes recopient, relancent et vérifient les mêmes informations dans plusieurs outils.",
+        "Les outils standards ne correspondent pas toujours à vos processus, à votre métier ou à vos objectifs.",
       deliverables: [
-        "Conception du workflow cible",
-        "Connexion de vos outils existants",
-        "Tests, documentation et transmission",
+        "Conception adaptée à votre fonctionnement",
+        "Développement et connexion à vos outils",
+        "Déploiement, documentation et accompagnement",
       ],
-      ctaLabel: "Identifier une automatisation",
-      ctaHref: "https://koalendar.com/e/meet-with-synapse",
     },
     {
       id: "agents",
-      eyebrow: "03 · Augmenter",
-      title: "Agents IA et assistants métier",
+      eyebrow: "03 · Autonomiser",
+      title: "Agents IA pour vos opérations",
       problem:
-        "Vos collaborateurs cherchent l’information, préparent des réponses et traitent trop de demandes répétitives.",
+        "Une partie de votre activité peut fonctionner de façon plus autonome tout en conservant le contrôle humain aux étapes importantes.",
       deliverables: [
-        "Assistant connecté à vos connaissances",
-        "Garde-fous et validation humaine",
-        "Mesure de la qualité et amélioration continue",
+        "Agent connecté à vos données et outils",
+        "Garde-fous, supervision et validation humaine",
+        "Implémentation, mesure et amélioration continue",
       ],
-      ctaLabel: "Étudier votre cas d’usage",
-      ctaHref: "https://koalendar.com/e/meet-with-synapse",
     },
   ] satisfies BioOffer[],
   legal: {
