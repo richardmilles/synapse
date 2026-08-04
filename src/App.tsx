@@ -3,44 +3,52 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { lazy, Suspense } from "react";
+
+const Index = lazy(() => import("./pages/Index"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Sector Pages - Professions Juridiques
-import AvocatsPage from "./pages/secteurs/Avocats";
-import ExpertsComptablesPage from "./pages/secteurs/ExpertsComptables";
-import NotairesPage from "./pages/secteurs/Notaires";
-import HuissiersPage from "./pages/secteurs/Huissiers";
+const AvocatsPage = lazy(() => import("./pages/secteurs/Avocats"));
+const ExpertsComptablesPage = lazy(() => import("./pages/secteurs/ExpertsComptables"));
+const NotairesPage = lazy(() => import("./pages/secteurs/Notaires"));
+const HuissiersPage = lazy(() => import("./pages/secteurs/Huissiers"));
 
 // Sector Pages - Services Financiers
-import RecouvrementPage from "./pages/secteurs/Recouvrement";
-import CourtageAssurancePage from "./pages/secteurs/CourtageAssurance";
-import CourtageCreditPage from "./pages/secteurs/CourtageCredit";
+const RecouvrementPage = lazy(() => import("./pages/secteurs/Recouvrement"));
+const CourtageAssurancePage = lazy(() => import("./pages/secteurs/CourtageAssurance"));
+const CourtageCreditPage = lazy(() => import("./pages/secteurs/CourtageCredit"));
 
 // Sector Pages - Services Urgence/Domicile
-import DepannagePage from "./pages/secteurs/Depannage";
-import ChauffageClimatisationPage from "./pages/secteurs/ChauffageClimatisation";
-import RenovationPage from "./pages/secteurs/Renovation";
-import SecuritePage from "./pages/secteurs/Securite";
+const DepannagePage = lazy(() => import("./pages/secteurs/Depannage"));
+const ChauffageClimatisationPage = lazy(() => import("./pages/secteurs/ChauffageClimatisation"));
+const RenovationPage = lazy(() => import("./pages/secteurs/Renovation"));
+const SecuritePage = lazy(() => import("./pages/secteurs/Securite"));
 
 // Sector Pages - Services B2B
-import RecrutementPage from "./pages/secteurs/Recrutement";
-import InterimPage from "./pages/secteurs/Interim";
-import FormationPage from "./pages/secteurs/Formation";
-import ServicesInformatiquesPage from "./pages/secteurs/ServicesInformatiques";
+const RecrutementPage = lazy(() => import("./pages/secteurs/Recrutement"));
+const InterimPage = lazy(() => import("./pages/secteurs/Interim"));
+const FormationPage = lazy(() => import("./pages/secteurs/Formation"));
+const ServicesInformatiquesPage = lazy(() => import("./pages/secteurs/ServicesInformatiques"));
 
 // Blog
-import BlogPage from "./pages/Blog";
-import BlogArticle1 from "./pages/blog/ReduireTempsAttenteAvocat";
-import BlogArticle2 from "./pages/blog/AutomatiserRelanceFactures";
-import BlogArticle3 from "./pages/blog/AmeliorerTauxReponseRecrutement";
-import BlogArticle4 from "./pages/blog/GererNoShowFormations";
-import BlogArticle5 from "./pages/blog/ReduireCoutSupportTechnique";
-import BlogArticle6 from "./pages/blog/AugmenterTauxSignatureNotaire";
-import BlogArticle7 from "./pages/blog/OptimiserPlanningDepannage";
-import BlogArticle8 from "./pages/blog/ConversionProspectsCourtier";
-import BlogArticle9 from "./pages/blog/RelanceContratMaintenance";
-import BlogArticle10 from "./pages/blog/QualificationLeadsRenovation";
+const BlogPage = lazy(() => import("./pages/Blog"));
+const BlogArticle1 = lazy(() => import("./pages/blog/ReduireTempsAttenteAvocat"));
+const BlogArticle2 = lazy(() => import("./pages/blog/AutomatiserRelanceFactures"));
+const BlogArticle3 = lazy(() => import("./pages/blog/AmeliorerTauxReponseRecrutement"));
+const BlogArticle4 = lazy(() => import("./pages/blog/GererNoShowFormations"));
+const BlogArticle5 = lazy(() => import("./pages/blog/ReduireCoutSupportTechnique"));
+const BlogArticle6 = lazy(() => import("./pages/blog/AugmenterTauxSignatureNotaire"));
+const BlogArticle7 = lazy(() => import("./pages/blog/OptimiserPlanningDepannage"));
+const BlogArticle8 = lazy(() => import("./pages/blog/ConversionProspectsCourtier"));
+const BlogArticle9 = lazy(() => import("./pages/blog/RelanceContratMaintenance"));
+const BlogArticle10 = lazy(() => import("./pages/blog/QualificationLeadsRenovation"));
+
+const BioHome = lazy(() => import("./pages/bio/BioHome"));
+const BioOffers = lazy(() => import("./pages/bio/BioOffers"));
+const BioThanks = lazy(() => import("./pages/bio/BioThanks"));
+const BioLegal = lazy(() => import("./pages/bio/BioLegal"));
+const BioPrivacy = lazy(() => import("./pages/bio/BioPrivacy"));
 
 const queryClient = new QueryClient();
 
@@ -50,8 +58,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Suspense fallback={<div className="min-h-screen bg-background" aria-label="Chargement" />}>
         <Routes>
           <Route path="/" element={<Index />} />
+
+          {/* Link in bio */}
+          <Route path="/bio" element={<BioHome />} />
+          <Route path="/bio/offres" element={<BioOffers />} />
+          <Route path="/bio/merci" element={<BioThanks />} />
+          <Route path="/bio/mentions-legales" element={<BioLegal />} />
+          <Route path="/bio/confidentialite" element={<BioPrivacy />} />
 
           {/* Sector Pages - Professions Juridiques */}
           <Route path="/secteurs/avocats" element={<AvocatsPage />} />
@@ -92,6 +108,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
