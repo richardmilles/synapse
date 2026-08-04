@@ -104,7 +104,7 @@ export const bioConfig = {
     eyebrow: "L’essentiel IA",
     title: "Une idée utile sur l’IA, chaque semaine.",
     promise:
-      "Des cas concrets, des automatisations applicables et aucun jargon inutile. Désinscription en un clic.",
+      "Des cas concrets, des automatisations applicables et aucun jargon inutile.",
     submitLabel: "Recevoir la prochaine note",
     consentLabel: "J’accepte de recevoir des emails.",
     doubleOptIn: false,
