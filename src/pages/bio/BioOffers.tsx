@@ -7,7 +7,7 @@ import { trackBioEvent } from "@/lib/bioAnalytics";
 export default function BioOffers() {
   useBioPage({
     title: `Offres | ${bioConfig.identity.name}`,
-    description: "Audit IA, solutions numériques sur mesure et agents IA conçus autour de vos opérations.",
+    description: "Un accompagnement complet, du diagnostic à l’implémentation d’une solution adaptée à votre activité.",
     canonicalPath: "/bio/offres",
     pageId: "bio-offers",
   });
@@ -15,12 +15,12 @@ export default function BioOffers() {
   return (
     <BioShell>
       <section className="mx-auto max-w-3xl pb-8 pt-8 text-center sm:pt-14">
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-violet-300">Offres Synapse</p>
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-violet-300">Accompagnement sur mesure</p>
         <h1 className="mt-4 text-4xl font-bold leading-[1.06] tracking-[-0.05em] sm:text-6xl">
-          Des solutions sur mesure pour rendre votre entreprise plus autonome.
+          De l’analyse de vos besoins à l’implémentation de la solution.
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/55 sm:text-lg">
-          Chaque accompagnement part de vos opérations réelles et aboutit à une solution utilisable, supervisée et adaptée à vos équipes.
+          Je vous accompagne à chaque étape pour transformer un besoin métier en une solution structurée, fiable et adaptée à votre fonctionnement.
         </p>
       </section>
 
@@ -45,8 +45,8 @@ export default function BioOffers() {
       </section>
 
       <section className="mx-auto mt-8 max-w-4xl rounded-[1.75rem] border border-violet-300/20 bg-gradient-to-r from-violet-500/15 to-blue-500/10 p-7 text-center sm:p-10">
-        <h2 className="text-2xl font-bold tracking-[-0.035em] sm:text-3xl">Le bon point de départ tient en 30 minutes.</h2>
-        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/55">Présentez votre besoin, votre processus ou votre objectif. Vous repartirez avec une première piste de solution adaptée.</p>
+        <h2 className="text-2xl font-bold tracking-[-0.035em] sm:text-3xl">Commençons par comprendre votre besoin.</h2>
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/55">Un premier échange permet de clarifier votre contexte, vos priorités et les prochaines étapes les plus pertinentes.</p>
         <a
           href="https://koalendar.com/e/meet-with-synapse"
           onClick={() => trackBioEvent("booking_click", { placement: "offers-footer" })}
