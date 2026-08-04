@@ -96,7 +96,7 @@ export const bioConfig = {
   presentation: {
     eyebrow: "Des solutions pensées pour votre activité",
     title: "Faites travailler la technologie au service de votre entreprise.",
-    body: "Je développe des solutions sur mesure et vous accompagne dans l’implémentation d’agents IA capables de prendre en charge une partie de vos opérations avec les garde-fous adaptés.",
+    body: "De l’analyse de vos besoins au déploiement, je vous accompagne pour intégrer une solution fiable, adaptée à votre fonctionnement.",
     ctaLabel: "Voir les offres",
     ctaHref: "/bio/offres",
   },
