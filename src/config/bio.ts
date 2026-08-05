@@ -106,7 +106,8 @@ export const bioConfig = {
     promise:
       "Des cas concrets, des automatisations applicables et aucun jargon inutile.",
     submitLabel: "Recevoir la prochaine note",
-    consentLabel: "J’accepte de recevoir des emails.",
+    consentLabel:
+      "En cliquant sur « Recevoir la prochaine note », vous acceptez de recevoir des emails.",
     doubleOptIn: false,
   },
   offers: [
