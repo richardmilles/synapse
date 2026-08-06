@@ -41,8 +41,8 @@ const MethodeContexte = () => (
     format="Guide d’audit"
     outcome="Vous pourrez réduire le bruit dans vos instructions, séparer les règles par niveau et rendre les réponses plus fiables."
     navItems={navItems}
-    ctaTitle="Votre environnement IA est devenu difficile à maintenir ?"
-    ctaText="Nous pouvons cartographier vos instructions, éliminer les contradictions et reconstruire une architecture de contexte adaptée à vos usages."
+    ctaTitle="Une idée à transformer en solution concrète ?"
+    ctaText="Outil sur mesure, automatisation ou IA : commençons par cadrer votre besoin et déterminer la voie la plus pertinente."
   >
     <section id="diagnostic" className="scroll-mt-28">
       <ResourceSectionHeading eyebrow="Diagnostic" title="Plus de contexte ne signifie pas plus de précision">

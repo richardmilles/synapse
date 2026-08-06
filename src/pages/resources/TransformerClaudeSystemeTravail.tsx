@@ -411,8 +411,8 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                 <section className="border-t border-white/10 py-16">
                   <div className="rounded-3xl border border-primary/25 bg-card/80 p-7 sm:p-10">
                     <Workflow className="h-7 w-7 text-primary" />
-                    <h2 className="mt-5 text-3xl font-bold">Besoin de structurer un système adapté à votre activité ?</h2>
-                    <p className="mt-4 max-w-2xl leading-7 text-foreground/85">Le diagnostic permet d’identifier le bon processus, les outils utiles et le niveau d’autonomie pertinent avant toute implémentation.</p>
+                    <h2 className="mt-5 text-3xl font-bold">Vous avez un projet ou un besoin à clarifier ?</h2>
+                    <p className="mt-4 max-w-2xl leading-7 text-foreground/85">Un premier appel permet de comprendre votre fonctionnement, vos objectifs et les prochaines étapes possibles.</p>
                     <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                       <Link to="/bio/offres" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-5 text-sm font-bold transition hover:border-primary/40 hover:bg-primary/10">
                         Voir l’accompagnement <ArrowRight className="h-4 w-4" />

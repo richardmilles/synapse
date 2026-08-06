@@ -54,8 +54,8 @@ const SecuriteConnecteursIA = () => (
     format="Checklist pratique"
     outcome="Vous disposerez d’une méthode simple pour autoriser les actions sûres, demander une confirmation ou bloquer les opérations sensibles."
     navItems={navItems}
-    ctaTitle="Vous préparez le déploiement d’un agent connecté à vos outils ?"
-    ctaText="Nous pouvons cadrer ses accès, ses validations humaines et ses limites avant la première mise en production."
+    ctaTitle="Vous cherchez à faire évoluer votre activité ?"
+    ctaText="Réservez un échange pour faire le point sur vos enjeux et identifier une première piste d’action réaliste."
   >
     <section id="niveaux" className="scroll-mt-28">
       <ResourceSectionHeading eyebrow="Principe" title="Trois niveaux suffisent pour décider">

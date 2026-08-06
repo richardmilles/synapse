@@ -42,8 +42,8 @@ const BoucleProgressionIA = () => (
     format="Méthode opérationnelle"
     outcome="Vous saurez conserver les bonnes versions, extraire les préférences durables et mesurer si vos agents progressent réellement."
     navItems={navItems}
-    ctaTitle="Besoin de construire une boucle adaptée à votre processus ?"
-    ctaText="Un diagnostic permet d’identifier les productions à comparer, les critères de validation et l’endroit où conserver les règles apprises."
+    ctaTitle="Vous avez un projet, mais vous ne savez pas encore par où commencer ?"
+    ctaText="Un premier échange permet de clarifier votre besoin, vos priorités et la solution la plus adaptée à votre activité."
   >
     <section id="principe" className="scroll-mt-28">
       <p className="text-lg leading-8 text-white/85">

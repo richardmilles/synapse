@@ -27,8 +27,8 @@ const MemoireDurableAgentsIA = () => (
     format="Guide technique"
     outcome="Vous comprendrez les briques d’une mémoire externe, son installation locale et les cas où elle apporte une vraie continuité."
     navItems={navItems}
-    ctaTitle="Vous voulez rendre vos agents plus cohérents d’une session à l’autre ?"
-    ctaText="Nous pouvons définir ce qui mérite d’être mémorisé, comment le retrouver et quels garde-fous appliquer aux données conservées."
+    ctaTitle="Un projet numérique à structurer ou à débloquer ?"
+    ctaText="Nous pouvons analyser votre fonctionnement et déterminer la solution, l’accompagnement ou la technologie réellement utile."
   >
     <section id="architecture" className="scroll-mt-28">
       <ResourceSectionHeading eyebrow="Architecture" title="Séparer la mémoire du modèle">
