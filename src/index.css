@@ -9,7 +9,7 @@
     --background: 240 20% 4%;
     --foreground: 0 0% 98%;
 
-    --card: 240 15% 8%;
+    --card: 240 14% 10%;
     --card-foreground: 0 0% 98%;
 
     --popover: 240 15% 8%;
@@ -25,12 +25,12 @@
     --accent-foreground: 240 20% 4%;
 
     --muted: 240 10% 12%;
-    --muted-foreground: 240 5% 55%;
+    --muted-foreground: 240 10% 82%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 15% 15%;
+    --border: 240 10% 24%;
     --input: 240 15% 12%;
     --ring: 280 90% 65%;
 
@@ -225,7 +225,7 @@
   }
 
   .bio-prose {
-    @apply text-[15px] leading-7 text-white/60;
+    @apply text-[15px] leading-7 text-white/85;
   }
 
   .bio-prose h1 {
@@ -246,6 +246,13 @@
 
   .bio-prose a {
     @apply text-violet-300 underline decoration-violet-300/30 underline-offset-4 transition hover:text-violet-200;
+  }
+}
+
+@layer utilities {
+  main > section:first-child .animate-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
   }
 }
 

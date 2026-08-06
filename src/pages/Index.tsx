@@ -6,14 +6,13 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { WhyUsSection } from "@/components/sections/WhyUsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { FomoSection } from "@/components/sections/FomoSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { Footer } from "@/components/sections/Footer";
 import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Synapse | Agence IA & Automatisation";
+    document.title = "Synapse | Solutions numériques sur mesure";
   }, []);
 
   return (
@@ -32,7 +31,6 @@ const Index = () => {
         <ProjectsSection />
         <WhyUsSection />
         <ProcessSection />
-        <FomoSection />
         <CTASection />
       </main>
       

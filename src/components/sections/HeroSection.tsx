@@ -15,20 +15,20 @@ export const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <Sparkles className="w-4 h-4 text-accent" />
             <span className="text-sm font-medium text-muted-foreground">
-              L'IA au service de votre croissance
+              Du diagnostic au déploiement
             </span>
           </div>
 
           {/* Main heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            Transformez votre entreprise avec{" "}
-            <span className="bg-gradient-to-r from-synapse-violet via-synapse-blue to-synapse-yellow bg-clip-text text-transparent">l'Intelligence Artificielle</span>
+            Des solutions numériques conçues pour{" "}
+            <span className="bg-gradient-to-r from-synapse-violet via-synapse-blue to-synapse-yellow bg-clip-text text-transparent">votre entreprise</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mx-auto mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            <span className="text-accent font-semibold">Synapse</span> conçoit et déploie des solutions IA sur-mesure pour automatiser vos processus,
-            optimiser vos opérations et <span className="text-primary">accélérer votre transformation digitale</span>.
+          <p className="text-lg sm:text-xl text-foreground/85 max-w-3xl mx-auto mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            <span className="text-accent font-semibold">Synapse</span> analyse vos besoins, structure la réponse adaptée et accompagne son implémentation :
+            outil sur mesure, automatisation ou <span className="text-primary">agent IA</span>.
           </p>
 
           {/* CTA buttons */}

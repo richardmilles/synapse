@@ -32,7 +32,7 @@ export const WhyNowSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Pourquoi <span className="text-accent">maintenant</span> ?
           </h2>
-          <p className="text-lg text-foreground/70">
+          <p className="text-lg text-foreground/85">
             La transformation technologique s'accélère. Les entreprises qui adoptent l'IA <span className="text-primary font-medium">aujourd'hui</span>{" "}
             construisent un avantage durable pour demain. <span className="text-accent font-medium">Attendre, c'est prendre du retard.</span>
           </p>

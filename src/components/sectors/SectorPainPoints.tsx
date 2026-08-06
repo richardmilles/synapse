@@ -38,7 +38,7 @@ export const SectorPainPoints = ({
                         {headline}
                     </h2>
                     {subheadline && (
-                        <p className="text-lg text-foreground/70">
+                        <p className="text-lg text-foreground/85">
                             {subheadline}
                         </p>
                     )}

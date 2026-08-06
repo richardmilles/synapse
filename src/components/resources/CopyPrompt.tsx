@@ -29,7 +29,7 @@ export const CopyPrompt = ({ title, children }: CopyPromptProps) => {
           {copied ? "Copié" : "Copier"}
         </button>
       </div>
-      <pre className="whitespace-pre-wrap p-5 font-mono text-[13px] leading-6 text-white/65">{children}</pre>
+      <pre className="whitespace-pre-wrap p-5 font-mono text-[13px] leading-6 text-white/80">{children}</pre>
     </div>
   );
 };

@@ -55,7 +55,7 @@ export const SectorHero = ({
                     </h1>
 
                     {/* Subtitle */}
-                    <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mx-auto mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+                    <p className="text-lg sm:text-xl text-foreground/85 max-w-2xl mx-auto mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
                         {subheadline}
                     </p>
 

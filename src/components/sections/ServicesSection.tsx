@@ -3,39 +3,39 @@ import { Bot, Workflow, Database, Code, Brain, Plug } from "lucide-react";
 export const ServicesSection = () => {
   const services = [
     {
+      icon: Brain,
+      title: "Diagnostic et analyse",
+      description: "Analyse de vos besoins, de vos processus et de vos contraintes pour identifier les solutions réellement utiles à votre activité.",
+      color: "primary",
+    },
+    {
+      icon: Code,
+      title: "Conception sur mesure",
+      description: "Conception et développement de solutions numériques adaptées à votre fonctionnement, à vos outils et à vos objectifs.",
+      color: "secondary",
+    },
+    {
+      icon: Plug,
+      title: "Implémentation et intégration",
+      description: "Déploiement, connexion à vos systèmes, tests et accompagnement des équipes jusqu'à l'adoption de la solution.",
+      color: "accent",
+    },
+    {
       icon: Bot,
       title: "Agents IA intelligents",
-      description: "Développement d'assistants virtuels et chatbots avancés capables de comprendre, analyser et agir de manière autonome.",
+      description: "Développement d'assistants et d'agents capables de comprendre, analyser et prendre en charge une partie de vos opérations.",
       color: "primary",
     },
     {
       icon: Workflow,
       title: "Automatisation des processus",
-      description: "Conception de workflows intelligents pour éliminer les tâches répétitives et optimiser vos opérations quotidiennes.",
+      description: "Conception de workflows fiables pour réduire les tâches répétitives et fluidifier vos opérations quotidiennes.",
       color: "secondary",
     },
     {
       icon: Database,
-      title: "Gestion des données",
-      description: "Structuration, analyse et valorisation de vos données pour extraire des insights stratégiques exploitables.",
-      color: "accent",
-    },
-    {
-      icon: Code,
-      title: "Développement sur-mesure",
-      description: "Création de solutions digitales personnalisées, parfaitement adaptées à vos besoins métiers spécifiques.",
-      color: "primary",
-    },
-    {
-      icon: Brain,
-      title: "Conseil en IA",
-      description: "Accompagnement stratégique pour identifier les opportunités d'intégration de l'IA dans votre organisation.",
-      color: "secondary",
-    },
-    {
-      icon: Plug,
-      title: "Intégration API & systèmes",
-      description: "Connexion fluide de vos outils existants avec les technologies IA pour créer un écosystème unifié.",
+      title: "Données et pilotage",
+      description: "Structuration, analyse et valorisation de vos données pour faciliter le suivi et améliorer la prise de décision.",
       color: "accent",
     },
   ];
@@ -57,9 +57,9 @@ export const ServicesSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Ce que nous <span className="text-secondary">faisons</span>
           </h2>
-          <p className="text-lg text-foreground/70">
-            De la conception à l'intégration, nous maîtrisons <span className="text-accent font-medium">l'ensemble de la chaîne de valeur IA</span>{" "}
-            pour transformer vos idées en solutions opérationnelles.
+          <p className="text-lg text-foreground/85">
+            De l'analyse à l'intégration, nous transformons un besoin métier en <span className="text-accent font-medium">solution opérationnelle</span>{" "}
+            adaptée à votre manière de travailler.
           </p>
         </div>
 

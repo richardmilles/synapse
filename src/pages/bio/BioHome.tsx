@@ -26,7 +26,7 @@ export default function BioHome() {
           {bioConfig.identity.eyebrow}
         </div>
         <h1 className="text-3xl font-bold tracking-[-0.04em] sm:text-4xl">{bioConfig.identity.handle}</h1>
-        <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-white/65">
+        <p className="mx-auto mt-3 max-w-lg text-base leading-relaxed text-white/85">
           {bioConfig.identity.positioning}
         </p>
 
@@ -68,7 +68,7 @@ export default function BioHome() {
             </span>
             <span className="min-w-0 flex-1">
               <span className="block text-[15px] font-bold">{link.label}</span>
-              {link.description && <span className={`mt-0.5 block text-xs leading-snug ${link.featured ? "text-white/75" : "text-white/45"}`}>{link.description}</span>}
+              {link.description && <span className={`mt-0.5 block text-xs leading-snug ${link.featured ? "text-white/85" : "text-white/75"}`}>{link.description}</span>}
             </span>
             <ChevronRight className="h-5 w-5 shrink-0 opacity-55 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </a>
@@ -81,7 +81,7 @@ export default function BioHome() {
         </div>
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-violet-300">{bioConfig.presentation.eyebrow}</p>
         <h2 className="mt-3 text-2xl font-bold leading-tight tracking-[-0.035em]">{bioConfig.presentation.title}</h2>
-        <p className="mt-3 text-sm leading-relaxed text-white/55">{bioConfig.presentation.body}</p>
+        <p className="mt-3 text-sm leading-relaxed text-white/80">{bioConfig.presentation.body}</p>
         <Link
           to={bioConfig.presentation.ctaHref}
           onClick={() => trackBioEvent("offers_click", { placement: "bio-home" })}
@@ -98,7 +98,7 @@ export default function BioHome() {
         </div>
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-violet-300">{bioConfig.newsletter.eyebrow}</p>
         <h2 className="mt-3 text-2xl font-bold leading-tight tracking-[-0.035em]">{bioConfig.newsletter.title}</h2>
-        <p className="mt-3 text-sm leading-relaxed text-white/55">{bioConfig.newsletter.promise}</p>
+        <p className="mt-3 text-sm leading-relaxed text-white/80">{bioConfig.newsletter.promise}</p>
         <NewsletterForm />
       </section>
     </BioShell>

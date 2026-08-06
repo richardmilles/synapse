@@ -20,7 +20,7 @@ export const BlogHero = () => {
                         </span>
                     </h1>
 
-                    <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-lg sm:text-xl text-foreground/85 max-w-2xl mx-auto">
                         Articles, analyses et études de cas pour comprendre les usages concrets de l’IA, identifier les bons leviers et prendre de meilleures décisions.
                     </p>
                 </div>

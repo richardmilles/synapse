@@ -62,7 +62,7 @@ const navItems = [
 ];
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
-  <li className="flex items-start gap-3 text-[15px] leading-7 text-white/65">
+  <li className="flex items-start gap-3 text-[15px] leading-7 text-white/85">
     <span className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
       <Check className="h-3 w-3" />
     </span>
@@ -74,7 +74,7 @@ const SectionIntro = ({ number, title, summary }: { number: string; title: strin
   <div className="mb-8">
     <span className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Configuration {number}</span>
     <h2 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">{title}</h2>
-    <p className="mt-4 text-lg leading-8 text-muted-foreground">{summary}</p>
+    <p className="mt-4 text-lg leading-8 text-foreground/85">{summary}</p>
   </div>
 );
 
@@ -112,7 +112,7 @@ const TransformerClaudeSystemeTravail = () => {
                     <h1 className="text-4xl font-bold leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
                       Transformer Claude en système de travail
                     </h1>
-                    <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground sm:text-xl">
+                    <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground/85 sm:text-xl">
                       Les cinq configurations à mettre en place pour dépasser le simple chatbot et construire un environnement de travail structuré, réutilisable et contrôlé.
                     </p>
                   </div>
@@ -120,7 +120,7 @@ const TransformerClaudeSystemeTravail = () => {
                   <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/15 to-secondary/10 p-6">
                     <Sparkles className="h-6 w-6 text-primary" />
                     <p className="mt-4 text-sm font-semibold">À la fin de ce guide</p>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">Vous saurez quelle capacité utiliser, dans quel ordre la configurer et où conserver une validation humaine.</p>
+                    <p className="mt-2 text-sm leading-6 text-foreground/80">Vous saurez quelle capacité utiliser, dans quel ordre la configurer et où conserver une validation humaine.</p>
                   </div>
                 </div>
               </div>
@@ -130,10 +130,10 @@ const TransformerClaudeSystemeTravail = () => {
           <div className="container px-4 sm:px-6">
             <div className="mx-auto grid max-w-6xl gap-12 py-14 lg:grid-cols-[220px_minmax(0,780px)] lg:items-start lg:py-20">
               <aside className="hidden lg:sticky lg:top-28 lg:block">
-                <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white/40">Dans ce guide</p>
+                <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white/70">Dans ce guide</p>
                 <nav className="space-y-1 border-l border-white/10 pl-4" aria-label="Sommaire">
                   {navItems.map((item) => (
-                    <a key={item.href} href={item.href} className="block py-1.5 text-sm text-white/45 transition hover:translate-x-1 hover:text-primary">
+                    <a key={item.href} href={item.href} className="block py-1.5 text-sm text-white/70 transition hover:translate-x-1 hover:text-primary">
                       {item.label}
                     </a>
                   ))}
@@ -146,7 +146,7 @@ const TransformerClaudeSystemeTravail = () => {
 
               <div className="min-w-0">
                 <section id="vue-ensemble" className="scroll-mt-28">
-                  <p className="text-lg leading-8 text-white/70">
+                  <p className="text-lg leading-8 text-white/85">
                     Claude produit déjà des réponses utiles dans une conversation. Sa valeur augmente lorsqu’il connaît une méthode, exécute un travail récurrent, fabrique un outil et intervient dans un environnement connecté. Chaque capacité doit recevoir une fonction précise.
                   </p>
 
@@ -163,12 +163,12 @@ const TransformerClaudeSystemeTravail = () => {
                             <div className="flex items-start gap-4">
                               <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-black/20 ${item.color}`}><Icon className="h-5 w-5" /></div>
                               <div>
-                                <p className="text-xs font-semibold text-white/40">0{index + 1}</p>
+                                <p className="text-xs font-semibold text-white/70">0{index + 1}</p>
                                 <h3 className="mt-1 font-bold">{item.label}</h3>
-                                <p className="mt-1 text-sm text-white/50">{item.role}</p>
+                                <p className="mt-1 text-sm text-white/75">{item.role}</p>
                               </div>
                             </div>
-                            <ChevronRight className="absolute right-4 top-4 h-4 w-4 text-white/25 transition group-hover:translate-x-1 group-hover:text-white/60" />
+                            <ChevronRight className="absolute right-4 top-4 h-4 w-4 text-white/50 transition group-hover:translate-x-1 group-hover:text-white/75" />
                           </a>
                         );
                       })}
@@ -177,7 +177,7 @@ const TransformerClaudeSystemeTravail = () => {
 
                   <div className="mb-20 rounded-2xl border border-accent/20 bg-accent/5 p-6">
                     <p className="text-sm font-bold text-accent">Principe directeur</p>
-                    <p className="mt-2 text-lg leading-8 text-white/75">Commencez par un processus réel. Rendez-le reproductible. Testez-le. Automatisez-le ensuite.</p>
+                    <p className="mt-2 text-lg leading-8 text-white/85">Commencez par un processus réel. Rendez-le reproductible. Testez-le. Automatisez-le ensuite.</p>
                   </div>
                 </section>
 
@@ -185,12 +185,12 @@ const TransformerClaudeSystemeTravail = () => {
                   <SectionIntro number="01" title="Créer une Skill pour une tâche répétitive" summary="Une Skill conserve une méthode spécialisée afin que Claude puisse la réappliquer sans recevoir les mêmes explications à chaque conversation." />
 
                   <h3 className="text-xl font-bold">Le bon signal</h3>
-                  <p className="mt-3 leading-7 text-white/60">Créez une Skill lorsque vous répétez régulièrement le contexte, les étapes, les critères de qualité, les formats de sortie ou les erreurs à éviter. Une demande ponctuelle reste un prompt. Une méthode réutilisable mérite une Skill.</p>
+                  <p className="mt-3 leading-7 text-white/80">Créez une Skill lorsque vous répétez régulièrement le contexte, les étapes, les critères de qualité, les formats de sortie ou les erreurs à éviter. Une demande ponctuelle reste un prompt. Une méthode réutilisable mérite une Skill.</p>
 
                   <div className="mt-8 grid gap-4 sm:grid-cols-2">
                     <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                       <h4 className="font-bold">Structure minimale</h4>
-                      <ol className="mt-4 space-y-3 text-sm text-white/60">
+                      <ol className="mt-4 space-y-3 text-sm text-white/80">
                         <li><strong className="text-white/85">1. Rôle :</strong> la tâche couverte.</li>
                         <li><strong className="text-white/85">2. Entrées :</strong> les informations nécessaires.</li>
                         <li><strong className="text-white/85">3. Méthode :</strong> les étapes dans l’ordre.</li>
@@ -218,7 +218,7 @@ Ajoute un contrôle final avant de produire le résultat.
 Méthode à formaliser :
 [collez ici vos instructions, exemples et corrections]`}</CopyPrompt>
 
-                  <p className="rounded-xl border-l-2 border-primary bg-primary/5 px-5 py-4 text-sm leading-6 text-white/65"><strong className="text-white">À retenir :</strong> une bonne Skill encode un processus. Elle évite d’accumuler des consignes sans ordre.</p>
+                  <p className="rounded-xl border-l-2 border-primary bg-primary/5 px-5 py-4 text-sm leading-6 text-white/80"><strong className="text-white">À retenir :</strong> une bonne Skill encode un processus. Elle évite d’accumuler des consignes sans ordre.</p>
                 </section>
 
                 <section id="tache" className="scroll-mt-28 border-t border-white/10 py-16">
@@ -232,7 +232,7 @@ Méthode à formaliser :
                     ].map(([title, text]) => (
                       <div key={title} className="rounded-2xl border border-secondary/20 bg-secondary/5 p-5">
                         <h3 className="font-bold text-secondary">{title}</h3>
-                        <p className="mt-2 text-sm leading-6 text-white/55">{text}</p>
+                        <p className="mt-2 text-sm leading-6 text-white/75">{text}</p>
                       </div>
                     ))}
                   </div>
@@ -255,7 +255,7 @@ Signale clairement [conditions importantes].
 
 Demande une validation avant toute action externe ou difficile à annuler.`}</CopyPrompt>
 
-                  <p className="rounded-xl border-l-2 border-secondary bg-secondary/5 px-5 py-4 text-sm leading-6 text-white/65"><strong className="text-white">À retenir :</strong> automatisez un processus stable avec une sortie identifiable.</p>
+                  <p className="rounded-xl border-l-2 border-secondary bg-secondary/5 px-5 py-4 text-sm leading-6 text-white/80"><strong className="text-white">À retenir :</strong> automatisez un processus stable avec une sortie identifiable.</p>
                 </section>
 
                 <section id="artifact" className="scroll-mt-28 border-t border-white/10 py-16">
@@ -266,7 +266,7 @@ Demande une validation avant toute action externe ou difficile à annuler.`}</Co
                     <p className="mt-3 text-2xl font-bold leading-tight">Quelle action la personne doit-elle pouvoir accomplir seule ?</p>
                     <div className="mt-6 grid grid-cols-2 gap-3 text-sm sm:grid-cols-3">
                       {["Calculer un prix", "Classer des priorités", "Comparer des options", "Remplir une structure", "Suivre une progression", "Générer un résultat"].map((item) => (
-                        <div key={item} className="rounded-xl border border-white/10 bg-black/20 px-3 py-3 text-white/60">{item}</div>
+                        <div key={item} className="rounded-xl border border-white/10 bg-black/20 px-3 py-3 text-white/80">{item}</div>
                       ))}
                     </div>
                   </div>
@@ -276,7 +276,7 @@ Demande une validation avant toute action externe ou difficile à annuler.`}</Co
                     {["Construire une version minimale avec une seule fonction importante.", "Tester avec de vraies données.", "Repérer les hésitations et les résultats trop vagues.", "Ajouter uniquement ce qui corrige ces problèmes.", "Faire tester l’outil sans explication préalable."].map((step, index) => (
                       <div key={step} className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.025] p-4">
                         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent">{index + 1}</span>
-                        <p className="text-sm leading-6 text-white/65">{step}</p>
+                        <p className="text-sm leading-6 text-white/80">{step}</p>
                       </div>
                     ))}
                   </div>
@@ -290,7 +290,7 @@ Ajoute [contrôles nécessaires].
 
 Le résultat final doit être compréhensible et utilisable sans explication supplémentaire.`}</CopyPrompt>
 
-                  <p className="rounded-xl border-l-2 border-accent bg-accent/5 px-5 py-4 text-sm leading-6 text-white/65"><strong className="text-white">À retenir :</strong> un bon Artifact transforme une conversation répétitive en expérience autonome.</p>
+                  <p className="rounded-xl border-l-2 border-accent bg-accent/5 px-5 py-4 text-sm leading-6 text-white/80"><strong className="text-white">À retenir :</strong> un bon Artifact transforme une conversation répétitive en expérience autonome.</p>
                 </section>
 
                 <section id="plugin" className="scroll-mt-28 border-t border-white/10 py-16">
@@ -300,12 +300,12 @@ Le résultat final doit être compréhensible et utilisable sans explication sup
                     <div className="rounded-2xl border border-synapse-violet/20 bg-synapse-violet/5 p-5">
                       <BrainCircuit className="h-5 w-5 text-synapse-violet" />
                       <h3 className="mt-4 font-bold">Skill</h3>
-                      <p className="mt-2 text-sm leading-6 text-white/55">Une méthode spécialisée pour exécuter correctement une tâche précise.</p>
+                      <p className="mt-2 text-sm leading-6 text-white/75">Une méthode spécialisée pour exécuter correctement une tâche précise.</p>
                     </div>
                     <div className="rounded-2xl border border-synapse-violet/20 bg-synapse-violet/5 p-5">
                       <Puzzle className="h-5 w-5 text-synapse-violet" />
                       <h3 className="mt-4 font-bold">Plugin</h3>
-                      <p className="mt-2 text-sm leading-6 text-white/55">Un ensemble cohérent de capacités pour couvrir une fonction plus large.</p>
+                      <p className="mt-2 text-sm leading-6 text-white/75">Un ensemble cohérent de capacités pour couvrir une fonction plus large.</p>
                     </div>
                   </div>
 
@@ -325,7 +325,7 @@ Pose uniquement les questions nécessaires pour l’adapter à mon processus.
 
 Propose ensuite une configuration personnalisée en conservant les éléments indispensables à son fonctionnement.`}</CopyPrompt>
 
-                  <p className="rounded-xl border-l-2 border-synapse-violet bg-synapse-violet/5 px-5 py-4 text-sm leading-6 text-white/65"><strong className="text-white">À retenir :</strong> choisissez un plugin pour une fonction précise, puis adaptez-le avant son usage quotidien.</p>
+                  <p className="rounded-xl border-l-2 border-synapse-violet bg-synapse-violet/5 px-5 py-4 text-sm leading-6 text-white/80"><strong className="text-white">À retenir :</strong> choisissez un plugin pour une fonction précise, puis adaptez-le avant son usage quotidien.</p>
                 </section>
 
                 <section id="chrome" className="scroll-mt-28 border-t border-white/10 py-16">
@@ -335,7 +335,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                     <div className="flex items-center gap-3"><Chrome className="h-6 w-6 text-synapse-blue" /><h3 className="text-xl font-bold">Workflow d’enregistrement</h3></div>
                     <div className="mt-6 grid gap-3 sm:grid-cols-2">
                       {["Choisir un processus stable", "Nettoyer le parcours", "Effectuer les actions dans l’ordre", "Verbaliser les décisions", "Nommer le raccourci", "Tester sur un autre cas"].map((step, index) => (
-                        <div key={step} className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/15 p-3 text-sm text-white/60">
+                        <div key={step} className="flex items-center gap-3 rounded-xl border border-white/10 bg-black/15 p-3 text-sm text-white/80">
                           <span className="font-bold text-synapse-blue">0{index + 1}</span>{step}
                         </div>
                       ))}
@@ -351,13 +351,13 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                     ].map(([level, examples, control, bar, textColor]) => (
                       <div key={level} className="grid gap-3 border-b border-white/10 bg-white/[0.025] p-4 last:border-b-0 sm:grid-cols-[110px_1fr_190px] sm:items-center">
                         <div className="flex items-center gap-2"><span className={`h-2.5 w-2.5 rounded-full ${bar}`} /><span className={`font-bold ${textColor}`}>{level}</span></div>
-                        <p className="text-sm text-white/55">{examples}</p>
-                        <p className="text-sm font-semibold text-white/75">{control}</p>
+                        <p className="text-sm text-white/75">{examples}</p>
+                        <p className="text-sm font-semibold text-white/85">{control}</p>
                       </div>
                     ))}
                   </div>
 
-                  <p className="mt-7 rounded-xl border-l-2 border-synapse-blue bg-synapse-blue/5 px-5 py-4 text-sm leading-6 text-white/65"><strong className="text-white">À retenir :</strong> plus une action produit des conséquences difficiles à annuler, plus la validation humaine doit intervenir avant son exécution.</p>
+                  <p className="mt-7 rounded-xl border-l-2 border-synapse-blue bg-synapse-blue/5 px-5 py-4 text-sm leading-6 text-white/80"><strong className="text-white">À retenir :</strong> plus une action produit des conséquences difficiles à annuler, plus la validation humaine doit intervenir avant son exécution.</p>
                 </section>
 
                 <section id="decision" className="scroll-mt-28 border-t border-white/10 py-16">
@@ -368,7 +368,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                       <thead className="bg-white/[0.05] text-white/80">
                         <tr><th className="px-5 py-4">Besoin</th><th className="px-5 py-4">Configuration</th><th className="px-5 py-4">Résultat</th></tr>
                       </thead>
-                      <tbody className="divide-y divide-white/10 text-white/55">
+                      <tbody className="divide-y divide-white/10 text-white/75">
                         <tr><td className="px-5 py-4">Répéter une méthode</td><td className="px-5 py-4 font-semibold text-primary">Skill</td><td className="px-5 py-4">Processus réutilisable</td></tr>
                         <tr><td className="px-5 py-4">Relancer un travail à fréquence fixe</td><td className="px-5 py-4 font-semibold text-secondary">Tâche planifiée</td><td className="px-5 py-4">Résultat récurrent</td></tr>
                         <tr><td className="px-5 py-4">Fournir une interface autonome</td><td className="px-5 py-4 font-semibold text-accent">Artifact</td><td className="px-5 py-4">Outil ou contenu interactif</td></tr>
@@ -392,7 +392,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                     ].map(([time, action], index) => (
                       <div key={time} className={`rounded-2xl border border-white/10 bg-white/[0.025] p-5 ${index === 4 ? "sm:col-span-2" : ""}`}>
                         <p className="text-sm font-bold text-primary">{time}</p>
-                        <p className="mt-2 text-sm leading-6 text-white/60">{action}</p>
+                        <p className="mt-2 text-sm leading-6 text-white/80">{action}</p>
                       </div>
                     ))}
                   </div>
@@ -400,7 +400,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                   <div className="mt-8 flex flex-col gap-4 rounded-3xl border border-primary/25 bg-gradient-to-r from-primary/15 to-secondary/10 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
                     <div>
                       <div className="flex items-center gap-2 text-primary"><ClipboardCheck className="h-5 w-5" /><span className="text-sm font-bold">Checklist complète</span></div>
-                      <p className="mt-2 max-w-xl text-sm leading-6 text-white/60">Téléchargez la checklist au format Markdown pour la conserver, la compléter ou la partager avec votre équipe.</p>
+                      <p className="mt-2 max-w-xl text-sm leading-6 text-white/80">Téléchargez la checklist au format Markdown pour la conserver, la compléter ou la partager avec votre équipe.</p>
                     </div>
                     <a href="/ressources/checklist-systeme-claude.md" download className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-bold text-background transition hover:bg-white/90">
                       <Download className="h-4 w-4" /> Télécharger
@@ -412,7 +412,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                   <div className="rounded-3xl border border-primary/25 bg-card/80 p-7 sm:p-10">
                     <Workflow className="h-7 w-7 text-primary" />
                     <h2 className="mt-5 text-3xl font-bold">Besoin de structurer un système adapté à votre activité ?</h2>
-                    <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">Le diagnostic permet d’identifier le bon processus, les outils utiles et le niveau d’autonomie pertinent avant toute implémentation.</p>
+                    <p className="mt-4 max-w-2xl leading-7 text-foreground/85">Le diagnostic permet d’identifier le bon processus, les outils utiles et le niveau d’autonomie pertinent avant toute implémentation.</p>
                     <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                       <Link to="/bio/offres" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-5 text-sm font-bold transition hover:border-primary/40 hover:bg-primary/10">
                         Voir l’accompagnement <ArrowRight className="h-4 w-4" />
@@ -425,7 +425,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                 </section>
 
                 <section className="border-t border-white/10 py-12">
-                  <div className="flex items-center gap-2 text-sm font-bold text-white/70"><ShieldCheck className="h-4 w-4 text-primary" />Documentation officielle</div>
+                  <div className="flex items-center gap-2 text-sm font-bold text-white/85"><ShieldCheck className="h-4 w-4 text-primary" />Documentation officielle</div>
                   <div className="mt-4 grid gap-2 sm:grid-cols-2">
                     {[
                       ["Créer des Skills personnalisées", "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"],
@@ -434,7 +434,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                       ["Utiliser les plugins", "https://support.claude.com/en/articles/13837440-use-plugins-in-claude"],
                       ["Utiliser Claude dans Chrome", "https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome"],
                     ].map(([label, href]) => (
-                      <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-sm text-white/55 transition hover:border-primary/30 hover:text-white">
+                      <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-sm text-white/75 transition hover:border-primary/30 hover:text-white">
                         {label}<ExternalLink className="h-3.5 w-3.5 shrink-0" />
                       </a>
                     ))}

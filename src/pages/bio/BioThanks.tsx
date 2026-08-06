@@ -25,7 +25,7 @@ export default function BioThanks() {
         </div>
         <p className="mt-7 text-xs font-bold uppercase tracking-[0.2em] text-violet-300">{subscribed ? "Inscription enregistrée" : "Bienvenue"}</p>
         <h1 className="mt-4 text-4xl font-bold tracking-[-0.05em] sm:text-5xl">Merci, la suite arrive par email.</h1>
-        <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/55">
+        <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/80">
           {bioConfig.newsletter.doubleOptIn
             ? "Ouvrez l’email de confirmation et validez votre inscription. Vous recevrez ensuite des cas d’usage concrets et des idées d’automatisation directement applicables."
             : "Vous recevrez bientôt des cas d’usage concrets, des solutions sur mesure et des idées d’IA directement applicables."}

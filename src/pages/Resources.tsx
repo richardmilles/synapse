@@ -31,7 +31,7 @@ const ResourcesPage = () => {
                 <h1 className="text-4xl font-bold leading-[1.05] sm:text-6xl">
                   Des méthodes à utiliser, partager et appliquer.
                 </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/85 sm:text-xl">
                   Des guides conçus pour rester utiles après la lecture : modèles copiables, outils de décision, checklists et plans d’action directement accessibles sur le site.
                 </p>
               </div>
@@ -43,13 +43,13 @@ const ResourcesPage = () => {
                       <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl transition group-hover:bg-primary/20" />
                       <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
                         <div>
-                          <div className="mb-5 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                          <div className="mb-5 flex flex-wrap items-center gap-3 text-xs text-foreground/70">
                             <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-semibold text-primary">{resource.category}</span>
                             <span>{resource.format}</span>
                           </div>
                           <h2 className="text-2xl font-bold transition group-hover:text-primary sm:text-4xl">{resource.title}</h2>
-                          <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">{resource.description}</p>
-                          <p className="mt-5 text-xs text-muted-foreground">Mis à jour le {resource.updatedAt}</p>
+                          <p className="mt-4 max-w-2xl leading-7 text-foreground/85">{resource.description}</p>
+                          <p className="mt-5 text-xs text-foreground/70">Mis à jour le {resource.updatedAt}</p>
                         </div>
                         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition group-hover:translate-x-1">
                           <ArrowRight className="h-5 w-5" />

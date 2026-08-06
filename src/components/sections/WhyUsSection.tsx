@@ -5,7 +5,7 @@ export const WhyUsSection = () => {
     {
       icon: Shield,
       title: "Expertise technique pointue",
-      description: "Notre équipe maîtrise les technologies IA les plus avancées et reste en veille permanente sur les dernières innovations.",
+      description: "Notre équipe réunit développement sur mesure, automatisation, intégration de systèmes et technologies IA.",
     },
     {
       icon: Rocket,
@@ -15,7 +15,7 @@ export const WhyUsSection = () => {
     {
       icon: Target,
       title: "Approche orientée business",
-      description: "Chaque solution est conçue pour générer un ROI mesurable. L'IA au service de vos objectifs stratégiques.",
+      description: "Chaque solution est conçue pour générer un ROI mesurable et servir directement vos objectifs stratégiques.",
     },
     {
       icon: Lightbulb,
@@ -48,9 +48,9 @@ export const WhyUsSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Pourquoi choisir <span className="bg-gradient-to-r from-synapse-yellow to-synapse-violet bg-clip-text text-transparent">Synapse</span> ?
           </h2>
-          <p className="text-lg text-foreground/70">
-            Nous ne sommes pas qu'une agence technique. Nous sommes votre <span className="text-accent font-medium">partenaire stratégique</span>{" "}
-            pour naviguer la révolution IA avec confiance et succès.
+          <p className="text-lg text-foreground/85">
+            Synapse réunit analyse métier, expertise technique et <span className="text-accent font-medium">accompagnement opérationnel</span>{" "}
+            pour concevoir une solution fiable et l'intégrer durablement à votre activité.
           </p>
         </div>
 

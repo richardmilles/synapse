@@ -6,7 +6,7 @@ export const ProcessSection = () => {
       number: "01",
       icon: Search,
       title: "Diagnostic",
-      description: "Analyse approfondie de vos besoins, processus existants et opportunités d'optimisation par l'IA.",
+      description: "Analyse approfondie de vos besoins, de vos processus existants, de vos contraintes et des résultats recherchés.",
       color: "primary",
     },
     {
@@ -42,7 +42,7 @@ export const ProcessSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Notre <span className="text-secondary">processus</span>
           </h2>
-          <p className="text-lg text-foreground/70">
+          <p className="text-lg text-foreground/85">
             Une méthodologie éprouvée pour transformer vos idées en <span className="text-accent font-medium">solutions opérationnelles</span>,
             avec des résultats mesurables à chaque étape.
           </p>
@@ -67,7 +67,7 @@ export const ProcessSection = () => {
 
                 <div className="relative p-6 rounded-2xl bg-card/50 border border-border/50 hover:border-primary/40 transition-all duration-500 text-center lg:text-left">
                   {/* Step number */}
-                  <div className="text-5xl font-bold text-muted/30 mb-4 group-hover:text-primary/20 transition-colors duration-300">
+                  <div className="text-5xl font-bold text-foreground/30 mb-4 group-hover:text-primary/40 transition-colors duration-300">
                     {step.number}
                   </div>
 

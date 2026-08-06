@@ -21,14 +21,14 @@ export const CTASection = () => {
 
           {/* Heading */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Prêt à transformer votre entreprise avec{" "}
-            <span className="bg-gradient-to-r from-synapse-yellow via-synapse-violet to-synapse-blue bg-clip-text text-transparent">l'IA</span> ?
+            Prêt à transformer votre besoin en{" "}
+            <span className="bg-gradient-to-r from-synapse-yellow via-synapse-violet to-synapse-blue bg-clip-text text-transparent">solution opérationnelle</span> ?
           </h2>
 
           {/* Description */}
           <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Discutons de vos défis et découvrons ensemble comment Synapse peut accélérer
-            votre croissance grâce à l'Intelligence Artificielle.
+            Discutons de votre fonctionnement, de vos priorités et de la solution la plus adaptée
+            avant de définir les prochaines étapes.
           </p>
 
           {/* CTA Button */}

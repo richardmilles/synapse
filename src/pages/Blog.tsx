@@ -9,7 +9,7 @@ import { blogArticles } from "@/data/blogArticles";
 
 const BlogPage = () => {
     useEffect(() => {
-        document.title = "Blog IA et automatisation | Synapse";
+        document.title = "Blog IA et solutions numériques | Synapse";
     }, []);
 
     return (

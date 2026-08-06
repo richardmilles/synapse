@@ -73,7 +73,7 @@ export const NewsletterForm = () => {
         </button>
       </div>
 
-      <p className="text-left text-[10px] leading-relaxed text-white/35">
+      <p className="text-left text-xs leading-relaxed text-white/35">
         {bioConfig.newsletter.consentLabel}
       </p>
 

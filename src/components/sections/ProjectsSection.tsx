@@ -50,7 +50,7 @@ export const ProjectsSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Exemples de <span className="text-accent">projets</span>
           </h2>
-          <p className="text-lg text-foreground/70">
+          <p className="text-lg text-foreground/85">
             Découvrez les types de solutions que nous concevons pour nos clients.
             Chaque projet est <span className="text-primary font-medium">unique</span>, adapté aux défis spécifiques de chaque organisation.
           </p>

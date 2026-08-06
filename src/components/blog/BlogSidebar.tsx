@@ -6,9 +6,9 @@ export const BlogSidebar = () => {
         <aside className="space-y-6">
             {/* CTA Card */}
             <div className="glass p-6 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
-                <h3 className="font-bold text-lg mb-3">Prêt à automatiser ?</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                    Découvrez comment Synapse peut transformer votre activité en 15 minutes de démo personnalisée.
+                <h3 className="font-bold text-lg mb-3">Un besoin à structurer ?</h3>
+                <p className="text-sm text-foreground/80 mb-4">
+                    Présentez votre fonctionnement, vos contraintes et le résultat recherché pour identifier une solution adaptée.
                 </p>
                 <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer" className="block">
                     <Button variant="hero" size="default" className="w-full group">
@@ -32,11 +32,9 @@ export const BlogSidebar = () => {
                         "Gérer no-shows",
                         "Optimiser support IT"
                     ].map((topic, index) => (
-                        <li key={index}>
-                            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group">
-                                <span className="w-1.5 h-1.5 rounded-full bg-primary opacity-50 group-hover:opacity-100 transition-opacity" />
+                        <li key={index} className="flex items-center gap-2 text-sm text-foreground/75">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary opacity-70" />
                                 {topic}
-                            </a>
                         </li>
                     ))}
                 </ul>
@@ -54,13 +52,12 @@ export const BlogSidebar = () => {
                         { name: "IT", color: "synapse-blue" },
                         { name: "Services", color: "synapse-green" },
                     ].map((cat, index) => (
-                        <a
+                        <span
                             key={index}
-                            href="#"
                             className={`text-xs px-3 py-1.5 rounded-full border bg-${cat.color}/10 text-${cat.color} border-${cat.color}/20 hover:bg-${cat.color}/20 transition-colors`}
                         >
                             {cat.name}
-                        </a>
+                        </span>
                     ))}
                 </div>
             </div>

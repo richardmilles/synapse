@@ -25,7 +25,7 @@ export const BlogCard = ({ article }: BlogCardProps) => {
                     <span className={`text-xs font-semibold px-3 py-1 rounded-full border ${categoryColors[article.category] || categoryColors["Services"]}`}>
                         {article.category}
                     </span>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-4 text-xs text-foreground/70">
                         <div className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
                             <span>{new Date(article.publishedDate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
@@ -43,13 +43,13 @@ export const BlogCard = ({ article }: BlogCardProps) => {
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-grow">
+                <p className="text-foreground/85 text-sm mb-4 line-clamp-3 flex-grow">
                     {article.excerpt}
                 </p>
 
                 {/* Author & CTA */}
                 <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-xs text-foreground/70">
                         Par <span className="font-medium text-foreground">{article.author.name}</span>
                     </div>
                     <div className="flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">

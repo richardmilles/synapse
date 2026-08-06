@@ -34,13 +34,13 @@ export const bioConfig = {
   identity: {
     name: "Nerva Vidal",
     handle: "@nerva.vi",
-    eyebrow: "IA · Solutions sur mesure · Agents autonomes",
-    positioning: "Je conçois des solutions sur mesure et des agents IA pour automatiser une partie de votre activité et rendre votre entreprise plus autonome.",
+    eyebrow: "Diagnostic · Solutions sur mesure · IA",
+    positioning: "J’analyse vos besoins, conçois la solution adaptée et vous accompagne dans son implémentation : outil sur mesure, automatisation ou agent IA.",
   },
   seo: {
-    title: "Nerva Vidal | Solutions sur mesure et agents IA",
+    title: "Nerva Vidal | Diagnostic et solutions sur mesure",
     description:
-      "Solutions numériques sur mesure, automatisations et agents IA conçus pour rendre votre entreprise plus efficace et autonome.",
+      "Du diagnostic à l’implémentation, des solutions numériques sur mesure, automatisations et agents IA adaptés au fonctionnement de votre entreprise.",
     shareImage: "/logo-new.png",
   },
   primaryLinks: [
