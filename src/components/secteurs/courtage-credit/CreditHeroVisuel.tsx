@@ -50,7 +50,7 @@ export const CreditHeroVisuel = () => {
 
                         {/* CTA */}
                         <div className="flex flex-col sm:flex-row items-start gap-4">
-                            <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                            <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                 <Button variant="hero" size="xl" className="group">
                                     Convertir 70% de mes leads
                                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

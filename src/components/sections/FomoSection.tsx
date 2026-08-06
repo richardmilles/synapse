@@ -123,7 +123,7 @@ export const FomoSection = () => {
               Ne laissez pas vos concurrents prendre l'avantage. <br />
               <span className="text-primary font-semibold">Agissez maintenant.</span>
             </p>
-            <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+            <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="xl" className="group">
                 Prendre RDV
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

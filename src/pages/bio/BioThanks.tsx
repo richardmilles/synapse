@@ -33,7 +33,7 @@ export default function BioThanks() {
 
         <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:flex-row">
           <a
-            href="https://koalendar.com/e/meet-with-synapse"
+            href="https://synapse0.neetocal.com/audit"
             onClick={() => trackBioEvent("booking_click", { placement: "thank-you" })}
             className="inline-flex min-h-[3.25rem] flex-1 items-center justify-center gap-2 rounded-2xl bg-white px-5 text-sm font-bold text-[#0a0a0d] transition hover:bg-violet-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
           >

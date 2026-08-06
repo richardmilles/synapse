@@ -48,7 +48,7 @@ export default function BioOffers() {
         <h2 className="text-2xl font-bold tracking-[-0.035em] sm:text-3xl">Commençons par comprendre votre besoin.</h2>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-white/55">Un premier échange permet de clarifier votre contexte, vos priorités et les prochaines étapes les plus pertinentes.</p>
         <a
-          href="https://koalendar.com/e/meet-with-synapse"
+          href="https://synapse0.neetocal.com/audit"
           onClick={() => trackBioEvent("booking_click", { placement: "offers-footer" })}
           className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-2xl bg-white px-5 text-sm font-bold text-[#0a0a0d] transition hover:bg-violet-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
         >

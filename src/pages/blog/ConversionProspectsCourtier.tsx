@@ -272,7 +272,7 @@ const ConversionProspectsCourtier = () => {
                                                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                                                     Synapse déploie l'appel automatique en 5 minutes, la qualification IA, et la séquence de relance. Vos commerciaux ne gèrent que les prospects chauds et qualifiés.
                                                 </p>
-                                                <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                                                <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                                     <Button variant="hero" size="lg" className="group">
                                                         Réserver ma démo gratuite
                                                         <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -33,7 +33,7 @@ export const HeroSection = () => {
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s" }}>
-            <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+            <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="xl" className="group">
                 Prendre RDV
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

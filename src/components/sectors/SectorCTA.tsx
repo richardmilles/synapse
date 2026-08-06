@@ -16,7 +16,7 @@ export const SectorCTA = ({
     subheadline,
     trustIndicators = ["Mise en place rapide", "Sans engagement", "Support dédié"],
     ctaText = "Demander une démo gratuite",
-    ctaLink = "https://koalendar.com/e/meet-with-synapse",
+    ctaLink = "https://synapse0.neetocal.com/audit",
 }: SectorCTAProps) => {
     const icons = [Shield, Clock, Zap];
 

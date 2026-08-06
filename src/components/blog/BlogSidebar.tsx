@@ -10,7 +10,7 @@ export const BlogSidebar = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                     Découvrez comment Synapse peut transformer votre activité en 15 minutes de démo personnalisée.
                 </p>
-                <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer" className="block">
+                <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer" className="block">
                     <Button variant="hero" size="default" className="w-full group">
                         Réserver ma démo
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

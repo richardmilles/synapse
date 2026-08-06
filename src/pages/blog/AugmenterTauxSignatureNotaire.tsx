@@ -254,7 +254,7 @@ const AugmenterTauxSignatureNotaire = () => {
                                                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                                                     Synapse automatise le suivi complet de vos dossiers : relances email, appels téléphoniques, et alertes proactives. Vos clercs ne gèrent que les exceptions.
                                                 </p>
-                                                <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                                                <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                                     <Button variant="hero" size="lg" className="group">
                                                         Réserver ma démo gratuite
                                                         <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -291,7 +291,7 @@ const OptimiserPlanningDepannage = () => {
                                                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                                                     Synapse déploie un agent vocal qui répond 24/7, qualifie et dispatche automatiquement. Vos techniciens se concentrent sur les interventions, pas sur le téléphone.
                                                 </p>
-                                                <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                                                <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                                     <Button variant="hero" size="lg" className="group">
                                                         Réserver ma démo gratuite
                                                         <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

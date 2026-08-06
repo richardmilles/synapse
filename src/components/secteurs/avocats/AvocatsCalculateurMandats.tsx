@@ -190,7 +190,7 @@ export const AvocatsCalculateurMandats = () => {
                                         <div className="text-sm text-muted-foreground mb-2">CA additionnel annuel</div>
                                         <div className="text-4xl font-bold text-primary mb-4">+{economieIA.toLocaleString()} €</div>
 
-                                        <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                             <Button variant="hero" size="lg" className="w-full group">
                                                 Récupérer ces mandats
                                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

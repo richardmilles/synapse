@@ -48,7 +48,7 @@ export const bioConfig = {
       id: "book-call",
       label: "Réserver un appel",
       description: "30 minutes pour identifier la solution la plus utile à votre activité",
-      href: "https://koalendar.com/e/meet-with-synapse",
+      href: "https://synapse0.neetocal.com/audit",
       icon: "calendar",
       enabled: true,
       featured: true,

@@ -136,7 +136,7 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+            <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="default">
                 Prendre RDV
               </Button>
@@ -206,7 +206,7 @@ export const Header = () => {
                 )}
               </div>
 
-              <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer" className="mt-2">
+              <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer" className="mt-2">
                 <Button variant="hero" size="default" className="w-full">
                   Prendre RDV
                 </Button>

@@ -182,7 +182,7 @@ export const SecuriteCalculateurSites = () => {
                                             </div>
                                         </div>
 
-                                        <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                             <Button variant="hero" size="lg" className="w-full group">
                                                 Sécuriser mon portefeuille
                                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

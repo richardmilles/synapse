@@ -83,7 +83,7 @@ export const ChauffageHeroVisuel = () => {
                             </div>
                         </div>
 
-                        <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                        <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                             <Button variant="hero" size="xl" className="group">
                                 Absorber tous les pics
                                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

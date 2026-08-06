@@ -20,7 +20,7 @@ export const SectorHero = ({
     subheadline,
     badges,
     ctaText = "Demander une démo",
-    ctaLink = "https://koalendar.com/e/meet-with-synapse",
+    ctaLink = "https://synapse0.neetocal.com/audit",
 }: SectorHeroProps) => {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">

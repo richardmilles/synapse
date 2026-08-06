@@ -326,7 +326,7 @@ const ReduireCoutSupportTechnique = () => {
                                                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                                                     Synapse déploie agents vocaux, chatbots et self-service en 2 semaines. Vos techs retrouvent du sens à leur métier, vos clients ont des réponses instantanées.
                                                 </p>
-                                                <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                                                <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                                     <Button variant="hero" size="lg" className="group">
                                                         Réserver ma démo gratuite
                                                         <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

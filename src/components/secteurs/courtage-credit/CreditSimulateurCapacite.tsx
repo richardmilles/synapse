@@ -177,7 +177,7 @@ export const CreditSimulateurCapacite = () => {
                                     vous présente les <span className="font-semibold text-foreground">meilleures offres bancaires</span>.
                                 </p>
 
-                                <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                                <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                     <Button variant="hero" size="lg" className="w-full group">
                                         Obtenir les meilleures offres
                                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

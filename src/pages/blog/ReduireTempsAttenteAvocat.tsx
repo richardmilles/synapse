@@ -270,7 +270,7 @@ const ReduireTempsAttenteAvocat = () => {
                                                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                                                     Que vous soyez avocat solo ou cabinet de 20 collaborateurs, découvrez comment ne plus jamais manquer un appel important. Démo personnalisée en 15 minutes.
                                                 </p>
-                                                <a href="https://koalendar.com/e/meet-with-synapse" target="_blank" rel="noopener noreferrer">
+                                                <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                                     <Button variant="hero" size="lg" className="group">
                                                         Réserver ma démo gratuite
                                                         <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
