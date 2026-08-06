@@ -60,6 +60,7 @@ export const Header = () => {
     { label: "Projets", href: "/#projets" },
     { label: "Processus", href: "/#processus" },
     { label: "Blog", href: "/blog" },
+    { label: "Ressources", href: "/ressources" },
     { label: "À propos", href: "/#apropos" },
   ];
 
@@ -79,7 +80,7 @@ export const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -135,7 +136,7 @@ export const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="default">
                 Prendre RDV
@@ -145,7 +146,7 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -154,7 +155,7 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
+          <div className="lg:hidden py-4 border-t border-border/50">
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a

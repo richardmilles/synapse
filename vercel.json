@@ -9,6 +9,14 @@
             "destination": "/bio.html"
         },
         {
+            "source": "/ressources",
+            "destination": "/resources.html"
+        },
+        {
+            "source": "/ressources/transformer-claude-en-systeme-de-travail",
+            "destination": "/resource-claude.html"
+        },
+        {
             "source": "/(.*)",
             "destination": "/"
         }

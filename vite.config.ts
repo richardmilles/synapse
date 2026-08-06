@@ -19,6 +19,8 @@ export default defineConfig(({ mode }) => ({
       input: {
         main: path.resolve(__dirname, "index.html"),
         bio: path.resolve(__dirname, "bio.html"),
+        resources: path.resolve(__dirname, "resources.html"),
+        resourceClaude: path.resolve(__dirname, "resource-claude.html"),
       },
     },
   },

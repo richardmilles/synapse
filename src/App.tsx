@@ -44,6 +44,10 @@ const BlogArticle8 = lazy(() => import("./pages/blog/ConversionProspectsCourtier
 const BlogArticle9 = lazy(() => import("./pages/blog/RelanceContratMaintenance"));
 const BlogArticle10 = lazy(() => import("./pages/blog/QualificationLeadsRenovation"));
 
+// Resources
+const ResourcesPage = lazy(() => import("./pages/Resources"));
+const TransformerClaudeSystemeTravail = lazy(() => import("./pages/resources/TransformerClaudeSystemeTravail"));
+
 const BioHome = lazy(() => import("./pages/bio/BioHome"));
 const BioOffers = lazy(() => import("./pages/bio/BioOffers"));
 const BioThanks = lazy(() => import("./pages/bio/BioThanks"));
@@ -104,6 +108,10 @@ const App = () => (
           <Route path="/blog/conversion-prospects-courtier" element={<BlogArticle8 />} />
           <Route path="/blog/relance-contrat-maintenance" element={<BlogArticle9 />} />
           <Route path="/blog/qualification-leads-renovation" element={<BlogArticle10 />} />
+
+          {/* Resources */}
+          <Route path="/ressources" element={<ResourcesPage />} />
+          <Route path="/ressources/transformer-claude-en-systeme-de-travail" element={<TransformerClaudeSystemeTravail />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

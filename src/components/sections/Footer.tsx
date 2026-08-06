@@ -15,8 +15,7 @@ export const Footer = () => {
               <span className="text-xl font-bold font-space-grotesk">Synapse</span>
             </div>
             <p className="text-muted-foreground text-sm max-w-sm mb-6">
-              Agence spécialisée en Intelligence Artificielle, automatisation et transformation digitale.
-              Nous aidons les entreprises à prendre de l'avance grâce aux technologies de demain.
+              Du diagnostic au déploiement, nous concevons et intégrons des solutions numériques adaptées au fonctionnement de chaque entreprise.
             </p>
             {/* Social links */}
             <div className="flex items-center gap-4">
@@ -50,21 +49,26 @@ export const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Légal</h4>
+            <h4 className="font-semibold text-foreground mb-4">Découvrir</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
+                <a href="/blog" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/ressources" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
+                  Ressources
+                </a>
+              </li>
+              <li>
+                <a href="/bio/mentions-legales" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
                   Mentions légales
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
+                <a href="/bio/confidentialite" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
                   Politique de confidentialité
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
-                  CGV
                 </a>
               </li>
             </ul>
@@ -72,12 +76,9 @@ export const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-border/50 flex items-center justify-center sm:justify-start">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Synapse. Tous droits réservés.
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Conçu avec passion pour l'innovation
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { BookOpen, TrendingUp } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 export const BlogHero = () => {
     return (
@@ -10,34 +10,19 @@ export const BlogHero = () => {
                 <div className="max-w-4xl mx-auto text-center space-y-6 opacity-0 animate-fade-in">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary/20">
                         <BookOpen className="w-4 h-4 text-primary" />
-                        <span className="text-sm font-medium">Guides & Stratégies IA</span>
+                        <span className="text-sm font-medium">Analyses & retours terrain</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-                        <span className="text-foreground">Ressources pour </span>
+                        <span className="text-foreground">Comprendre l’IA pour </span>
                         <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-                            Automatiser Votre Business
+                            faire évoluer votre activité
                         </span>
                     </h1>
 
                     <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-                        Guides pratiques, études de cas et stratégies d'automatisation pour les professionnels qui veulent <span className="font-semibold text-foreground">gagner du temps</span> et <span className="font-semibold text-foreground">augmenter leur CA</span>.
+                        Articles, analyses et études de cas pour comprendre les usages concrets de l’IA, identifier les bons leviers et prendre de meilleures décisions.
                     </p>
-
-                    <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground pt-4">
-                        <div className="flex items-center gap-2">
-                            <TrendingUp className="w-4 h-4 text-primary" />
-                            <span><strong>10 articles</strong> SEO-optimisés</span>
-                        </div>
-                        <div className="h-4 w-px bg-border" />
-                        <div className="flex items-center gap-2">
-                            <span><strong>7 catégories</strong> métiers</span>
-                        </div>
-                        <div className="h-4 w-px bg-border" />
-                        <div className="flex items-center gap-2">
-                            <span><strong>Cas concrets</strong> & ROI chiffrés</span>
-                        </div>
-                    </div>
                 </div>
             </div>
 
