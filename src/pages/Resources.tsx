@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Clock, Download, Layers3 } from "lucide-react";
+import { ArrowRight, Layers3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { NeuralBackground } from "@/components/NeuralBackground";
@@ -46,7 +46,6 @@ const ResourcesPage = () => {
                           <div className="mb-5 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                             <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-semibold text-primary">{resource.category}</span>
                             <span>{resource.format}</span>
-                            <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" />{resource.readTime}</span>
                           </div>
                           <h2 className="text-2xl font-bold transition group-hover:text-primary sm:text-4xl">{resource.title}</h2>
                           <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">{resource.description}</p>
@@ -59,19 +58,6 @@ const ResourcesPage = () => {
                     </article>
                   </Link>
                 ))}
-              </div>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-border/50 bg-white/[0.025] p-5">
-                  <BookOpen className="h-5 w-5 text-secondary" />
-                  <h2 className="mt-4 font-semibold">Lecture sans distraction</h2>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">Chaque ressource reste accessible depuis une URL claire et adaptée au partage.</p>
-                </div>
-                <div className="rounded-2xl border border-border/50 bg-white/[0.025] p-5">
-                  <Download className="h-5 w-5 text-accent" />
-                  <h2 className="mt-4 font-semibold">Éléments réutilisables</h2>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">Les modèles se copient en un clic et les checklists peuvent être téléchargées.</p>
-                </div>
               </div>
             </div>
           </div>

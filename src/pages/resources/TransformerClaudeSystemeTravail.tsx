@@ -108,7 +108,6 @@ const TransformerClaudeSystemeTravail = () => {
                     <div className="mb-5 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                       <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-semibold text-primary">Productivité IA</span>
                       <span>Guide pratique</span>
-                      <span>18 min de lecture</span>
                     </div>
                     <h1 className="text-4xl font-bold leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
                       Transformer Claude en système de travail
