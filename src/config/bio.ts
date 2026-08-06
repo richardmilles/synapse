@@ -34,7 +34,7 @@ export const bioConfig = {
   identity: {
     name: "Nerva Vidal",
     handle: "@nerva.vi",
-    eyebrow: "Diagnostic · Solutions sur mesure · IA",
+    eyebrow: "IA · Solutions sur mesure · Agents autonomes",
     positioning: "J’analyse vos besoins, conçois la solution adaptée et vous accompagne dans son implémentation : outil sur mesure, automatisation ou agent IA.",
   },
   seo: {

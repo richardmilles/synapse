@@ -17,6 +17,22 @@
             "destination": "/resource-claude.html"
         },
         {
+            "source": "/ressources/boucle-progression-ia",
+            "destination": "/resource-progression.html"
+        },
+        {
+            "source": "/ressources/methode-contexte-claude",
+            "destination": "/resource-contexte.html"
+        },
+        {
+            "source": "/ressources/securite-connecteurs-ia",
+            "destination": "/resource-security.html"
+        },
+        {
+            "source": "/ressources/memoire-durable-agents-ia",
+            "destination": "/resource-memory.html"
+        },
+        {
             "source": "/(.*)",
             "destination": "/"
         }

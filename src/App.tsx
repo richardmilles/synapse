@@ -47,6 +47,10 @@ const BlogArticle10 = lazy(() => import("./pages/blog/QualificationLeadsRenovati
 // Resources
 const ResourcesPage = lazy(() => import("./pages/Resources"));
 const TransformerClaudeSystemeTravail = lazy(() => import("./pages/resources/TransformerClaudeSystemeTravail"));
+const BoucleProgressionIA = lazy(() => import("./pages/resources/BoucleProgressionIA"));
+const MethodeContexte = lazy(() => import("./pages/resources/MethodeContexte"));
+const SecuriteConnecteursIA = lazy(() => import("./pages/resources/SecuriteConnecteursIA"));
+const MemoireDurableAgentsIA = lazy(() => import("./pages/resources/MemoireDurableAgentsIA"));
 
 const BioHome = lazy(() => import("./pages/bio/BioHome"));
 const BioOffers = lazy(() => import("./pages/bio/BioOffers"));
@@ -112,6 +116,10 @@ const App = () => (
           {/* Resources */}
           <Route path="/ressources" element={<ResourcesPage />} />
           <Route path="/ressources/transformer-claude-en-systeme-de-travail" element={<TransformerClaudeSystemeTravail />} />
+          <Route path="/ressources/boucle-progression-ia" element={<BoucleProgressionIA />} />
+          <Route path="/ressources/methode-contexte-claude" element={<MethodeContexte />} />
+          <Route path="/ressources/securite-connecteurs-ia" element={<SecuriteConnecteursIA />} />
+          <Route path="/ressources/memoire-durable-agents-ia" element={<MemoireDurableAgentsIA />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
