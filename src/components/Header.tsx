@@ -101,7 +101,7 @@ export const Header = () => {
 
               {isServiceMenuOpen && (
                 <div className="absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-4">
-                  <div className="glass-strong rounded-2xl border border-border/60 p-5 shadow-xl">
+                  <div className="rounded-2xl border border-border/80 bg-card p-5 shadow-2xl shadow-black/40">
                     <Link
                       to="/expertises"
                       className="mb-4 flex items-center justify-between rounded-xl border border-primary/25 bg-primary/10 p-4 transition hover:border-primary/50"
@@ -158,7 +158,7 @@ export const Header = () => {
               {/* Mega Menu */}
               {isSectorMenuOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[600px]">
-                  <div className="glass-strong rounded-2xl p-6 shadow-xl border border-border/50">
+                  <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-2xl shadow-black/40">
                     <div className="grid grid-cols-2 gap-6">
                       {sectorGroups.map((group) => (
                         <div key={group.title}>
