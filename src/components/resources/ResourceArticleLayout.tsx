@@ -1,9 +1,12 @@
-import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/sections/Footer";
 import { Header } from "@/components/Header";
 import { NeuralBackground } from "@/components/NeuralBackground";
 import { usePageSeo } from "@/hooks/use-page-seo";
+import { resources } from "@/data/resources";
+import { contentClusters } from "@/data/contentClusters";
+import { PageBreadcrumb } from "@/components/navigation/PageBreadcrumb";
 
 const BOOKING_URL = "https://synapse0.neetocal.com/audit";
 
@@ -40,6 +43,8 @@ export const ResourceArticleLayout = ({
   children,
 }: ResourceArticleLayoutProps) => {
   const canonicalUrl = `https://www.synapse-lab.co${path}`;
+  const resource = resources.find((item) => `/ressources/${item.slug}` === path);
+  const cluster = resource ? contentClusters.find((item) => item.id === resource.clusterId) : undefined;
 
   usePageSeo({
     title: seoTitle,
@@ -70,10 +75,7 @@ export const ResourceArticleLayout = ({
           <header className="border-b border-border/60 px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-20">
             <div className="container">
               <div className="mx-auto max-w-5xl">
-                <Link to="/ressources" className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-primary">
-                  <ArrowLeft className="h-4 w-4" />
-                  Toutes les ressources
-                </Link>
+                <PageBreadcrumb items={[{ label: "Ressources", href: "/ressources" }, { label: title }]} className="mb-8" />
 
                 <div className="grid gap-10 lg:grid-cols-[1fr_280px] lg:items-end">
                   <div>
@@ -111,6 +113,20 @@ export const ResourceArticleLayout = ({
               <div className="min-w-0">
                 {children}
 
+                {cluster && (
+                  <section className="border-t border-white/15 py-12">
+                    <div className="rounded-2xl border border-secondary/25 bg-secondary/5 p-6">
+                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-secondary">Mettre cette ressource en contexte</p>
+                      <h2 className="mt-3 text-2xl font-bold">{cluster.title}</h2>
+                      <p className="mt-3 leading-7 text-foreground/80">{cluster.description}</p>
+                      <Link to={cluster.serviceHref} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-secondary transition hover:text-primary">
+                        {cluster.serviceLabel}
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
+                  </section>
+                )}
+
                 <section className="border-t border-white/15 py-12">
                   <div className="flex flex-col gap-5 rounded-2xl border border-primary/25 bg-card/80 p-6 sm:flex-row sm:items-center sm:justify-between">
                     <div>
@@ -141,4 +157,3 @@ export const ResourceSectionHeading = ({ eyebrow, title, children }: { eyebrow: 
     {children && <div className="mt-4 text-lg leading-8 text-foreground/85">{children}</div>}
   </div>
 );
-

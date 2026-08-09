@@ -15,17 +15,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, "index.html"),
-        bio: path.resolve(__dirname, "bio.html"),
-        resources: path.resolve(__dirname, "resources.html"),
-        resourceClaude: path.resolve(__dirname, "resource-claude.html"),
-        resourceProgression: path.resolve(__dirname, "resource-progression.html"),
-        resourceContexte: path.resolve(__dirname, "resource-contexte.html"),
-        resourceSecurity: path.resolve(__dirname, "resource-security.html"),
-        resourceMemory: path.resolve(__dirname, "resource-memory.html"),
-      },
-    },
+    emptyOutDir: true,
+    rollupOptions: {},
   },
 }));

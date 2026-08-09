@@ -1,4 +1,5 @@
 import { Bot, Workflow, Database, Code, Brain, Plug } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const ServicesSection = () => {
   const services = [
@@ -7,36 +8,42 @@ export const ServicesSection = () => {
       title: "Diagnostic et analyse",
       description: "Analyse de vos besoins, de vos processus et de vos contraintes pour identifier les solutions réellement utiles à votre activité.",
       color: "primary",
+      href: "/services/diagnostic-processus",
     },
     {
       icon: Code,
       title: "Conception sur mesure",
       description: "Conception et développement de solutions numériques adaptées à votre fonctionnement, à vos outils et à vos objectifs.",
       color: "secondary",
+      href: "/services/solution-numerique-sur-mesure",
     },
     {
       icon: Plug,
       title: "Implémentation et intégration",
       description: "Déploiement, connexion à vos systèmes, tests et accompagnement des équipes jusqu'à l'adoption de la solution.",
       color: "accent",
+      href: "/services/integration-api-outils",
     },
     {
       icon: Bot,
       title: "Agents IA intelligents",
       description: "Développement d'assistants et d'agents capables de comprendre, analyser et prendre en charge une partie de vos opérations.",
       color: "primary",
+      href: "/services/agents-ia",
     },
     {
       icon: Workflow,
       title: "Automatisation des processus",
       description: "Conception de workflows fiables pour réduire les tâches répétitives et fluidifier vos opérations quotidiennes.",
       color: "secondary",
+      href: "/services/automatisation-processus",
     },
     {
       icon: Database,
       title: "Données et pilotage",
       description: "Structuration, analyse et valorisation de vos données pour faciliter le suivi et améliorer la prise de décision.",
       color: "accent",
+      href: "/services/integration-api-outils",
     },
   ];
 
@@ -65,8 +72,9 @@ export const ServicesSection = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div
+            <Link
               key={service.title}
+              to={service.href}
               className="group relative p-6 rounded-2xl bg-gradient-card border border-border/50 hover:border-primary/30 transition-all duration-500 opacity-0 animate-fade-in-up"
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
@@ -92,8 +100,14 @@ export const ServicesSection = () => {
                 <div className="absolute top-0 right-0 w-px h-12 bg-gradient-to-b from-primary/50 to-transparent" />
                 <div className="absolute top-0 right-0 w-12 h-px bg-gradient-to-l from-primary/50 to-transparent" />
               </div>
-            </div>
+            </Link>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link to="/expertises" className="text-sm font-semibold text-primary transition hover:text-secondary">
+            Voir l’ensemble des services et des parcours
+          </Link>
         </div>
       </div>
     </section>

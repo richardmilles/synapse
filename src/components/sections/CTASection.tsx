@@ -43,7 +43,7 @@ export const CTASection = () => {
 
           {/* Trust note */}
           <p className="mt-8 text-sm text-muted-foreground">
-            Consultation gratuite et sans engagement • Réponse sous 24h
+            Consultation gratuite et sans engagement
           </p>
 
           {/* Decorative synaptic pattern */}

@@ -13,6 +13,7 @@ export interface BlogArticle {
     };
     seoKeywords: string[];
     relatedSectorPage?: string; // URL to related sector page
+    clusterId: "structurer" | "concevoir" | "automatiser" | "agents-ia";
 }
 
 export const blogArticles: BlogArticle[] = [
@@ -29,7 +30,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts IA pour Professionnels du Droit"
         },
         seoKeywords: ["temps attente téléphonique", "cabinet avocat", "standard téléphonique", "secrétariat juridique"],
-        relatedSectorPage: "/secteurs/avocats"
+        relatedSectorPage: "/secteurs/avocats",
+        clusterId: "agents-ia"
     },
     {
         slug: "automatiser-relance-factures",
@@ -44,7 +46,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Recouvrement & Trésorerie"
         },
         seoKeywords: ["relance facture", "automatiser recouvrement", "DSO", "facture impayée"],
-        relatedSectorPage: "/secteurs/recouvrement-creances"
+        relatedSectorPage: "/secteurs/recouvrement-creances",
+        clusterId: "automatiser"
     },
     {
         slug: "ameliorer-taux-reponse-recrutement",
@@ -59,7 +62,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Recrutement & Automatisation RH"
         },
         seoKeywords: ["taux réponse candidat", "recrutement", "relance candidat", "cabinet recrutement"],
-        relatedSectorPage: "/secteurs/recrutement"
+        relatedSectorPage: "/secteurs/recrutement",
+        clusterId: "automatiser"
     },
     {
         slug: "gerer-no-show-formations",
@@ -74,7 +78,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Formation Professionnelle"
         },
         seoKeywords: ["no-show formation", "annulation formation", "taux remplissage", "organisme formation"],
-        relatedSectorPage: "/secteurs/formation-professionnelle"
+        relatedSectorPage: "/secteurs/formation-professionnelle",
+        clusterId: "concevoir"
     },
     {
         slug: "reduire-cout-support-technique",
@@ -89,7 +94,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Helpdesk & ITSM"
         },
         seoKeywords: ["support technique niveau 1", "réduire coût IT", "automatisation helpdesk", "ESN MSP"],
-        relatedSectorPage: "/secteurs/services-informatiques"
+        relatedSectorPage: "/secteurs/services-informatiques",
+        clusterId: "concevoir"
     },
     {
         slug: "augmenter-taux-signature-notaire",
@@ -104,7 +110,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Offices Notariaux"
         },
         seoKeywords: ["taux signature notaire", "délai acte notarié", "étude notariale", "pièces dossier notaire"],
-        relatedSectorPage: "/secteurs/notaires"
+        relatedSectorPage: "/secteurs/notaires",
+        clusterId: "automatiser"
     },
     {
         slug: "optimiser-planning-depannage",
@@ -119,7 +126,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Services d'Urgence"
         },
         seoKeywords: ["planning intervention", "dépannage urgence", "optimisation tournée", "plombier électricien"],
-        relatedSectorPage: "/secteurs/depannage-domicile"
+        relatedSectorPage: "/secteurs/depannage-domicile",
+        clusterId: "structurer"
     },
     {
         slug: "conversion-prospects-courtier",
@@ -134,7 +142,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Courtage & Assurance"
         },
         seoKeywords: ["conversion prospect courtier", "courtier assurance", "taux transformation", "prospection assurance"],
-        relatedSectorPage: "/secteurs/courtage-assurance"
+        relatedSectorPage: "/secteurs/courtage-assurance",
+        clusterId: "structurer"
     },
     {
         slug: "relance-contrat-maintenance",
@@ -149,7 +158,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Maintenance Technique"
         },
         seoKeywords: ["contrat maintenance chauffage", "renouvellement contrat", "chauffagiste", "fidélisation client"],
-        relatedSectorPage: "/secteurs/chauffage-climatisation"
+        relatedSectorPage: "/secteurs/chauffage-climatisation",
+        clusterId: "automatiser"
     },
     {
         slug: "qualification-leads-renovation",
@@ -164,7 +174,8 @@ export const blogArticles: BlogArticle[] = [
             role: "Experts Rénovation & Bâtiment"
         },
         seoKeywords: ["qualification lead rénovation", "devis rénovation", "entreprise rénovation", "taux transformation"],
-        relatedSectorPage: "/secteurs/renovation"
+        relatedSectorPage: "/secteurs/renovation",
+        clusterId: "structurer"
     }
 ];
 

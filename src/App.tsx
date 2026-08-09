@@ -4,9 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { RouteSeo } from "@/components/seo/RouteSeo";
 
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const ExpertisesPage = lazy(() => import("./pages/Expertises"));
+const ServicePage = lazy(() => import("./pages/services/ServicePage"));
 
 // Sector Pages - Professions Juridiques
 const AvocatsPage = lazy(() => import("./pages/secteurs/Avocats"));
@@ -60,15 +63,17 @@ const BioPrivacy = lazy(() => import("./pages/bio/BioPrivacy"));
 
 const queryClient = new QueryClient();
 
-const App = () => (
+export const AppContent = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Suspense fallback={<div className="min-h-screen bg-background" aria-label="Chargement" />}>
+      <RouteSeo />
+      <Suspense fallback={<div className="min-h-screen bg-background" aria-label="Chargement" />}>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/expertises" element={<ExpertisesPage />} />
+          <Route path="/services/:slug" element={<ServicePage />} />
 
           {/* Link in bio */}
           <Route path="/bio" element={<BioHome />} />
@@ -122,12 +127,18 @@ const App = () => (
           <Route path="/ressources/memoire-durable-agents-ia" element={<MemoireDurableAgentsIA />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        </Suspense>
-      </BrowserRouter>
+      </Suspense>
     </TooltipProvider>
   </QueryClientProvider>
+);
+
+const App = () => (
+  <BrowserRouter>
+    <AppContent />
+  </BrowserRouter>
 );
 
 export default App;

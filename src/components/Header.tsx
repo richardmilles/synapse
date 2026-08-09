@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { services } from "@/data/services";
 
 const sectorGroups = [
   {
@@ -45,7 +46,9 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSectorMenuOpen, setIsSectorMenuOpen] = useState(false);
+  const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
   const [mobileSectorOpen, setMobileSectorOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +59,6 @@ export const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: "Services", href: "/#services" },
     { label: "Projets", href: "/#projets" },
     { label: "Processus", href: "/#processus" },
     { label: "Blog", href: "/blog" },
@@ -81,6 +83,55 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServiceMenuOpen(true)}
+              onMouseLeave={() => setIsServiceMenuOpen(false)}
+            >
+              <button
+                type="button"
+                aria-expanded={isServiceMenuOpen}
+                aria-haspopup="true"
+                onClick={() => setIsServiceMenuOpen((open) => !open)}
+                className="relative flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground"
+              >
+                Services
+                <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isServiceMenuOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {isServiceMenuOpen && (
+                <div className="absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-4">
+                  <div className="glass-strong rounded-2xl border border-border/60 p-5 shadow-xl">
+                    <Link
+                      to="/expertises"
+                      className="mb-4 flex items-center justify-between rounded-xl border border-primary/25 bg-primary/10 p-4 transition hover:border-primary/50"
+                      onClick={() => setIsServiceMenuOpen(false)}
+                    >
+                      <div>
+                        <p className="font-semibold text-foreground">Vue d’ensemble</p>
+                        <p className="mt-1 text-xs text-foreground/70">Les cinq services et les quatre parcours</p>
+                      </div>
+                      <ChevronRight className="h-4 w-4 text-primary" />
+                    </Link>
+                    <ul className="grid grid-cols-2 gap-2">
+                      {services.map((service) => (
+                        <li key={service.slug}>
+                          <Link
+                            to={`/services/${service.slug}`}
+                            className="block rounded-xl p-3 transition hover:bg-muted hover:text-primary"
+                            onClick={() => setIsServiceMenuOpen(false)}
+                          >
+                            <span className="block text-sm font-semibold">{service.shortTitle}</span>
+                            <span className="mt-1 block line-clamp-2 text-xs leading-5 text-foreground/65">{service.description}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -157,6 +208,46 @@ export const Header = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border/50">
             <nav className="flex flex-col gap-2">
+              <div>
+                <button
+                  type="button"
+                  aria-expanded={mobileServicesOpen}
+                  onClick={() => setMobileServicesOpen((open) => !open)}
+                  className="flex w-full items-center justify-between py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Services
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                {mobileServicesOpen && (
+                  <div className="mt-2 space-y-1 border-l border-border pl-4">
+                    <Link
+                      to="/expertises"
+                      className="block py-2 text-sm font-semibold text-primary"
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setMobileServicesOpen(false);
+                      }}
+                    >
+                      Vue d’ensemble et parcours
+                    </Link>
+                    {services.map((service) => (
+                      <Link
+                        key={service.slug}
+                        to={`/services/${service.slug}`}
+                        className="block py-2 text-sm text-muted-foreground transition hover:text-foreground"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setMobileServicesOpen(false);
+                        }}
+                      >
+                        {service.shortTitle}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               {navLinks.map((link) => (
                 <a
                   key={link.label}

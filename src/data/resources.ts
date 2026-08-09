@@ -3,8 +3,8 @@ export type Resource = {
   title: string;
   description: string;
   category: string;
-  updatedAt: string;
   format: string;
+  clusterId: "structurer" | "concevoir" | "automatiser" | "agents-ia";
 };
 
 export const resources: Resource[] = [
@@ -14,8 +14,8 @@ export const resources: Resource[] = [
     description:
       "Une méthode pour transformer chaque correction humaine en règle durable, tester son effet et améliorer les productions suivantes.",
     category: "Méthodes IA",
-    updatedAt: "6 août 2026",
     format: "Méthode opérationnelle",
+    clusterId: "agents-ia",
   },
   {
     slug: "methode-contexte-claude",
@@ -23,8 +23,8 @@ export const resources: Resource[] = [
     description:
       "Nettoyer, classer et charger les instructions au bon moment pour obtenir des réponses plus précises et plus faciles à maintenir.",
     category: "Productivité IA",
-    updatedAt: "6 août 2026",
     format: "Guide d’audit",
+    clusterId: "structurer",
   },
   {
     slug: "securite-connecteurs-ia",
@@ -32,8 +32,8 @@ export const resources: Resource[] = [
     description:
       "Une matrice de décision pour connecter Gmail, Google Drive et Notion avec le niveau de permission adapté à chaque action.",
     category: "Sécurité IA",
-    updatedAt: "6 août 2026",
     format: "Checklist pratique",
+    clusterId: "automatiser",
   },
   {
     slug: "memoire-durable-agents-ia",
@@ -41,8 +41,8 @@ export const resources: Resource[] = [
     description:
       "Comprendre l’architecture de TencentDB Agent Memory et mettre en place une mémoire externe réutilisable entre les sessions et les agents.",
     category: "Infrastructure IA",
-    updatedAt: "6 août 2026",
     format: "Guide technique",
+    clusterId: "agents-ia",
   },
   {
     slug: "transformer-claude-en-systeme-de-travail",
@@ -50,7 +50,7 @@ export const resources: Resource[] = [
     description:
       "Les cinq configurations à mettre en place pour passer d’un simple chatbot à un environnement de travail structuré et réutilisable.",
     category: "Productivité IA",
-    updatedAt: "6 août 2026",
     format: "Guide pratique",
+    clusterId: "structurer",
   },
 ];

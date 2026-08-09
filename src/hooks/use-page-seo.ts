@@ -5,10 +5,13 @@ type PageSeoOptions = {
   description: string;
   canonicalPath: string;
   type?: "website" | "article";
-  structuredData?: Record<string, unknown>;
+  robots?: "index,follow" | "noindex,follow";
+  image?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 };
 
 const SITE_URL = "https://www.synapse-lab.co";
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
 const setMeta = (selector: string, attribute: "name" | "property", value: string, content: string) => {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -20,7 +23,7 @@ const setMeta = (selector: string, attribute: "name" | "property", value: string
   element.content = content;
 };
 
-export const usePageSeo = ({ title, description, canonicalPath, type = "website", structuredData }: PageSeoOptions) => {
+export const usePageSeo = ({ title, description, canonicalPath, type = "website", robots = "index,follow", image = DEFAULT_IMAGE, structuredData }: PageSeoOptions) => {
   const structuredDataJson = structuredData ? JSON.stringify(structuredData) : "";
 
   useEffect(() => {
@@ -31,8 +34,12 @@ export const usePageSeo = ({ title, description, canonicalPath, type = "website"
     setMeta('meta[property="og:description"]', "property", "og:description", description);
     setMeta('meta[property="og:type"]', "property", "og:type", type);
     setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl);
+    setMeta('meta[property="og:image"]', "property", "og:image", image);
+    setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", title);
     setMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
+    setMeta('meta[name="twitter:image"]', "name", "twitter:image", image);
+    setMeta('meta[name="robots"]', "name", "robots", robots);
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
@@ -53,5 +60,5 @@ export const usePageSeo = ({ title, description, canonicalPath, type = "website"
     }
 
     return () => document.getElementById(schemaId)?.remove();
-  }, [canonicalPath, description, structuredDataJson, title, type]);
+  }, [canonicalPath, description, image, robots, structuredDataJson, title, type]);
 };

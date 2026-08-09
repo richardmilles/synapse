@@ -29,7 +29,7 @@ const RenovationPage = () => {
         painPoints: [
             {
                 icon: Clock,
-                title: "60% de RDV si rappel {" < "} 1h",
+                title: "60% de RDV si rappel < 1h",
                 description: "Le prospect réno compare. S'il n'a pas de rappel rapide, il passe à un autre artisan.",
                 stat: "60% vs 25%",
             },
@@ -59,7 +59,7 @@ const RenovationPage = () => {
         features: [
             {
                 icon: Zap,
-                title: "Rappel immédiat {" < "} 15 min",
+                title: "Rappel immédiat < 15 min",
                 description: "Dès qu'un formulaire arrive, l'IA rappelle. Le prospect est encore motivé.",
             },
             {

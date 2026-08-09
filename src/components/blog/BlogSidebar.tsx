@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, Compass } from "lucide-react";
+import { contentClusters } from "@/data/contentClusters";
+import { getArticleBySlug } from "@/data/blogArticles";
+import { Link, useLocation } from "react-router-dom";
 
 export const BlogSidebar = () => {
+    const location = useLocation();
+    const articleSlug = location.pathname.startsWith("/blog/") ? location.pathname.split("/").pop() : undefined;
+    const article = articleSlug ? getArticleBySlug(articleSlug) : undefined;
+    const articleCluster = article ? contentClusters.find((cluster) => cluster.id === article.clusterId) : undefined;
+
     return (
         <aside className="space-y-6">
             {/* CTA Card */}
@@ -18,48 +26,42 @@ export const BlogSidebar = () => {
                 </a>
             </div>
 
-            {/* Popular Topics */}
+            {articleCluster && (
+                <div className="glass p-6 rounded-2xl border border-primary/20">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Service associé</p>
+                    <h3 className="mt-3 font-bold">{articleCluster.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-foreground/75">{articleCluster.description}</p>
+                    <Link to={articleCluster.serviceHref} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                        {articleCluster.serviceLabel}
+                        <ArrowRight className="h-4 w-4" />
+                    </Link>
+                </div>
+            )}
+
             <div className="glass p-6 rounded-2xl border border-border/50">
                 <div className="flex items-center gap-2 mb-4">
-                    <TrendingUp className="w-5 h-5 text-accent" />
-                    <h3 className="font-bold">Sujets populaires</h3>
+                    <Compass className="w-5 h-5 text-accent" />
+                    <h3 className="font-bold">Explorer par objectif</h3>
                 </div>
                 <ul className="space-y-3">
-                    {[
-                        "Réduire temps d'attente",
-                        "Automatiser relances",
-                        "Améliorer conversion",
-                        "Gérer no-shows",
-                        "Optimiser support IT"
-                    ].map((topic, index) => (
-                        <li key={index} className="flex items-center gap-2 text-sm text-foreground/75">
+                    {contentClusters.map((cluster) => (
+                        <li key={cluster.id}>
+                            <a href={`#${cluster.id}`} className="flex items-center gap-2 text-sm text-foreground/75 transition hover:text-primary">
                                 <span className="w-1.5 h-1.5 rounded-full bg-primary opacity-70" />
-                                {topic}
+                                {cluster.title}
+                            </a>
                         </li>
                     ))}
                 </ul>
             </div>
 
-            {/* Categories */}
             <div className="glass p-6 rounded-2xl border border-border/50">
-                <h3 className="font-bold mb-4">Catégories</h3>
-                <div className="flex flex-wrap gap-2">
-                    {[
-                        { name: "Juridique", color: "primary" },
-                        { name: "Finance", color: "accent" },
-                        { name: "RH", color: "secondary" },
-                        { name: "Formation", color: "synapse-violet" },
-                        { name: "IT", color: "synapse-blue" },
-                        { name: "Services", color: "synapse-green" },
-                    ].map((cat, index) => (
-                        <span
-                            key={index}
-                            className={`text-xs px-3 py-1.5 rounded-full border bg-${cat.color}/10 text-${cat.color} border-${cat.color}/20 hover:bg-${cat.color}/20 transition-colors`}
-                        >
-                            {cat.name}
-                        </span>
-                    ))}
-                </div>
+                <h3 className="font-bold mb-3">Besoin d’une vue d’ensemble ?</h3>
+                <p className="text-sm leading-6 text-foreground/75">Les services, articles et ressources sont réunis dans quatre parcours cohérents.</p>
+                <Link to="/expertises" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    Voir les expertises
+                    <ArrowRight className="h-4 w-4" />
+                </Link>
             </div>
         </aside>
     );

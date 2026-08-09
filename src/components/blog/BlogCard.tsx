@@ -28,7 +28,7 @@ export const BlogCard = ({ article }: BlogCardProps) => {
                     <div className="flex items-center gap-4 text-xs text-foreground/70">
                         <div className="flex items-center gap-1">
                             <Calendar className="w-3 h-3" />
-                            <span>{new Date(article.publishedDate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                            <span>{new Date(article.publishedDate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</span>
                         </div>
                         <div className="flex items-center gap-1">
                             <Clock className="w-3 h-3" />
