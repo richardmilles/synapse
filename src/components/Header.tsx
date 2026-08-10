@@ -137,18 +137,17 @@ export const Header = () => {
                           </Link>
                         </li>
                       ))}
+                      <li>
+                        <Link
+                          to="/services/fidelisation-automatisee-logiciels-metiers"
+                          className="block rounded-xl p-3 transition hover:bg-muted hover:text-primary"
+                          onClick={() => setIsServiceMenuOpen(false)}
+                        >
+                          <span className="block text-sm font-semibold">Fidélisation automatisée</span>
+                          <span className="mt-1 block line-clamp-2 text-xs leading-5 text-foreground/65">Transformer les événements d’un logiciel métier en actions utiles.</span>
+                        </Link>
+                      </li>
                     </ul>
-                    <Link
-                      to="/services/fidelisation-automatisee-logiciels-metiers"
-                      className="mt-3 flex items-center justify-between rounded-xl border border-secondary/25 bg-secondary/10 p-4 transition hover:border-secondary/50"
-                      onClick={() => setIsServiceMenuOpen(false)}
-                    >
-                      <div>
-                        <p className="text-sm font-semibold text-foreground">Fidélisation automatisée</p>
-                        <p className="mt-1 text-xs text-foreground/70">Transformer les événements d’un logiciel métier en actions utiles</p>
-                      </div>
-                      <ChevronRight className="h-4 w-4 text-secondary" />
-                    </Link>
                   </div>
                 </div>
               )}
