@@ -58,6 +58,8 @@ const staticRoutes: RouteSeo[] = [
     description: "Guides, méthodes, modèles et outils pratiques pour structurer un projet numérique, automatiser les opérations et déployer des agents IA.",
     lastModified: "2026-08-09",
   },
+  { path: "/mentions-legales", title: "Mentions légales | Synapse", description: "Mentions légales du site Synapse.", index: false },
+  { path: "/politique-de-confidentialite", title: "Politique de confidentialité | Synapse", description: "Informations sur la collecte et l’utilisation des données sur le site Synapse.", index: false },
   {
     path: "/bio",
     title: "Nerva Vidal | Solutions numériques sur mesure",

@@ -58,6 +58,17 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { label: "Projets", href: "/#projets" },
     { label: "Processus", href: "/#processus" },
@@ -68,7 +79,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass-strong shadow-lg" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isMobileMenuOpen ? "bg-background shadow-lg" : isScrolled ? "glass-strong shadow-lg" : "bg-transparent"
         }`}
     >
       <div className="container px-4 sm:px-6">
@@ -199,6 +210,8 @@ export const Header = () => {
           <button
             className="lg:hidden p-2 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -206,7 +219,7 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border/50">
+          <div className="fixed inset-x-0 bottom-0 top-16 overflow-y-auto overscroll-contain border-t border-border/70 bg-background px-4 py-4 shadow-2xl lg:hidden sm:top-20 sm:px-6">
             <nav className="flex flex-col gap-2">
               <div>
                 <button

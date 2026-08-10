@@ -1,4 +1,4 @@
-import { Instagram, Mail, MapPin, Music2, Youtube } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { services } from "@/data/services";
 
@@ -19,17 +19,6 @@ export const Footer = () => {
             <p className="text-muted-foreground text-sm max-w-sm mb-6">
               Du diagnostic au déploiement, nous concevons et intégrons des solutions numériques adaptées au fonctionnement de chaque entreprise.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="https://www.instagram.com/nerva.vi/" aria-label="Instagram de Nerva Vidal" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-300">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://www.tiktok.com/@nerva.vi" aria-label="TikTok de Nerva Vidal" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-300">
-                <Music2 className="w-5 h-5" />
-              </a>
-              <a href="https://www.youtube.com/@NervaVidal01" aria-label="Chaîne YouTube de Nerva Vidal" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-300">
-                <Youtube className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           <div>
@@ -83,14 +72,14 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="/bio/mentions-legales" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
+                <Link to="/mentions-legales" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
                   Mentions légales
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/bio/confidentialite" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
+                <Link to="/politique-de-confidentialite" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
                   Politique de confidentialité
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

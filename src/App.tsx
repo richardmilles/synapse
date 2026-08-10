@@ -54,6 +54,8 @@ const BoucleProgressionIA = lazy(() => import("./pages/resources/BoucleProgressi
 const MethodeContexte = lazy(() => import("./pages/resources/MethodeContexte"));
 const SecuriteConnecteursIA = lazy(() => import("./pages/resources/SecuriteConnecteursIA"));
 const MemoireDurableAgentsIA = lazy(() => import("./pages/resources/MemoireDurableAgentsIA"));
+const LegalNotices = lazy(() => import("./pages/legal/MainLegalPages").then((module) => ({ default: module.LegalNotices })));
+const PrivacyPolicy = lazy(() => import("./pages/legal/MainLegalPages").then((module) => ({ default: module.PrivacyPolicy })));
 
 const BioHome = lazy(() => import("./pages/bio/BioHome"));
 const BioOffers = lazy(() => import("./pages/bio/BioOffers"));
@@ -74,6 +76,8 @@ export const AppContent = () => (
           <Route path="/" element={<Index />} />
           <Route path="/expertises" element={<ExpertisesPage />} />
           <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="/mentions-legales" element={<LegalNotices />} />
+          <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
 
           {/* Link in bio */}
           <Route path="/bio" element={<BioHome />} />
