@@ -142,6 +142,14 @@
 }
 
 @layer components {
+  .min-h-screen:has(> .site-footer) {
+    @apply flex flex-col;
+  }
+
+  .min-h-screen:has(> .site-footer) > main {
+    @apply flex-1;
+  }
+
   .synapse-node {
     @apply absolute w-2 h-2 rounded-full bg-primary/60;
     animation: pulse-glow 3s ease-in-out infinite;

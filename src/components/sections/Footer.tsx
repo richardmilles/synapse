@@ -4,26 +4,26 @@ import { services } from "@/data/services";
 
 export const Footer = () => {
   return (
-    <footer className="relative border-t border-border/50">
-      <div className="container px-4 sm:px-6 py-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+    <footer className="site-footer relative mt-auto border-t border-border/50">
+      <div className="container px-4 py-8 sm:px-6 sm:py-9">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-12">
           {/* Brand */}
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+          <div className="md:col-span-2 lg:col-span-4">
+            <div className="mb-3 flex items-center gap-2">
               {/* Logo */}
-              <div className="relative w-10 h-10">
+              <div className="relative h-9 w-9">
                 <img src="/logo.png" alt="Synapse Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="text-xl font-bold font-space-grotesk">Synapse</span>
+              <span className="font-space-grotesk text-lg font-bold">Synapse</span>
             </div>
-            <p className="text-muted-foreground text-sm max-w-sm mb-6">
+            <p className="max-w-md text-sm leading-6 text-muted-foreground">
               Du diagnostic au déploiement, nous concevons et intégrons des solutions numériques adaptées au fonctionnement de chaque entreprise.
             </p>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Services</h4>
-            <ul className="space-y-3">
+          <div className="lg:col-span-4">
+            <h4 className="mb-3 font-semibold text-foreground">Services</h4>
+            <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link to={`/services/${service.slug}`} className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
@@ -40,9 +40,9 @@ export const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Contact</h4>
-            <ul className="space-y-3">
+          <div className="lg:col-span-2">
+            <h4 className="mb-3 font-semibold text-foreground">Contact</h4>
+            <ul className="space-y-2">
               <li>
                 <a href="mailto:contact@synapse-lab.co" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
                   <Mail className="w-4 h-4" />
@@ -58,9 +58,9 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Découvrir</h4>
-            <ul className="space-y-3">
+          <div className="lg:col-span-2">
+            <h4 className="mb-3 font-semibold text-foreground">Découvrir</h4>
+            <ul className="space-y-2">
               <li>
                 <Link to="/expertises" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
                   Expertises
@@ -91,7 +91,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-border/50 flex items-center justify-center sm:justify-start">
+        <div className="mt-7 flex items-center justify-center border-t border-border/50 pt-5 sm:justify-start">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Synapse. Tous droits réservés.
           </p>
