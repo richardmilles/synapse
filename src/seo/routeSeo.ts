@@ -47,6 +47,21 @@ const staticRoutes: RouteSeo[] = [
     lastModified: "2026-08-09",
   },
   {
+    path: "/services/fidelisation-automatisee-logiciels-metiers",
+    title: "Fidélisation automatisée pour logiciels métiers | Synapse",
+    description: "Transformez les événements et données de votre logiciel métier en actions de fidélisation, de réactivation et de renouvellement déclenchées au bon moment.",
+    lastModified: "2026-08-10",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Fidélisation automatisée pour logiciels métiers",
+      description: "Conception et intégration de systèmes qui transforment les événements d’un logiciel métier en actions de fidélisation mesurables.",
+      provider: { "@type": "Organization", name: "Synapse", url: SITE_URL },
+      areaServed: "FR",
+      url: `${SITE_URL}/services/fidelisation-automatisee-logiciels-metiers`,
+    },
+  },
+  {
     path: "/blog",
     title: "Conseils sur les processus et solutions numériques | Synapse",
     description: "Analyses concrètes pour structurer les processus, concevoir des solutions sur mesure, automatiser avec fiabilité et déployer des agents IA.",

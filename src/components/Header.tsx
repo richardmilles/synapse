@@ -120,7 +120,7 @@ export const Header = () => {
                     >
                       <div>
                         <p className="font-semibold text-foreground">Vue d’ensemble</p>
-                        <p className="mt-1 text-xs text-foreground/70">Les cinq services et les quatre parcours</p>
+                        <p className="mt-1 text-xs text-foreground/70">Les services, solutions et parcours</p>
                       </div>
                       <ChevronRight className="h-4 w-4 text-primary" />
                     </Link>
@@ -138,6 +138,17 @@ export const Header = () => {
                         </li>
                       ))}
                     </ul>
+                    <Link
+                      to="/services/fidelisation-automatisee-logiciels-metiers"
+                      className="mt-3 flex items-center justify-between rounded-xl border border-secondary/25 bg-secondary/10 p-4 transition hover:border-secondary/50"
+                      onClick={() => setIsServiceMenuOpen(false)}
+                    >
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">Fidélisation automatisée</p>
+                        <p className="mt-1 text-xs text-foreground/70">Transformer les événements d’un logiciel métier en actions utiles</p>
+                      </div>
+                      <ChevronRight className="h-4 w-4 text-secondary" />
+                    </Link>
                   </div>
                 </div>
               )}
@@ -257,6 +268,16 @@ export const Header = () => {
                         {service.shortTitle}
                       </Link>
                     ))}
+                    <Link
+                      to="/services/fidelisation-automatisee-logiciels-metiers"
+                      className="block py-2 text-sm text-muted-foreground transition hover:text-foreground"
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setMobileServicesOpen(false);
+                      }}
+                    >
+                      Fidélisation automatisée
+                    </Link>
                   </div>
                 )}
               </div>

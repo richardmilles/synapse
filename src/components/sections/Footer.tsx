@@ -31,6 +31,11 @@ export const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/services/fidelisation-automatisee-logiciels-metiers" className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm">
+                  Fidélisation automatisée
+                </Link>
+              </li>
             </ul>
           </div>
 

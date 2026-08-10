@@ -154,6 +154,7 @@ export const services: Service[] = [
     related: [
       { title: "Sécurité des connecteurs IA", description: "Définir précisément ce qu’un système peut lire, préparer ou modifier.", href: "/ressources/securite-connecteurs-ia", type: "Ressource" },
       { title: "Relance des factures impayées", description: "Structurer les règles, les rythmes et les exceptions d’un processus de relance.", href: "/blog/automatiser-relance-factures", type: "Article" },
+      { title: "Fidélisation automatisée", description: "Transformer les événements d’un logiciel métier en actions de réactivation et de renouvellement.", href: "/services/fidelisation-automatisee-logiciels-metiers", type: "Service" },
     ],
     faq: [
       { question: "Quels processus faut-il automatiser en premier ?", answer: "Les meilleurs candidats sont fréquents, répétitifs, relativement stables et associés à un résultat mesurable. Un processus instable doit d’abord être clarifié." },
@@ -246,6 +247,7 @@ export const services: Service[] = [
     related: [
       { title: "Concevoir une solution sur mesure", description: "Construire un outil métier qui s’insère dans l’écosystème existant.", href: "/services/solution-numerique-sur-mesure", type: "Service" },
       { title: "Automatiser avec fiabilité", description: "Transformer les connexions entre outils en processus supervisés.", href: "/services/automatisation-processus", type: "Service" },
+      { title: "Fidélisation automatisée", description: "Connecter les données clients aux actions commerciales déclenchées par les événements métier.", href: "/services/fidelisation-automatisee-logiciels-metiers", type: "Service" },
     ],
     faq: [
       { question: "Que faire lorsqu’un outil ne possède pas d’API ?", answer: "Selon le contexte, un export structuré, un traitement planifié ou une interface intermédiaire peut suffire. La fiabilité et les conditions d’utilisation restent prioritaires dans le choix." },

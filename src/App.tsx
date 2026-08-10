@@ -10,6 +10,7 @@ const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ExpertisesPage = lazy(() => import("./pages/Expertises"));
 const ServicePage = lazy(() => import("./pages/services/ServicePage"));
+const FidelisationLogicielsMetiers = lazy(() => import("./pages/services/FidelisationLogicielsMetiers"));
 
 // Sector Pages - Professions Juridiques
 const AvocatsPage = lazy(() => import("./pages/secteurs/Avocats"));
@@ -75,6 +76,7 @@ export const AppContent = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/expertises" element={<ExpertisesPage />} />
+          <Route path="/services/fidelisation-automatisee-logiciels-metiers" element={<FidelisationLogicielsMetiers />} />
           <Route path="/services/:slug" element={<ServicePage />} />
           <Route path="/mentions-legales" element={<LegalNotices />} />
           <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />

@@ -57,6 +57,25 @@ const Expertises = () => {
           </div>
         </section>
 
+        <section className="px-4 py-16 sm:px-6 sm:py-24">
+          <div className="container">
+            <Link
+              to="/services/fidelisation-automatisee-logiciels-metiers"
+              className="group mx-auto grid max-w-6xl gap-8 rounded-3xl border border-secondary/30 bg-gradient-to-br from-secondary/15 via-card to-primary/10 p-8 transition hover:border-secondary/55 sm:p-10 lg:grid-cols-[1fr_auto] lg:items-end"
+            >
+              <div className="max-w-4xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">Solution verticale</p>
+                <h2 className="mt-3 text-3xl font-bold sm:text-5xl">Fidélisation automatisée pour logiciels métiers</h2>
+                <p className="mt-5 max-w-3xl text-lg leading-8 text-foreground/80">Transformer les prestations terminées, périodes d’inactivité, habitudes d’achat et renouvellements en actions déclenchées au bon moment.</p>
+              </div>
+              <span className="inline-flex items-center gap-2 font-semibold text-secondary">
+                Découvrir la solution
+                <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
+              </span>
+            </Link>
+          </div>
+        </section>
+
         <section className="px-4 py-20 sm:px-6 sm:py-28">
           <div className="container">
             <div className="mx-auto flex max-w-6xl flex-col gap-8 rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/20 via-card to-secondary/15 p-8 sm:p-12 lg:flex-row lg:items-end lg:justify-between">
