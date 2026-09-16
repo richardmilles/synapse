@@ -1,21 +1,31 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Recouvrement (NOUVEAUX Phase 3)
-import { RecouvrementHeroVisuel } from "@/components/secteurs/recouvrement/RecouvrementHeroVisuel";
 import { RecouvrementTimelineRelance } from "@/components/secteurs/recouvrement/RecouvrementTimelineRelance";
 import { RecouvrementCalculateurCreances } from "@/components/secteurs/recouvrement/RecouvrementCalculateurCreances";
 
-// Composants génériques
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
 import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
-import { HandCoins, Phone, Clock, FileWarning, ShieldCheck, Scale, TrendingUp, MessageCircle } from "lucide-react";
+import { HandCoins, Phone, Clock, FileWarning, ShieldCheck, Scale, TrendingUp, MessageCircle, TrendingDown, Coins } from "lucide-react";
+
+const heroData = {
+    sectorName: "Recouvrement de créances",
+    headline: "Recouvrez votre cash sans délai",
+    subheadline: "Facture impayée depuis 60 jours ? Promesse de virement non tenue ? Votre négociateur IA relance le débiteur, met en place un plan de paiement adapté et sécurise l’encaissement avant la prescription.",
+    badges: [
+        { icon: MessageCircle, text: "Relance multicanale intelligente" },
+        { icon: TrendingDown, text: "Détection promesse non tenue" },
+        { icon: Scale, text: "Négociation échelonnement" },
+    ],
+    ctaText: "Démarrer le recouvrement",
+};
 
 const RecouvrementPage = () => {
     useEffect(() => {
@@ -129,12 +139,11 @@ const RecouvrementPage = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
-                <RecouvrementHeroVisuel />
+                <SectorHero {...heroData} />
                 <SectorPainPoints {...painPointsData} />
                 <SectorSolution {...solutionData} />
                 <RecouvrementTimelineRelance />

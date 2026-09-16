@@ -1,21 +1,31 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Chauffage (NOUVEAUX)
-import { ChauffageHeroVisuel } from "@/components/secteurs/chauffage/ChauffageHeroVisuel";
 import { ChauffageSaisonnalite } from "@/components/secteurs/chauffage/ChauffageSaisonnalite";
 import { ChauffageCalculateurContrats } from "@/components/secteurs/chauffage/ChauffageCalculateurContrats";
 
-// Composants génériques (ANCIENS)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
 import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
-import { Phone, Clock, Thermometer, Snowflake, Sun, Calendar, Wrench, Users, Headphones, Zap } from "lucide-react";
+import { Phone, Clock, Thermometer, Snowflake, Sun, Calendar, Wrench, Users, Headphones, Zap, FileText, AlertTriangle } from "lucide-react";
+
+const heroData = {
+    sectorName: "Chauffage et climatisation",
+    headline: "Captez les pics saisonniers",
+    subheadline: "Décembre : -8°C, chaudière en panne. Juillet : 38°C, clim qui lâche. Votre standard chauffagiste automatisé absorbe les pics d’appels sans embaucher, qualifie la panne technique et dispatche vos techniciens CVC instantanément.",
+    badges: [
+        { icon: Wrench, text: "Diagnostic code erreur" },
+        { icon: AlertTriangle, text: "Urgence vs installation" },
+        { icon: FileText, text: "Pré-devis instantané" },
+    ],
+    ctaText: "Absorber tous les pics",
+};
 
 const ChauffageClimatisationPage = () => {
     useEffect(() => {
@@ -129,17 +139,16 @@ const ChauffageClimatisationPage = () => {
         headline: "Prêt à absorber vos pics saisonniers ?",
         subheadline: "Ne perdez plus de clients faute de pouvoir décrocher. Notre agent IA gère 100% de vos appels, même en pleine vague de froid.",
         trustIndicators: ["Gestion pics", "Diagnostic IA", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Absorber mon pic saisonnier",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
                 {/* NOUVEAU Hero unique */}
-                <ChauffageHeroVisuel />
+                <SectorHero {...heroData} />
 
                 {/* ANCIENS composants génériques */}
                 <SectorPainPoints {...painPointsData} />

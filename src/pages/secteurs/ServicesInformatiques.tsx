@@ -1,21 +1,31 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Informatique (NOUVEAUX Phase 3)
-import { InformatiqueHeroVisuel } from "@/components/secteurs/informatique/InformatiqueHeroVisuel";
 import { InformatiqueTicketingVisuel } from "@/components/secteurs/informatique/InformatiqueTicketingVisuel";
 import { InformatiqueCalculateurTickets } from "@/components/secteurs/informatique/InformatiqueCalculateurTickets";
 
-// Composants génériques
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
 import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
-import { AlertTriangle, Clock, BrainCircuit, ShieldAlert, Terminal, MessageSquare, Wrench, BarChart3 } from "lucide-react";
+import { AlertTriangle, Clock, BrainCircuit, ShieldAlert, Terminal, MessageSquare, Wrench, BarChart3, KeyRound, Waypoints } from "lucide-react";
+
+const heroData = {
+    sectorName: "Services informatiques",
+    headline: "Automatisez votre support niveau 1",
+    subheadline: "Techniciens noyés sous les tickets mot de passe ? SLA non respectés ? Votre technicien IA qualifie l’incident, résout les cas simples sans intervention et route les cas complexes vers l’expert compétent.",
+    badges: [
+        { icon: Terminal, text: "Diagnostic pré-qualifié" },
+        { icon: KeyRound, text: "Reset password auto" },
+        { icon: Waypoints, text: "Escalade intelligente" },
+    ],
+    ctaText: "Libérer mes techs",
+};
 
 const ServicesInformatiquesPage = () => {
     useEffect(() => {
@@ -127,12 +137,11 @@ const ServicesInformatiquesPage = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
-                <InformatiqueHeroVisuel />
+                <SectorHero {...heroData} />
                 <SectorPainPoints {...painPointsData} />
                 <SectorSolution {...solutionData} />
                 <InformatiqueTicketingVisuel />

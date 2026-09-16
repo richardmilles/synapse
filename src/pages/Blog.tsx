@@ -1,5 +1,4 @@
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 import { BlogHero } from "@/components/blog/BlogHero";
 import { BlogCard } from "@/components/blog/BlogCard";
@@ -16,14 +15,13 @@ const BlogPage = () => {
     });
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen bg-background overflow-x-hidden">
             <Header />
 
             <main className="relative z-10">
                 <BlogHero />
 
-                <section className="py-20">
+                <section className="py-20" id="articles">
                     <div className="container px-4 sm:px-6">
                         <div className="max-w-7xl mx-auto">
                             <div className="grid lg:grid-cols-3 gap-12">

@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Experts-Comptables (NOUVEAUX)
-import { ExpertsComptablesHeroVisuel } from "@/components/secteurs/experts-comptables/ExpertsComptablesHeroVisuel";
 import { ExpertsComptablesCalendrierPics } from "@/components/secteurs/experts-comptables/ExpertsComptablesCalendrierPics";
 import { ExpertsComptablesSimulateurClients } from "@/components/secteurs/experts-comptables/ExpertsComptablesSimulateurClients";
 
-// Composants génériques (ANCIENS - ON GARDE)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Phone, Clock, Users, Calendar, FileText, Calculator, Building, TrendingUp, Headphones, Zap } from "lucide-react";
+
+const heroData = {
+    sectorName: "Experts-comptables",
+    headline: "Captez les créateurs d’entreprise avant vos concurrents",
+    subheadline: "82% des créateurs choisissent le premier cabinet qui répond. Notre standard téléphonique expert-comptable absorbe vos pics saisonniers et qualifie chaque demande de création d’entreprise.",
+    badges: [
+        { icon: Calculator, text: "Qualification SIRET automatique" },
+        { icon: Building, text: "Intégration logiciel comptable" },
+        { icon: Clock, text: "Mise en place 48h" },
+    ],
+    ctaText: "Absorber mes pics saisonniers",
+};
 
 const ExpertsComptablesPage = () => {
     useEffect(() => {
@@ -126,17 +136,16 @@ const ExpertsComptablesPage = () => {
         headline: "Prêt à ne plus perdre de clients en période fiscale ?",
         subheadline: "Découvrez comment notre agent vocal peut gérer vos pics saisonniers et convertir plus de prospects.",
         trustIndicators: ["Qualification SIRET", "Gestion pics saison", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Sécuriser ma période fiscale",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
                 {/* NOUVEAU Hero unique */}
-                <ExpertsComptablesHeroVisuel />
+                <SectorHero {...heroData} />
 
                 {/* ANCIENS composants génériques */}
                 <SectorPainPoints {...painPointsData} />

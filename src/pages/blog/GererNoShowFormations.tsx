@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock, User, CheckCircle2, TrendingUp, Users, Euro, AlertCircle, Phone, MessageSquare, CalendarCheck, UserX } from "lucide-react";
@@ -13,8 +12,7 @@ const GererNoShowFormations = () => {
     }, []);
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
             <main className="relative z-10 pt-20">
                 <article className="py-16">

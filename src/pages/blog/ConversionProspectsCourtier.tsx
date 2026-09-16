@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock, User, CheckCircle2, TrendingUp, Phone, Euro, AlertCircle, FileText, Users, Timer, Shield } from "lucide-react";
@@ -13,8 +12,7 @@ const ConversionProspectsCourtier = () => {
     }, []);
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
             <main className="relative z-10 pt-20">
                 <article className="py-16">
@@ -270,7 +268,7 @@ const ConversionProspectsCourtier = () => {
                                             <div className="glass p-8 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/5 to-transparent text-center">
                                                 <h3 className="text-2xl font-bold mb-4">Convertissez Plus de Prospects</h3>
                                                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                                                    Synapse déploie l'appel automatique en 5 minutes, la qualification IA, et la séquence de relance. Vos commerciaux ne gèrent que les prospects chauds et qualifiés.
+                                                    Déployez l’appel automatique en 5 minutes, la qualification IA et la séquence de relance. Vos commerciaux récupèrent les prospects chauds et qualifiés.
                                                 </p>
                                                 <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                                     <Button variant="hero" size="lg" className="group">

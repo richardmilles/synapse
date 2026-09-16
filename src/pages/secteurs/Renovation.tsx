@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Rénovation (NOUVEAUX)
-import { RenovationHeroVisuel } from "@/components/secteurs/renovation/RenovationHeroVisuel";
 import { RenovationFunnelProspects } from "@/components/secteurs/renovation/RenovationFunnelProspects";
 import { RenovationEstimateurProjets } from "@/components/secteurs/renovation/RenovationEstimateurProjets";
 
-// Composants génériques (ANCIENS)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Phone, Clock, Calendar, AlertCircle, FileText, Home, Headphones, Zap, CheckCircle2 } from "lucide-react";
+
+const heroData = {
+    sectorName: "Rénovation",
+    headline: "Un rappel sous 1 heure fait signer 60% de RDV en plus",
+    subheadline: "38% des prospects abandonnent sans rappel sous 2 heures. Notre agent vocal rénovation rappelle en 15 minutes et qualifie les projets à forte valeur automatiquement.",
+    badges: [
+        { icon: Clock, text: "Rappel formulaire < 15 min" },
+        { icon: CheckCircle2, text: "Qualification projet" },
+        { icon: Calendar, text: "RDV chantier auto" },
+    ],
+    ctaText: "Convertir mes demandes de devis",
+};
 
 const RenovationPage = () => {
     useEffect(() => {
@@ -130,17 +140,16 @@ const RenovationPage = () => {
         headline: "Prêt à convertir 60% de vos prospects en chantiers ?",
         subheadline: "Ne laissez plus un prospect refroidir. Rappelez en moins de 15 minutes.",
         trustIndicators: ["Rappel < 15 min", "Qualification auto", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Convertir mes prospects en chantiers",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
                 {/* NOUVEAU Hero unique */}
-                <RenovationHeroVisuel />
+                <SectorHero {...heroData} />
 
                 {/* ANCIENS composants génériques */}
                 <SectorPainPoints {...painPointsData} />

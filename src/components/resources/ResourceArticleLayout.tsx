@@ -2,7 +2,6 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/sections/Footer";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { usePageSeo } from "@/hooks/use-page-seo";
 import { resources } from "@/data/resources";
 import { contentClusters } from "@/data/contentClusters";
@@ -66,8 +65,7 @@ export const ResourceArticleLayout = ({
   });
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background">
-      <NeuralBackground />
+    <div className="site-page-premium resource-page-premium relative min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       <main className="relative z-10 pt-20">

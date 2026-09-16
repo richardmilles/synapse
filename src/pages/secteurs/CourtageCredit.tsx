@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Courtage Crédit (NOUVEAUX)
-import { CreditHeroVisuel } from "@/components/secteurs/courtage-credit/CreditHeroVisuel";
 import { CreditTimelineCritique } from "@/components/secteurs/courtage-credit/CreditTimelineCritique";
 import { CreditSimulateurCapacite } from "@/components/secteurs/courtage-credit/CreditSimulateurCapacite";
 
-// Composants génériques (ANCIENS)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Phone, Clock, Home, DollarSign, FileText, Calculator, Calendar, TrendingUp, Headphones, Zap } from "lucide-react";
+
+const heroData = {
+    sectorName: "Courtage crédit",
+    headline: "Les 10 minutes critiques qui font tout",
+    subheadline: "70% de conversion si vous rappelez dans les 10 minutes après le formulaire. Notre agent vocal courtier crédit appelle en 2 minutes et réalise la simulation de capacité d’emprunt instantanément.",
+    badges: [
+        { icon: Clock, text: "Rappel formulaire < 2 min" },
+        { icon: Calculator, text: "Simulation capacité emprunt" },
+        { icon: Home, text: "Dossier moyen 250k€" },
+    ],
+    ctaText: "Convertir 70% de mes leads",
+};
 
 const CourtageCreditPage = () => {
     useEffect(() => {
@@ -130,17 +140,16 @@ const CourtageCreditPage = () => {
         headline: "Prêt à convertir 70% de vos leads en clients ?",
         subheadline: "Ne laissez plus un prospect refroidir. Contactez-le en moins de 10 minutes.",
         trustIndicators: ["Rappel < 10 min", "Simulation capacité", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Convertir mes leads plus vite",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
                 {/* NOUVEAU Hero unique */}
-                <CreditHeroVisuel />
+                <SectorHero {...heroData} />
 
                 {/* ANCIENS composants génériques */}
                 <SectorPainPoints {...painPointsData} />

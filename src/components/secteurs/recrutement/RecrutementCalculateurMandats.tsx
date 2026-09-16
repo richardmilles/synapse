@@ -26,7 +26,6 @@ export const RecrutementCalculateurMandats = () => {
         <section className="relative py-24 overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-500/5 rounded-full blur-[150px]" />
 
             <div className="container relative z-10 px-4 sm:px-6">
                 <div className="max-w-5xl mx-auto">

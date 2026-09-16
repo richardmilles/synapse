@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Intérim (NOUVEAUX Phase 3)
-import { InterimHeroVisuel } from "@/components/secteurs/interim/InterimHeroVisuel";
 import { InterimFunnelCandidats } from "@/components/secteurs/interim/InterimFunnelCandidats";
 import { InterimCalculateurAbsences } from "@/components/secteurs/interim/InterimCalculateurAbsences";
 
-// Composants génériques
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Clock, Users, Phone, Zap, Briefcase, FileText, CheckCircle2, AlertTriangle } from "lucide-react";
+
+const heroData = {
+    sectorName: "Intérim",
+    headline: "L’imprévu géré en 15 minutes",
+    subheadline: "Intérimaire absent à 7h du matin ? Commande client urgente le vendredi soir ? Votre assistant recrutement IA qualifie les besoins, interroge votre vivier candidats et trouve le profil disponible avant l’ouverture de l’agence.",
+    badges: [
+        { icon: AlertTriangle, text: "Gestion urgence matin" },
+        { icon: Users, text: "Matching CV automatique" },
+        { icon: Phone, text: "Confirmation dispo SMS/vocal" },
+    ],
+    ctaText: "Automatiser le sourcing urgent",
+};
 
 const InterimPage = () => {
     useEffect(() => {
@@ -130,12 +140,11 @@ const InterimPage = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
-                <InterimHeroVisuel />
+                <SectorHero {...heroData} />
                 <SectorPainPoints {...painPointsData} />
                 <SectorSolution {...solutionData} />
                 <InterimFunnelCandidats />

@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Dépannage (NOUVEAUX)
-import { DepannageHeroVisuel } from "@/components/secteurs/depannage/DepannageHeroVisuel";
 import { DepannageTimelineUrgence } from "@/components/secteurs/depannage/DepannageTimelineUrgence";
 import { DepannageCalculateurUrgences } from "@/components/secteurs/depannage/DepannageCalculateurUrgences";
 
-// Composants génériques (ANCIENS)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Phone, Clock, Wrench, MapPin, AlertTriangle, Calendar, Headphones, Zap, Truck, CreditCard } from "lucide-react";
+
+const heroData = {
+    sectorName: "Dépannage à domicile",
+    headline: "Urgence, réponse immédiate",
+    subheadline: "Fuite d’eau à 3h du matin ? Panne électrique le dimanche ? Notre agent vocal dépannage décroche en 3 secondes, qualifie la panne et dispatche le technicien le plus proche, 24 h/24 et 7 j/7.",
+    badges: [
+        { icon: Phone, text: "Décrochage instantané" },
+        { icon: Wrench, text: "Qualification technique panne" },
+        { icon: MapPin, text: "Géolocalisation automatique" },
+    ],
+    ctaText: "Ne manquez plus aucune urgence",
+};
 
 const DepannagePage = () => {
     useEffect(() => {
@@ -129,17 +139,16 @@ const DepannagePage = () => {
         headline: "Prêt à ne plus jamais perdre un appel d'urgence ?",
         subheadline: "Décrochez 100% des appels 24/7 et transformez chaque urgence en intervention facturée.",
         trustIndicators: ["24/7/365", "Dispatching auto", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Ne plus rater une urgence",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
                 {/* NOUVEAU Hero unique */}
-                <DepannageHeroVisuel />
+                <SectorHero {...heroData} />
 
                 {/* ANCIENS composants génériques */}
                 <SectorPainPoints {...painPointsData} />

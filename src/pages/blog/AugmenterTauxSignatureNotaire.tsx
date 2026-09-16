@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock, User, CheckCircle2, TrendingUp, FileCheck, Euro, AlertCircle, Phone, Mail, Home, FileText } from "lucide-react";
@@ -13,8 +12,7 @@ const AugmenterTauxSignatureNotaire = () => {
     }, []);
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
             <main className="relative z-10 pt-20">
                 <article className="py-16">
@@ -252,7 +250,7 @@ const AugmenterTauxSignatureNotaire = () => {
                                             <div className="glass p-8 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/5 to-transparent text-center">
                                                 <h3 className="text-2xl font-bold mb-4">Accélérez Vos Signatures</h3>
                                                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                                                    Synapse automatise le suivi complet de vos dossiers : relances email, appels téléphoniques, et alertes proactives. Vos clercs ne gèrent que les exceptions.
+                                                    Automatisez le suivi complet de vos dossiers : relances email, appels téléphoniques et alertes proactives. Vos clercs se concentrent sur les dossiers prioritaires.
                                                 </p>
                                                 <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                                     <Button variant="hero" size="lg" className="group">

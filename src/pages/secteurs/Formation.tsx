@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Formation (NOUVEAUX Phase 3)
-import { FormationHeroVisuel } from "@/components/secteurs/formation/FormationHeroVisuel";
 import { FormationFunnelInscription } from "@/components/secteurs/formation/FormationFunnelInscription";
 import { FormationCalculateurAnnulations } from "@/components/secteurs/formation/FormationCalculateurAnnulations";
 
-// Composants génériques
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Users, FileX, CalendarOff, PhoneOff, CheckSquare, GraduationCap, Clock, BellRing } from "lucide-react";
+
+const heroData = {
+    sectorName: "Formation professionnelle",
+    headline: "Remplissez vos sessions sans effort",
+    subheadline: "Taux de no-show trop élevé ? Dossiers CPF qui traînent ? Votre équipe IA qualifie les apprenants, vérifie leur éligibilité en direct et maximise votre taux de remplissage.",
+    badges: [
+        { icon: FileX, text: "Relance dossiers incomplets" },
+        { icon: BellRing, text: "Convocation automatique" },
+        { icon: CalendarOff, text: "Gestion absences" },
+    ],
+    ctaText: "Booster mes inscriptions",
+};
 
 const FormationPage = () => {
     useEffect(() => {
@@ -125,12 +135,11 @@ const FormationPage = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
-                <FormationHeroVisuel />
+                <SectorHero {...heroData} />
                 <SectorPainPoints {...painPointsData} />
                 <SectorSolution {...solutionData} />
                 <FormationFunnelInscription />

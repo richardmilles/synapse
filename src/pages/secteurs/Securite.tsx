@@ -1,21 +1,31 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Sécurité (NOUVEAUX)
-import { SecuriteHeroVisuel } from "@/components/secteurs/securite/SecuriteHeroVisuel";
 import { SecuriteTimelineIntervention } from "@/components/secteurs/securite/SecuriteTimelineIntervention";
 import { SecuriteCalculateurSites } from "@/components/secteurs/securite/SecuriteCalculateurSites";
 
-// Composants génériques (ANCIENS)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
 import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
-import { Phone, Shield, AlertTriangle, Clock, Lock, Calendar, Camera, Home, Headphones, Zap } from "lucide-react";
+import { Phone, Shield, AlertTriangle, Clock, Lock, Calendar, Camera, Home, Headphones, Zap, Radar } from "lucide-react";
+
+const heroData = {
+    sectorName: "Sécurité et alarmes",
+    headline: "Protection 24/7 garantie",
+    subheadline: "Alarme déclenchée à 2h du matin ? Notre PC télésurveillance automatisé appelle le client, vérifie l’intrusion réelle et dispatche l’agent d’intervention le plus proche en moins de 5 minutes.",
+    badges: [
+        { icon: Radar, text: "Levée de doute automatique" },
+        { icon: Shield, text: "Dispatch agent terrain" },
+        { icon: Camera, text: "Suivi conformité sites" },
+    ],
+    ctaText: "Sécuriser toutes les alertes",
+};
 
 const SecuritePage = () => {
     useEffect(() => {
@@ -129,17 +139,16 @@ const SecuritePage = () => {
         headline: "Prêt à rassurer vos prospects 24/7 ?",
         subheadline: "Ne laissez plus un prospect anxieux raccrocher faute de réponse. Notre agent IA rassure et convertit.",
         trustIndicators: ["Réponse < 20 sec", "Ton empathique", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Rassurer mes prospects 24/7",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
                 {/* NOUVEAU Hero unique */}
-                <SecuriteHeroVisuel />
+                <SectorHero {...heroData} />
 
                 {/* ANCIENS composants génériques */}
                 <SectorPainPoints {...painPointsData} />

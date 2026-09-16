@@ -2,12 +2,12 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContentClustersSection } from "@/components/content/ContentClustersSection";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { usePageSeo } from "@/hooks/use-page-seo";
 import { PageBreadcrumb } from "@/components/navigation/PageBreadcrumb";
+import { getServiceIcon } from "@/lib/serviceIcons";
 
 const Expertises = () => {
   usePageSeo({
@@ -17,8 +17,7 @@ const Expertises = () => {
   });
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background">
-      <NeuralBackground />
+    <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
       <Header />
       <main className="relative z-10 pt-20">
         <section className="border-b border-border/60 px-4 py-16 sm:px-6 sm:py-24">
@@ -27,7 +26,13 @@ const Expertises = () => {
               <PageBreadcrumb items={[{ label: "Services" }]} className="mb-9" />
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Services et expertises</p>
               <h1 className="mt-5 max-w-5xl text-4xl font-bold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-7xl">Du problème métier à la solution en production</h1>
-              <p className="mt-7 max-w-3xl text-lg leading-8 text-foreground/85 sm:text-xl">Synapse analyse le fonctionnement existant, structure le projet, conçoit la solution et accompagne son déploiement. La technologie est choisie selon le besoin, les contraintes et la valeur attendue.</p>
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-foreground/85 sm:text-xl">Nous analysons le fonctionnement existant, structurons le projet, concevons la solution et accompagnons son déploiement. La technologie est choisie selon le besoin, les contraintes et la valeur attendue.</p>
+              <div className="mt-10 grid max-w-3xl grid-cols-2 gap-6 border-t border-border/60 pt-8 sm:grid-cols-4">
+                <div><strong className="block text-2xl font-bold text-primary">5</strong><span className="text-xs text-foreground/65">expertises combinables</span></div>
+                <div><strong className="block text-2xl font-bold text-primary">4</strong><span className="text-xs text-foreground/65">étapes, du cadrage au déploiement</span></div>
+                <div><strong className="block text-2xl font-bold text-primary">48h</strong><span className="text-xs text-foreground/65">pour un premier retour</span></div>
+                <div><strong className="block text-2xl font-bold text-primary">15</strong><span className="text-xs text-foreground/65">secteurs déjà accompagnés</span></div>
+              </div>
             </div>
           </div>
         </section>
@@ -42,16 +47,19 @@ const Expertises = () => {
                 <h2 className="mt-3 text-3xl font-bold sm:text-5xl">Cinq services qui peuvent se combiner</h2>
               </div>
               <div className="grid gap-5 md:grid-cols-2">
-                {services.map((service, index) => (
-                  <Link key={service.slug} to={`/services/${service.slug}`} className="group rounded-3xl border border-border/70 bg-background/60 p-7 transition hover:-translate-y-1 hover:border-primary/40">
-                    <div className="flex items-start justify-between gap-5">
-                      <span className="text-sm font-bold text-primary">0{index + 1}</span>
-                      <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1 group-hover:text-primary" />
-                    </div>
-                    <h3 className="mt-8 text-2xl font-bold">{service.shortTitle}</h3>
-                    <p className="mt-4 leading-7 text-foreground/80">{service.description}</p>
-                  </Link>
-                ))}
+                {services.map((service, index) => {
+                  const Icon = getServiceIcon(service.slug);
+                  return (
+                    <Link key={service.slug} to={`/services/${service.slug}`} className="group rounded-3xl border border-border/70 bg-background/60 p-7 transition hover:-translate-y-1 hover:border-primary/40">
+                      <div className="flex items-start justify-between gap-5">
+                        <span className="flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-card/60 text-primary transition group-hover:border-primary/50"><Icon className="h-5 w-5" aria-hidden="true" /></span>
+                        <span className="flex items-center gap-3 text-sm font-bold text-primary">0{index + 1}<ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" /></span>
+                      </div>
+                      <h3 className="mt-8 text-2xl font-bold">{service.shortTitle}</h3>
+                      <p className="mt-4 leading-7 text-foreground/80">{service.description}</p>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -73,6 +81,23 @@ const Expertises = () => {
                 <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
               </span>
             </Link>
+          </div>
+        </section>
+
+        <section className="border-t border-border/60 px-4 py-16 sm:px-6 sm:py-24">
+          <div className="container">
+            <div className="mx-auto max-w-4xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-secondary">Questions fréquentes</p>
+              <h2 className="mt-3 text-3xl font-bold sm:text-5xl">Avant de choisir un service</h2>
+              <div className="mt-8 divide-y divide-border/70 border-y border-border/70">
+                {services.map((service) => (
+                  <details key={service.slug} className="group py-5">
+                    <summary className="cursor-pointer list-none pr-8 font-semibold marker:hidden">{service.faq[0].question}</summary>
+                    <p className="mt-3 pr-6 text-sm leading-7 text-foreground/75">{service.faq[0].answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

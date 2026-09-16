@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock, User, CheckCircle2, TrendingUp, Users, AlertCircle, Phone, MessageSquare, Zap, Timer } from "lucide-react";
@@ -13,8 +12,7 @@ const AmeliorerTauxReponseRecrutement = () => {
     }, []);
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10 pt-20">
@@ -300,7 +298,7 @@ const AmeliorerTauxReponseRecrutement = () => {
                                             <div className="glass p-8 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/5 to-transparent text-center">
                                                 <h3 className="text-2xl font-bold mb-4">Ne Laissez Plus Filer les Meilleurs Candidats</h3>
                                                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                                                    Synapse automatise le rappel immédiat, la pré-qualification par IA vocale, et les séquences de relance multi-canal. Résultat : vos consultants ne gèrent que les candidats déjà qualifiés et intéressés.
+                                                    Automatisez le rappel immédiat, la préqualification par IA vocale et les séquences de relance multicanal. Vos consultants récupèrent des candidats déjà qualifiés et intéressés.
                                                 </p>
                                                 <a href="https://synapse0.neetocal.com/audit" target="_blank" rel="noopener noreferrer">
                                                     <Button variant="hero" size="lg" className="group">

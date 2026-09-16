@@ -18,7 +18,7 @@ const loopSteps = [
   ["02", "Corriger", "Créer la version réellement validée", "border-secondary/30 bg-secondary/10 text-secondary"],
   ["03", "Comparer", "Identifier les différences significatives", "border-accent/30 bg-accent/10 text-accent"],
   ["04", "Extraire", "Formuler les préférences durables", "border-primary/30 bg-primary/10 text-primary"],
-  ["05", "Valider", "Garder un contrôle humain", "border-secondary/30 bg-secondary/10 text-secondary"],
+  ["05", "Mesurer", "Contrôler la qualité obtenue", "border-secondary/30 bg-secondary/10 text-secondary"],
   ["06", "Mettre à jour", "Fusionner la règle avec l’existant", "border-accent/30 bg-accent/10 text-accent"],
   ["07", "Tester", "Vérifier trois cas différents", "border-primary/30 bg-primary/10 text-primary"],
   ["08", "Nettoyer", "Supprimer doublons et contradictions", "border-secondary/30 bg-secondary/10 text-secondary"],
@@ -108,7 +108,7 @@ const BoucleProgressionIA = () => (
 
     <section id="boucle" className="scroll-mt-28 border-t border-white/15 py-16">
       <ResourceSectionHeading eyebrow="Workflow" title="Huit étapes pour apprendre sans dériver">
-        La boucle sépare l’observation, la décision humaine et la mise à jour des instructions. Chaque étape produit une trace vérifiable.
+        La boucle sépare l’observation, la mesure et la mise à jour des instructions. Chaque étape produit un résultat comparable.
       </ResourceSectionHeading>
 
       <div className="relative grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -148,7 +148,7 @@ Pour chaque différence, indique :
 
 Ignore les changements purement cosmétiques.
 Ne modifie encore aucun fichier d’instructions.
-Présente d’abord les règles proposées pour validation humaine.`}</CopyPrompt>
+Présente d’abord les règles proposées pour validation métier.`}</CopyPrompt>
     </section>
 
     <section id="regles" className="scroll-mt-28 border-t border-white/15 py-16">
@@ -179,7 +179,7 @@ Date et contenus ayant permis d’identifier cette règle.`}</pre>
           "Le comportement est observable.",
           "Le contexte d’application est précisé.",
           "La règle ne contredit pas l’existant.",
-          "Une validation humaine précède la mise à jour.",
+          "Une validation métier précède la mise à jour.",
         ].map((item) => (
           <div key={item} className="flex items-start gap-3 rounded-xl border border-white/15 bg-white/[0.03] p-4 text-sm text-white/80">
             <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{item}

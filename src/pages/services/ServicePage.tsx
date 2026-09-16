@@ -1,11 +1,11 @@
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
 import { getServiceBySlug, services } from "@/data/services";
 import { usePageSeo } from "@/hooks/use-page-seo";
+import { getServiceIcon, stepIcons } from "@/lib/serviceIcons";
 
 const BOOKING_URL = "https://synapse0.neetocal.com/audit";
 
@@ -23,9 +23,10 @@ const ServicePageContent = ({ slug }: { slug: string }) => {
     return <Navigate to="/404" replace />;
   }
 
+  const ServiceIcon = getServiceIcon(service.slug);
+
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background">
-      <NeuralBackground />
+    <div className="site-page-premium service-page-premium relative min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       <main className="relative z-10 pt-20">
@@ -42,7 +43,10 @@ const ServicePageContent = ({ slug }: { slug: string }) => {
 
               <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{service.eyebrow}</p>
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary"><ServiceIcon className="h-6 w-6" aria-hidden="true" /></span>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{service.eyebrow}</p>
+                  </div>
                   <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-7xl">{service.title}</h1>
                   <p className="mt-7 max-w-3xl text-lg leading-8 text-foreground/85 sm:text-xl">{service.description}</p>
                   <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -61,7 +65,7 @@ const ServicePageContent = ({ slug }: { slug: string }) => {
                 <aside className="rounded-3xl border border-primary/25 bg-gradient-to-br from-primary/15 via-card/80 to-secondary/10 p-7">
                   <p className="text-sm font-semibold text-primary">Ce que vous obtenez</p>
                   <ul className="mt-5 space-y-4">
-                    {service.outcomes.slice(0, 3).map((outcome) => (
+                    {service.outcomes.map((outcome) => (
                       <li key={outcome} className="flex gap-3 text-sm leading-6 text-foreground/85">
                         <Check className="mt-1 h-4 w-4 shrink-0 text-primary" />
                         <span>{outcome}</span>
@@ -105,13 +109,19 @@ const ServicePageContent = ({ slug }: { slug: string }) => {
                 <h2 className="mt-3 text-3xl font-bold sm:text-5xl">Avancer par décisions vérifiables</h2>
               </div>
               <ol className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-                {service.steps.map((step, index) => (
-                  <li key={step.title} className="rounded-3xl border border-border/70 bg-background/60 p-6">
-                    <span className="text-sm font-bold text-primary">0{index + 1}</span>
-                    <h3 className="mt-8 text-xl font-bold">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-foreground/75">{step.description}</p>
-                  </li>
-                ))}
+                {service.steps.map((step, index) => {
+                  const StepIcon = stepIcons[index] ?? stepIcons[0];
+                  return (
+                    <li key={step.title} className="rounded-3xl border border-border/70 bg-background/60 p-6">
+                      <div className="flex items-center justify-between">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-border/70 bg-card/60 text-primary"><StepIcon className="h-4 w-4" aria-hidden="true" /></span>
+                        <span className="text-sm font-bold text-primary">0{index + 1}</span>
+                      </div>
+                      <h3 className="mt-6 text-xl font-bold">{step.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-foreground/75">{step.description}</p>
+                    </li>
+                  );
+                })}
               </ol>
 
               <div className="mt-10 grid gap-8 rounded-3xl border border-primary/25 bg-primary/5 p-7 sm:p-10 lg:grid-cols-[1fr_1fr]">
@@ -181,12 +191,15 @@ const ServicePageContent = ({ slug }: { slug: string }) => {
                   <h2 className="mt-3 text-3xl font-bold sm:text-5xl">Clarifier le besoin et définir une première étape utile</h2>
                   <p className="mt-5 text-lg leading-8 text-foreground/80">Un échange permet de présenter le fonctionnement actuel, les contraintes et le résultat recherché.</p>
                 </div>
-                <a href={BOOKING_URL} className="shrink-0">
-                  <Button variant="hero" size="lg">
-                    Réserver un appel
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
+                <div className="flex shrink-0 flex-col items-start gap-3 lg:items-end">
+                  <a href={BOOKING_URL}>
+                    <Button variant="hero" size="lg">
+                      Réserver un appel
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                  <p className="max-w-[260px] text-xs italic leading-5 text-foreground/60 lg:text-right">Nombre de projets menés en parallèle volontairement limité.</p>
+                </div>
               </div>
             </div>
           </div>

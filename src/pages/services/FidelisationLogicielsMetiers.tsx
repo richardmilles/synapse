@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { PageBreadcrumb } from "@/components/navigation/PageBreadcrumb";
 import { Footer } from "@/components/sections/Footer";
 import { Button } from "@/components/ui/button";
@@ -188,8 +187,7 @@ const FidelisationLogicielsMetiers = () => {
   });
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background">
-      <NeuralBackground />
+    <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       <main className="relative z-10 pt-20">

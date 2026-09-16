@@ -1,21 +1,32 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Avocats (NOUVEAUX)
-import { AvocatsHeroVisuel } from "@/components/secteurs/avocats/AvocatsHeroVisuel";
+// Composants uniques Avocats
 import { AvocatsTimelineComparaison } from "@/components/secteurs/avocats/AvocatsTimelineComparaison";
 import { AvocatsCalculateurMandats } from "@/components/secteurs/avocats/AvocatsCalculateurMandats";
 
-// Composants génériques (ANCIENS - ON GARDE)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
 import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
-import { Phone, Clock, Users, AlertTriangle, Calendar, FileText, Scale, Headphones, Zap, Shield } from "lucide-react";
+import { Phone, Clock, Users, AlertTriangle, Calendar, FileText, Scale, Headphones, Zap, Shield, Lock } from "lucide-react";
+
+const heroData = {
+    sectorName: "Avocats",
+    headline: "Ne perdez plus aucun mandat par manque de réactivité",
+    subheadline: "78% des clients choisissent le premier cabinet qui répond. Notre standard téléphonique IA qualifie vos prospects 24/7 et transfère uniquement les dossiers pertinents.",
+    badges: [
+        { icon: Shield, text: "Conforme déontologie avocat" },
+        { icon: Scale, text: "Qualification juridique automatique" },
+        { icon: Lock, text: "RGPD France" },
+    ],
+    ctaText: "Voir comment capter chaque mandat",
+};
 
 const AvocatsPage = () => {
     useEffect(() => {
@@ -131,19 +142,15 @@ const AvocatsPage = () => {
         headline: "Prêt à ne plus jamais manquer un mandat ?",
         subheadline: "Rejoignez les cabinets qui ont augmenté leur taux de conversion de 40% grâce à notre agent vocal IA.",
         trustIndicators: ["Conforme déontologie", "RGPD France", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Sécuriser mes prochains mandats",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
-                {/* NOUVEAU Hero unique */}
-                <AvocatsHeroVisuel />
-
-                {/* ANCIENS composants génériques */}
+                <SectorHero {...heroData} />
                 <SectorPainPoints {...painPointsData} />
                 <SectorSolution {...solutionData} />
 

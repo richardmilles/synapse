@@ -123,7 +123,7 @@ export const services: Service[] = [
     description:
       "Des automatisations conçues autour des règles métier, des exceptions et du suivi nécessaire pour fonctionner durablement.",
     introduction:
-      "Une automatisation utile ne se limite pas à relier deux outils. Elle doit savoir quoi faire lorsque les données sont incomplètes, une API ne répond plus ou une décision exige une validation. Nous concevons des workflows observables, avec des règles claires et une intervention humaine prévue aux bons endroits.",
+      "Une automatisation utile ne se limite pas à relier deux outils. Elle doit gérer les données incomplètes, les indisponibilités et les exceptions. Nous concevons des workflows observables, avec des règles claires, des alertes et des procédures de reprise.",
     situations: [
       "Les mêmes informations sont ressaisies dans plusieurs logiciels.",
       "Les relances et notifications dépendent encore de vérifications manuelles.",
@@ -138,13 +138,13 @@ export const services: Service[] = [
     ],
     deliverables: [
       "Schéma du workflow et règles de déclenchement",
-      "Gestion des exceptions et validations humaines",
+      "Gestion des exceptions et règles de validation",
       "Tableau de suivi, alertes et journal des opérations",
       "Documentation et procédure de reprise manuelle",
     ],
     steps: [
       { title: "Sélectionner", description: "Choix d’un processus stable, fréquent et suffisamment mesurable pour justifier l’automatisation." },
-      { title: "Sécuriser", description: "Définition des permissions, contrôles, exceptions et données sensibles." },
+      { title: "Fiabiliser", description: "Définition des permissions, règles métier, exceptions et données sensibles." },
       { title: "Connecter", description: "Intégration des outils et construction du workflow avec des tests représentatifs." },
       { title: "Superviser", description: "Mise en place des alertes, journaux et indicateurs nécessaires au fonctionnement quotidien." },
     ],
@@ -165,23 +165,23 @@ export const services: Service[] = [
   {
     slug: "agents-ia",
     eyebrow: "Agents IA encadrés",
-    title: "Confier une partie du travail à un agent IA avec les bons garde-fous",
+    title: "Déployer un agent IA qui accélère réellement vos opérations",
     shortTitle: "Agents IA",
     description:
-      "Des agents IA reliés aux connaissances et aux outils de l’entreprise, avec des permissions, des évaluations et une validation humaine adaptées.",
+      "Des agents IA spécialisés, reliés aux connaissances et aux outils de l’entreprise, pour qualifier, rechercher, préparer et exécuter plus rapidement.",
     introduction:
-      "Un agent IA peut analyser une demande, rechercher une information, préparer une réponse ou déclencher une action. Sa valeur dépend du contexte auquel il accède, des outils qu’il peut utiliser et des limites qui encadrent son autonomie. Nous construisons ces systèmes à partir d’un cas d’usage précis, puis nous mesurons leur comportement avant d’élargir leur rôle.",
+      "Un agent IA peut analyser une demande, rechercher une information, préparer une réponse ou déclencher une action. Sa valeur dépend de la qualité du contexte, des outils connectés et de son intégration au processus. Nous partons d’un cas d’usage précis, mesurons ses résultats et étendons ensuite son périmètre.",
     situations: [
       "Une équipe traite un grand volume de demandes textuelles ou vocales.",
       "La recherche d’informations internes ralentit les réponses.",
-      "Des dossiers doivent être qualifiés avant une intervention humaine.",
+      "Des dossiers doivent être qualifiés avant leur attribution à la bonne équipe.",
       "Un assistant générique existe déjà, mais ses réponses manquent de contexte et de constance.",
     ],
     outcomes: [
       "Un agent spécialisé sur un périmètre et des sources définis.",
       "Des actions limitées par des permissions explicites.",
       "Des réponses évaluées sur des cas réels avant la production.",
-      "Un passage clair vers un humain lorsque la situation l’exige.",
+      "Une attribution claire vers la bonne équipe lorsque le dossier sort du périmètre.",
     ],
     deliverables: [
       "Définition du rôle, des limites et des critères de réussite",
@@ -190,21 +190,21 @@ export const services: Service[] = [
       "Suivi des réponses, coûts, erreurs et escalades",
     ],
     steps: [
-      { title: "Délimiter", description: "Choix d’une responsabilité précise, des utilisateurs et des décisions qui restent humaines." },
+      { title: "Cibler", description: "Choix d’une responsabilité précise, des utilisateurs et du résultat opérationnel attendu." },
       { title: "Contextualiser", description: "Organisation des instructions, connaissances, outils et droits d’accès de l’agent." },
       { title: "Évaluer", description: "Tests sur des cas réalistes, y compris les ambiguïtés, erreurs et demandes hors périmètre." },
       { title: "Déployer", description: "Mise en service progressive avec observation, corrections et possibilité de reprendre la main." },
     ],
-    approachTitle: "L’autonomie se gagne par étapes",
+    approachTitle: "Commencer ciblé, puis développer les usages",
     approachText:
-      "Un agent commence par préparer ou recommander. Les actions automatiques sont ouvertes lorsque la qualité, la traçabilité et les règles de contrôle sont suffisantes. Cette progression permet d’obtenir de la valeur rapidement tout en protégeant les opérations sensibles.",
+      "Un premier périmètre permet de mesurer la précision, le temps gagné et le coût par traitement. Les fonctions et connexions supplémentaires sont ajoutées lorsque leur contribution au résultat est démontrée.",
     related: [
       { title: "Donner une mémoire durable à ses agents", description: "Comprendre comment conserver et réutiliser le contexte entre les sessions.", href: "/ressources/memoire-durable-agents-ia", type: "Ressource" },
       { title: "La boucle de progression IA", description: "Transformer les corrections humaines en améliorations mesurables.", href: "/ressources/boucle-progression-ia", type: "Ressource" },
     ],
     faq: [
       { question: "Un agent IA peut-il agir directement dans les outils ?", answer: "Oui, lorsque le cas d’usage le justifie. Les permissions peuvent limiter l’agent à la lecture, à la préparation ou à certaines actions précises avec validation." },
-      { question: "Comment mesurer la qualité d’un agent ?", answer: "Un jeu de cas représentatifs permet de mesurer l’exactitude, le respect des règles, la capacité à reconnaître ses limites et la qualité du passage vers un humain." },
+      { question: "Comment mesurer la qualité d’un agent ?", answer: "Un jeu de cas représentatifs permet de mesurer l’exactitude, le taux de résolution, le délai de traitement, le coût par demande et la bonne attribution des exceptions." },
       { question: "Peut-on utiliser les modèles et outils déjà choisis par l’entreprise ?", answer: "L’architecture peut s’adapter aux fournisseurs, bases documentaires et logiciels existants lorsque leurs API et leurs conditions d’utilisation le permettent." },
     ],
   },

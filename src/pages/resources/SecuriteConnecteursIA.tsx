@@ -5,7 +5,7 @@ const navItems = [
   { href: "#niveaux", label: "Niveaux d’autorisation" },
   { href: "#decision", label: "Décider en quatre questions" },
   { href: "#matrices", label: "Matrices par outil" },
-  { href: "#controle", label: "Contrôle humain" },
+  { href: "#controle", label: "Règles d’exécution" },
   { href: "#checklist", label: "Checklist finale" },
 ];
 
@@ -75,7 +75,7 @@ const SecuriteConnecteursIA = () => (
           ["01", "L’action écrit-elle ou communique-t-elle ?", "Une lecture ciblée est généralement moins risquée qu’une action qui modifie ou envoie."],
           ["02", "Peut-on revenir en arrière ?", "Un brouillon est récupérable. Un email envoyé ou un fichier supprimé ne l’est pas toujours."],
           ["03", "Quel est le périmètre touché ?", "Une page précise et un espace entier ne doivent jamais recevoir la même autorisation."],
-          ["04", "Qui subit les conséquences ?", "Plus l’action touche des clients, collègues ou partenaires, plus le contrôle humain est important."],
+          ["04", "Quel est l’impact business ?", "Plus l’action touche des clients, des revenus ou des partenaires, plus ses conditions d’exécution doivent être précises."],
         ].map(([number, title, text]) => (
           <div key={number} className="rounded-2xl border border-primary/20 bg-primary/5 p-5"><span className="text-xs font-bold text-primary">{number}</span><h3 className="mt-3 font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-white/80">{text}</p></div>
         ))}
@@ -94,7 +94,7 @@ const SecuriteConnecteursIA = () => (
     </section>
 
     <section id="controle" className="scroll-mt-28 border-t border-white/15 py-16">
-      <ResourceSectionHeading eyebrow="Garde-fous" title="Les actions qui restent sous contrôle humain" />
+      <ResourceSectionHeading eyebrow="Règles d’exécution" title="Définir les conditions avant d’automatiser une action" />
       <div className="rounded-3xl border border-amber-400/25 bg-amber-400/5 p-6 sm:p-8">
         <div className="grid gap-4 sm:grid-cols-2">
           {["Envoyer un message à un tiers", "Supprimer ou déplacer des données", "Modifier les droits d’accès", "Publier un contenu", "Agir sur un grand nombre d’éléments", "Traiter des données sensibles"].map((item) => (

@@ -1,21 +1,31 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Notaires (NOUVEAUX Phase 3)
-import { NotairesHeroVisuel } from "@/components/secteurs/notaires/NotairesHeroVisuel";
 import { NotairesTimelineActe } from "@/components/secteurs/notaires/NotairesTimelineActe";
 import { NotairesCalculateurDossiers } from "@/components/secteurs/notaires/NotairesCalculateurDossiers";
 
-// Composants génériques
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
 import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
-import { Scale, FileText, Clock, Phone, Shield, FileCheck, Landmark, MessageSquare } from "lucide-react";
+import { Scale, FileText, Clock, Phone, Shield, FileCheck, Landmark, MessageSquare, FileSignature } from "lucide-react";
+
+const heroData = {
+    sectorName: "Notaires",
+    headline: "L’acte authentique sans délai",
+    subheadline: "Signature urgente avant 16h ? Question sur une succession ? Votre secrétariat notarial IA qualifie la demande, vérifie la complétude du dossier et cale le rendez-vous de signature dans l’agenda du clerc.",
+    badges: [
+        { icon: FileSignature, text: "Prise RDV synchronisée" },
+        { icon: FileCheck, text: "Checklist pièces auto" },
+        { icon: Shield, text: "Filtrage démarchage" },
+    ],
+    ctaText: "Sécuriser vos signatures",
+};
 
 const NotairesPage = () => {
     useEffect(() => {
@@ -132,12 +142,11 @@ const NotairesPage = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
-                <NotairesHeroVisuel />
+                <SectorHero {...heroData} />
                 <SectorPainPoints {...painPointsData} />
                 <SectorSolution {...solutionData} />
                 <NotairesTimelineActe />

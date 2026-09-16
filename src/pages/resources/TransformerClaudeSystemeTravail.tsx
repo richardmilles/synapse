@@ -21,7 +21,6 @@ import {
 import { Link } from "react-router-dom";
 import { CopyPrompt } from "@/components/resources/CopyPrompt";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 import { usePageSeo } from "@/hooks/use-page-seo";
 
@@ -89,8 +88,7 @@ const TransformerClaudeSystemeTravail = () => {
   });
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-background">
-      <NeuralBackground />
+    <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
       <Header />
 
       <main className="relative z-10 pt-20">
@@ -120,7 +118,7 @@ const TransformerClaudeSystemeTravail = () => {
                   <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/15 to-secondary/10 p-6">
                     <Sparkles className="h-6 w-6 text-primary" />
                     <p className="mt-4 text-sm font-semibold">À la fin de ce guide</p>
-                    <p className="mt-2 text-sm leading-6 text-foreground/80">Vous saurez quelle capacité utiliser, dans quel ordre la configurer et où conserver une validation humaine.</p>
+                    <p className="mt-2 text-sm leading-6 text-foreground/80">Vous saurez quelle capacité utiliser, dans quel ordre la configurer et comment mesurer le résultat.</p>
                   </div>
                 </div>
               </div>
@@ -347,7 +345,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                     {[
                       ["Faible", "Lecture, recherche, comparaison, extraction", "Autonomie encadrée", "bg-emerald-400", "text-emerald-300"],
                       ["Intermédiaire", "Brouillon, saisie ou modification non critique", "Vérification avant finalisation", "bg-amber-400", "text-amber-300"],
-                      ["Élevé", "Envoi, suppression, paiement, publication, signature", "Validation humaine explicite", "bg-rose-400", "text-rose-300"],
+                      ["Élevé", "Envoi, suppression, paiement, publication, signature", "Validation métier explicite", "bg-rose-400", "text-rose-300"],
                     ].map(([level, examples, control, bar, textColor]) => (
                       <div key={level} className="grid gap-3 border-b border-white/10 bg-white/[0.025] p-4 last:border-b-0 sm:grid-cols-[110px_1fr_190px] sm:items-center">
                         <div className="flex items-center gap-2"><span className={`h-2.5 w-2.5 rounded-full ${bar}`} /><span className={`font-bold ${textColor}`}>{level}</span></div>
@@ -357,7 +355,7 @@ Propose ensuite une configuration personnalisée en conservant les éléments in
                     ))}
                   </div>
 
-                  <p className="mt-7 rounded-xl border-l-2 border-synapse-blue bg-synapse-blue/5 px-5 py-4 text-sm leading-6 text-white/80"><strong className="text-white">À retenir :</strong> plus une action produit des conséquences difficiles à annuler, plus la validation humaine doit intervenir avant son exécution.</p>
+                  <p className="mt-7 rounded-xl border-l-2 border-synapse-blue bg-synapse-blue/5 px-5 py-4 text-sm leading-6 text-white/80"><strong className="text-white">À retenir :</strong> les actions qui engagent un paiement, une publication ou une suppression exigent une règle de validation explicite.</p>
                 </section>
 
                 <section id="decision" className="scroll-mt-28 border-t border-white/10 py-16">

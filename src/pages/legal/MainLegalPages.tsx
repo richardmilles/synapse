@@ -1,5 +1,4 @@
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { PageBreadcrumb } from "@/components/navigation/PageBreadcrumb";
 import { Footer } from "@/components/sections/Footer";
 import { bioConfig } from "@/config/bio";
@@ -13,8 +12,7 @@ type LegalPageShellProps = {
 };
 
 const LegalPageShell = ({ eyebrow, title, children }: LegalPageShellProps) => (
-  <div className="relative min-h-screen overflow-x-hidden bg-background">
-    <NeuralBackground />
+  <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
     <Header />
     <main className="relative z-10 px-4 pb-20 pt-28 sm:px-6 sm:pb-28 sm:pt-36">
       <div className="container">

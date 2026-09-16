@@ -58,7 +58,7 @@ export const BioShell = ({ children, compact = false }: BioShellProps) => {
       </main>
 
       <footer className="relative z-10 border-t border-white/10 px-5 py-7 text-center text-xs text-white/65">
-        <p>© {new Date().getFullYear()} Synapse · Vos données restent sous votre contrôle.</p>
+        <p>© {new Date().getFullYear()} Synapse · Solutions numériques sur mesure.</p>
         <nav className="mt-3 flex flex-wrap justify-center gap-x-5 gap-y-2" aria-label="Liens légaux">
           <Link className="transition hover:text-white" to="/bio/mentions-legales">Mentions légales</Link>
           <Link className="transition hover:text-white" to="/bio/confidentialite">Confidentialité</Link>

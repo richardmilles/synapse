@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Assurance (NOUVEAUX Phase 3)
-import { AssuranceHeroVisuel } from "@/components/secteurs/assurance/AssuranceHeroVisuel";
 import { AssuranceComparatifVisuel } from "@/components/secteurs/assurance/AssuranceComparatifVisuel";
 import { AssuranceCalculateurRenouvellements } from "@/components/secteurs/assurance/AssuranceCalculateurRenouvellements";
 
-// Composants génériques
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Umbrella, FileCheck, Repeat, FileSpreadsheet, ShieldAlert, Phone, Clock, Coins } from "lucide-react";
+
+const heroData = {
+    sectorName: "Courtage assurance",
+    headline: "Protégez mieux, vendez plus",
+    subheadline: "Renouvellement de contrat dans 30 jours ? Besoin d’une RC Pro urgente ? Votre courtier IA compare les offres, relance vos prospects chauds et sécurise la signature avant la concurrence.",
+    badges: [
+        { icon: Repeat, text: "Comparateur temps réel" },
+        { icon: ShieldAlert, text: "Gestion sinistre auto" },
+        { icon: FileCheck, text: "Anti-résiliation" },
+    ],
+    ctaText: "Comparer les offres",
+};
 
 const CourtageAssurancePage = () => {
     useEffect(() => {
@@ -125,12 +135,11 @@ const CourtageAssurancePage = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
-                <AssuranceHeroVisuel />
+                <SectorHero {...heroData} />
                 <SectorPainPoints {...painPointsData} />
                 <SectorSolution {...solutionData} />
                 <AssuranceComparatifVisuel />

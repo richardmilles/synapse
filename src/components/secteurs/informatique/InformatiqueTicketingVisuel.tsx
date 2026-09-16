@@ -47,7 +47,7 @@ export const InformatiqueTicketingVisuel = () => {
                         Le workflow qui <span className="text-primary">filtre</span> le bruit
                     </h2>
                     <p className="text-muted-foreground">
-                        Synapse intercepte 100% des demandes, résout les problèmes récurrents automatiquement et ne dérange vos humains que pour les vrais défis.
+                        Les demandes sont captées, classées et résolues automatiquement lorsqu’elles sont récurrentes. Les cas complexes arrivent directement à la bonne équipe.
                     </p>
                 </div>
 

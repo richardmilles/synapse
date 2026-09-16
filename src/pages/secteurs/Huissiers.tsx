@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Huissiers (NOUVEAUX)
-import { HuissiersHeroVisuel } from "@/components/secteurs/huissiers/HuissiersHeroVisuel";
 import { HuissiersProcessusSignification } from "@/components/secteurs/huissiers/HuissiersProcessusSignification";
 import { HuissiersCalculateurDossiers } from "@/components/secteurs/huissiers/HuissiersCalculateurDossiers";
 
-// Composants génériques (ANCIENS)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Phone, Clock, FileText, Scale, Users, Calendar, Headphones, Zap, CheckCircle2, AlertTriangle } from "lucide-react";
+
+const heroData = {
+    sectorName: "Huissiers de justice",
+    headline: "Chaque dossier compte",
+    subheadline: "Signification urgente avant 15h ? Constat après effraction ? Notre standard automatisé qualifie le type d’acte juridique, collecte les pièces obligatoires et planifie votre clerc disponible en moins de 2 heures.",
+    badges: [
+        { icon: Scale, text: "Qualification acte automatique" },
+        { icon: FileText, text: "Checklist pièces obligatoires" },
+        { icon: Calendar, text: "Planification tournée" },
+    ],
+    ctaText: "Traiter tous les dossiers",
+};
 
 const HuissiersPage = () => {
     useEffect(() => {
@@ -127,19 +137,18 @@ const HuissiersPage = () => {
     const ctaData = {
         sectorName: "Huissier de Justice",
         headline: "Prêt à optimiser votre étude ?",
-        subheadline: "Traitez plus de dossiers avec la même équipe. Notre agent IA gère qualifica tion, planification et suivi.",
+        subheadline: "Traitez plus de dossiers avec la même équipe. Notre agent IA gère qualification, planification et suivi.",
         trustIndicators: ["Qualification auto", "Conformité RGPD", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Optimiser mon étude",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
                 {/* NOUVEAU Hero unique */}
-                <HuissiersHeroVisuel />
+                <SectorHero {...heroData} />
 
                 {/* ANCIENS composants génériques */}
                 <SectorPainPoints {...painPointsData} />

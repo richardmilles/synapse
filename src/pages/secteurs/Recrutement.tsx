@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { NeuralBackground } from "@/components/NeuralBackground";
 import { Footer } from "@/components/sections/Footer";
 
-// Composants uniques Recrutement (NOUVEAUX)
-import { RecrutementHeroVisuel } from "@/components/secteurs/recrutement/RecrutementHeroVisuel";
 import { RecrutementMatchingVisuel } from "@/components/secteurs/recrutement/RecrutementMatchingVisuel";
 import { RecrutementCalculateurMandats } from "@/components/secteurs/recrutement/RecrutementCalculateurMandats";
 
-// Composants génériques (ANCIENS)
+// Composants génériques (identité éditoriale premium)
+import { SectorHero } from "@/components/sectors/SectorHero";
 import { SectorPainPoints } from "@/components/sectors/SectorPainPoints";
 import { SectorSolution } from "@/components/sectors/SectorSolution";
 import { SectorStats } from "@/components/sectors/SectorStats";
@@ -16,6 +14,18 @@ import { SectorFAQ } from "@/components/sectors/SectorFAQ";
 import { SectorCTA } from "@/components/sectors/SectorCTA";
 
 import { Phone, Clock, Users, Target, FileText, Briefcase, Headphones, Zap, TrendingUp } from "lucide-react";
+
+const heroData = {
+    sectorName: "Recrutement",
+    headline: "Captez les candidats actifs avant vos concurrents",
+    subheadline: "65% des candidats postulent sur 3 à 5 offres simultanément. Le standard recrutement automatisé rappelle en moins de 30 minutes et qualifie chaque candidature instantanément.",
+    badges: [
+        { icon: Clock, text: "Rappel candidat < 30 min" },
+        { icon: Target, text: "Qualification compétences" },
+        { icon: Users, text: "Routing consultant" },
+    ],
+    ctaText: "Placer plus de candidats",
+};
 
 const RecrutementPage = () => {
     useEffect(() => {
@@ -132,17 +142,16 @@ const RecrutementPage = () => {
         headline: "Prêt à placer 40% de candidats en plus ?",
         subheadline: "Ne laissez plus un talent actif partir chez la concurrence. Rappelez en moins de 30 minutes.",
         trustIndicators: ["Rappel < 30 min", "Matching auto", "Mise en place 48h"],
-        ctaText: "Demander ma démo gratuite",
+        ctaText: "Placer plus de candidats",
     };
 
     return (
-        <div className="relative min-h-screen bg-background overflow-x-hidden">
-            <NeuralBackground />
+        <div className="site-page-premium relative min-h-screen overflow-x-hidden bg-background">
             <Header />
 
             <main className="relative z-10">
                 {/* NOUVEAU Hero unique */}
-                <RecrutementHeroVisuel />
+                <SectorHero {...heroData} />
 
                 {/* ANCIENS composants génériques */}
                 <SectorPainPoints {...painPointsData} />

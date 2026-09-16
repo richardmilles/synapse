@@ -52,7 +52,7 @@ export const contentClusters: ContentCluster[] = [
     id: "agents-ia",
     number: "04",
     title: "Déployer des agents IA responsables",
-    description: "Donner à un agent un rôle, un contexte, des permissions et des critères d’évaluation avant d’élargir son autonomie.",
+    description: "Donner à un agent un objectif, un contexte, des outils et des indicateurs avant d’étendre son périmètre.",
     serviceHref: "/services/agents-ia",
     serviceLabel: "Comprendre les agents IA",
     links: [
