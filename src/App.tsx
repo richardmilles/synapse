@@ -11,6 +11,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const ExpertisesPage = lazy(() => import("./pages/Expertises"));
 const ServicePage = lazy(() => import("./pages/services/ServicePage"));
 const FidelisationLogicielsMetiers = lazy(() => import("./pages/services/FidelisationLogicielsMetiers"));
+const ProjectPage = lazy(() => import("./pages/realisations/ProjectPage"));
 
 // Sector Pages - Professions Juridiques
 const AvocatsPage = lazy(() => import("./pages/secteurs/Avocats"));
@@ -78,6 +79,7 @@ export const AppContent = () => (
           <Route path="/expertises" element={<ExpertisesPage />} />
           <Route path="/services/fidelisation-automatisee-logiciels-metiers" element={<FidelisationLogicielsMetiers />} />
           <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="/realisations/:slug" element={<ProjectPage />} />
           <Route path="/mentions-legales" element={<LegalNotices />} />
           <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
 

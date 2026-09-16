@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, BarChart3, Check, Clock3, MoveRight, TrendingUp } from "lucide-react";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ArrowRight, ArrowUpRight, BarChart3, Clock3, TrendingUp } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/sections/Footer";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
 import { ClientLogos } from "@/components/sections/ClientLogos";
+import { BuildCarousel } from "@/components/sections/BuildCarousel";
+import { ProcessCommitments } from "@/components/sections/ProcessCommitments";
+import { RoiCalculator } from "@/components/sections/RoiCalculator";
+import { projects } from "@/data/projects";
 import { usePageSeo } from "@/hooks/use-page-seo";
 
 const expertiseCards = [
@@ -33,31 +38,6 @@ const expertiseCards = [
   },
 ];
 
-const useCases = [
-  ["Ventes", "Qualifier plus vite, relancer au bon moment et réduire la perte de prospects.", "/services/agents-ia"],
-  ["Opérations", "Supprimer les ressaisies, accélérer les dossiers et absorber plus de volume.", "/services/automatisation-processus"],
-  ["Service client", "Répondre immédiatement aux demandes récurrentes et raccourcir les délais.", "/services/agents-ia"],
-  ["Direction", "Centraliser les indicateurs utiles et piloter avec des données à jour.", "/services/integration-api-outils"],
-];
-
-const sectors = [
-  ["Avocats", "/secteurs/avocats"], ["Experts-comptables", "/secteurs/experts-comptables"],
-  ["Notaires", "/secteurs/notaires"], ["Huissiers de justice", "/secteurs/huissiers-justice"],
-  ["Recouvrement", "/secteurs/recouvrement-creances"], ["Courtage assurance", "/secteurs/courtage-assurance"],
-  ["Courtage crédit", "/secteurs/courtage-credit"], ["Dépannage à domicile", "/secteurs/depannage-domicile"],
-  ["Chauffage et climatisation", "/secteurs/chauffage-climatisation"], ["Rénovation", "/secteurs/renovation"],
-  ["Sécurité et alarmes", "/secteurs/securite-alarmes"], ["Recrutement", "/secteurs/recrutement"],
-  ["Intérim", "/secteurs/interim"], ["Formation professionnelle", "/secteurs/formation-professionnelle"],
-  ["Services informatiques", "/secteurs/services-informatiques"],
-];
-
-const missions = [
-  ["Recouvrement de créances", "Automatiser les relances", "Règles par ancienneté de créance, exceptions gérées automatiquement et tableau de suivi des encaissements.", "/services/automatisation-processus"],
-  ["Courtage crédit", "Qualifier les demandes entrantes", "Un agent IA trie les dossiers par profil et urgence avant transmission au bon courtier.", "/services/agents-ia"],
-  ["Dépannage à domicile", "Optimiser le planning des techniciens", "Un portail sur mesure affecte les interventions selon la zone, la disponibilité et l’urgence.", "/services/solution-numerique-sur-mesure"],
-  ["Notaires", "Centraliser le suivi des dossiers", "Les outils existants sont connectés pour réunir échanges, délais et pièces dans un même espace.", "/services/integration-api-outils"],
-];
-
 const faqs = [
   ["Faut-il déjà savoir quel outil ou quelle IA utiliser ?", "Non. Le diagnostic sert justement à comparer les options à partir de votre besoin réel, de vos contraintes et du niveau d’investissement pertinent. Aucun choix technique préalable n’est nécessaire."],
   ["Est-ce compatible avec nos outils actuels (CRM, ERP, logiciel métier) ?", "Oui. Nous intégrons systématiquement les systèmes déjà en place plutôt que d’imposer un outil isolé supplémentaire. Vos données restent la source de vérité."],
@@ -73,6 +53,18 @@ const Index = () => {
     description: "Des solutions numériques conçues pour accélérer votre entreprise, du diagnostic au déploiement.",
     canonicalPath: "/",
   });
+
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const scrollToTarget = () => document.getElementById(hash.slice(1))?.scrollIntoView({ block: "start" });
+    const timer = window.setTimeout(scrollToTarget, 350);
+    window.addEventListener("load", scrollToTarget, { once: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("load", scrollToTarget);
+    };
+  }, [hash]);
 
   return (
     <div className="premium-home" id="top">
@@ -158,44 +150,30 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="premium-usecases">
-          <div className="premium-shell">
-            <div className="premium-section-head">
-              <div><p className="premium-section-label">Cas d’usage</p><h2>Parler business avant<br />de parler technologie.</h2></div>
-              <p>Nous partons du revenu, du coût, du délai ou de la qualité de service à améliorer. La technologie vient ensuite.</p>
-            </div>
-            <div className="premium-usecases__list">
-              {useCases.map(([title, copy, href], index) => <Link to={href} className="premium-usecase" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{copy}</p><MoveRight aria-hidden="true" /></Link>)}
-            </div>
-          </div>
-        </section>
+        <BuildCarousel />
 
-        <section className="premium-sectors">
-          <div className="premium-shell premium-sectors__grid">
-            <div><p className="premium-section-label">Expertise sectorielle</p><h2>Des solutions adaptées aux réalités de votre marché.</h2><p>Parcours client, contraintes métier, saisonnalité et outils existants sont intégrés dès le cadrage.</p></div>
-            <div className="premium-sectors__links">{sectors.map(([label, href]) => <Link to={href} key={href}><span>{label}</span><ArrowUpRight /></Link>)}</div>
-          </div>
-        </section>
-
-        <section className="premium-missions">
+        <section className="premium-realisations" id="realisations">
           <div className="premium-shell">
-            <div className="premium-section-head">
-              <div><p className="premium-section-label">Concrètement</p><h2>À quoi ressemble<br />une mission chez nous.</h2></div>
-              <p>Quatre exemples représentatifs du type de projet mené, du diagnostic à la mise en production.</p>
+            <div className="premium-section-head premium-section-head--light">
+              <div><p className="premium-section-label">Réalisations</p><h2>Des projets métier<br />conçus de bout en bout.</h2></div>
+              <p>Pilotage client, restauration d’entreprise, gestion locative : des systèmes construits autour du fonctionnement réel de nos clients.</p>
             </div>
-            <div className="premium-missions__grid">
-              {missions.map(([sector, title, copy, href]) => (
-                <Link to={href} className="premium-mission-card" key={title}>
-                  <div className="premium-mission-card__tag"><span>{sector}</span><ArrowUpRight aria-hidden="true" /></div>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
+            <div className="premium-realisations__grid">
+              {projects.map((project, index) => (
+                <Link to={`/realisations/${project.slug}`} className="premium-realisation-card" key={project.slug}>
+                  <div className="premium-realisation-card__top"><span>{String(index + 1).padStart(2, "0")}</span><ArrowUpRight aria-hidden="true" /></div>
+                  <p className="premium-realisation-card__sector">{project.sector}</p>
+                  <h3>{project.name}</h3>
+                  <p className="premium-realisation-card__tagline">{project.tagline}</p>
+                  <ul className="premium-realisation-card__scope">
+                    {project.scope.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                  <span className="premium-realisation-card__cta">Voir la réalisation</span>
                 </Link>
               ))}
             </div>
           </div>
         </section>
-
-        <LogoMarquee />
 
         <section className="premium-manifesto">
           <div className="premium-shell premium-manifesto__inner">
@@ -210,7 +188,7 @@ const Index = () => {
             <div className="premium-process__sticky">
               <p className="premium-section-label">De l’idée à la production</p>
               <h2>Un projet piloté par la valeur.</h2>
-              <p>Un périmètre clair, des livraisons visibles et des décisions rapides. Vous savez ce qui est construit, pourquoi et avec quel impact attendu.</p>
+              <p>Chaque étape produit un livrable que vous pouvez voir, tester et valider. Vous savez ce qui est construit, pourquoi et avec quel impact attendu.</p>
               <Link className="premium-text-link premium-text-link--light" to="/expertises">Découvrir la méthode <ArrowRight aria-hidden="true" /></Link>
               <div className="premium-process__flow" aria-label="Progression du projet">
                 <span><i>01</i><b>Problème</b></span>
@@ -226,19 +204,14 @@ const Index = () => {
               <li><span>04 / Déploiement</span><h3>Mesurer et développer</h3><p>Mise en production, suivi des indicateurs, documentation et feuille de route.</p></li>
             </ol>
           </div>
-        </section>
-
-        <section className="premium-standard">
-          <div className="premium-shell premium-standard__card">
-            <div><p className="premium-section-label">Notre standard</p><h2>Un actif business,<br />pas une démonstration.</h2></div>
-            <ul>
-              <li><Check aria-hidden="true" /><span><strong>Objectif mesurable</strong> relié à un indicateur de l’entreprise.</span></li>
-              <li><Check aria-hidden="true" /><span><strong>Intégration complète</strong> avec vos logiciels et vos données.</span></li>
-              <li><Check aria-hidden="true" /><span><strong>Expérience simple</strong> pour accélérer l’adoption par les équipes.</span></li>
-              <li><Check aria-hidden="true" /><span><strong>Architecture évolutive</strong> pour accompagner la croissance.</span></li>
-            </ul>
+          <div className="premium-shell">
+            <ProcessCommitments />
           </div>
         </section>
+
+        <LogoMarquee />
+
+        <RoiCalculator />
 
         <section className="premium-faq" id="faq">
           <div className="premium-shell premium-faq__grid">

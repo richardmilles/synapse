@@ -1,4 +1,5 @@
 import { blogArticles } from "@/data/blogArticles";
+import { projects } from "@/data/projects";
 import { resources } from "@/data/resources";
 import { services } from "@/data/services";
 
@@ -146,6 +147,23 @@ const blogRoutes: RouteSeo[] = blogArticles.map((article) => ({
   },
 }));
 
+const projectRoutes: RouteSeo[] = projects.map((project) => ({
+  path: `/realisations/${project.slug}`,
+  title: `${project.name} | Réalisation Synapse`,
+  description: project.tagline,
+  type: "article",
+  lastModified: "2026-09-16",
+  structuredData: {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.name,
+    description: project.tagline,
+    about: project.sector,
+    author: { "@type": "Organization", name: "Synapse" },
+    url: `${SITE_URL}/realisations/${project.slug}`,
+  },
+}));
+
 const resourceRoutes: RouteSeo[] = resources.map((resource) => ({
   path: `/ressources/${resource.slug}`,
   title: `${resource.title} | Synapse`,
@@ -170,6 +188,7 @@ export const routeSeoEntries: RouteSeo[] = [
   ...staticRoutes,
   ...serviceRoutes,
   ...sectorRoutes,
+  ...projectRoutes,
   ...blogRoutes,
   ...resourceRoutes,
 ];

@@ -26,6 +26,10 @@ CTA principal du site : réserver un audit via `https://synapse0.neetocal.com/au
   les deux offres. Sur ces pages : améliorer la copy et la forme comme sur la homepage, sans
   changer le produit vendu ni les statistiques.
 - **Jamais de tiret cadratin (—)** dans le texte du site. Demande explicite de l'utilisateur.
+- **Images fournies par l'utilisateur : toujours affichées en entier**, proportions natives
+  (`width:100%; height:auto`, attributs `width`/`height` sur la balise). Jamais de
+  `object-fit: cover` avec une hauteur fixe qui recadre, jamais d'étirement. Retour explicite
+  de l'utilisateur après plusieurs images recadrées.
 - **Jamais de faux témoignages / faux clients / fausses statistiques**. Toute preuve sociale ou
   chiffre doit être honnête et vérifiable, ou explicitement présenté comme un exemple illustratif
   ("exemples de missions", pas "témoignages clients réels" sauf si les logos/noms sont fournis
@@ -57,29 +61,25 @@ CTA principal du site : réserver un audit via `https://synapse0.neetocal.com/au
 
 ## Composants ajoutés sur la homepage (`src/pages/Index.tsx`)
 
-Ordre des sections (haut → bas) :
-1. Hero
-2. `ClientLogos` — vrais logos clients en défilement (voir plus bas), juste après le hero car
-   c'est la preuve sociale la plus forte.
-3. Proof bar (5 expertises / 4 étapes / 48h premier retour / 100% opérations)
-4. Intro + grille des 3 expertises phares
-5. Résultats recherchés (3 cartes)
-6. Cas d'usage par fonction (Ventes/Opérations/Service client/Direction) — chaque ligne est un
-   vrai lien vers la page service pertinente, pas juste une flèche décorative.
-7. Secteurs (15 chips, tous liés aux vraies routes de `App.tsx`)
-8. **Missions** (`premium-missions`) — 4 exemples concrets de type de mission par secteur,
-   cadrés honnêtement comme "exemples représentatifs" (pas des cas clients nommés inventés).
-9. `LogoMarquee` — "Notre écosystème technique" (Airtable, Google, Make, n8n, Notion, HubSpot,
-   Zapier, Stripe, Supabase, Anthropic, Figma, Linear). Positionné ici (juste après Missions),
-   PAS en haut de page — c'est une preuve secondaire, moins importante que les vrais clients.
-10. Manifeste ("Notre position") — texte de positionnement, taille réduite (`clamp(30-50px)`,
-    pas `clamp(46-90px)` comme au départ, jugé trop gros).
-11. Process (4 étapes)
-12. Standard ("Un actif business, pas une démonstration")
-13. FAQ (accordéon natif `<details>`, 6 questions traitant les vraies objections)
-14. CTA final, avec une ligne de rareté honnête sous le bouton ("Nous limitons volontairement
-    le nombre de projets menés en parallèle...") — **à confirmer avec l'utilisateur que c'est
-    vrai opérationnellement**, idem pour le "48h" de la proof bar.
+Ordre des sections (haut → bas), état actuel, pensé comme un parcours visiteur
+(attirer → rassurer → comprendre → prouver → expliquer → quantifier → lever les objections → convertir) :
+1. Hero (accroche)
+2. `ClientLogos` (confiance immédiate)
+3. Proof bar
+4. Intro + 3 expertises (ce que nous faisons)
+5. Résultats recherchés (pourquoi)
+6. `BuildCarousel` "Ce que nous construisons" (exemples concrets)
+7. Réalisations (preuve)
+8. Manifeste "Notre position" (différenciation, transition vers la méthode)
+9. Process + `ProcessCommitments` (comment nous travaillons)
+10. `LogoMarquee` écosystème technique (crédibilité technique, prolonge le "comment")
+11. `RoiCalculator` (quantifier la valeur juste avant la décision)
+12. FAQ (objections)
+13. CTA final
+
+Sections supprimées car redondantes (demande utilisateur) : "Cas d'usage" (remplacée par le
+carrousel), "Expertise sectorielle" (doublon du menu Secteurs), "Concrètement / missions"
+(doublon du carrousel et des réalisations), "Notre standard" (doublon du process).
 
 ### Logos clients (`src/components/sections/ClientLogos.tsx`)
 
@@ -211,6 +211,49 @@ dans l'esprit, avec le style premium :
 - Tous les liens internes utilisent maintenant `<Link to>` (React Router) au lieu de `<a href>`
   pour une navigation SPA correcte (pas de rechargement complet de page) — seul `/#processus`
   reste un `<a href>` classique car c'est une ancre vers une section de la homepage.
+
+## Réalisations (fait)
+
+- `src/data/projects.ts` : 3 vrais projets clients (SingularityXP, IziMeals, Odalya), contenu
+  condensé depuis la matière brute de l'utilisateur (ne garder que le pertinent). Structure :
+  secteur, type, périmètre, tagline, contexte (titre + texte), réponse (titre + texte),
+  6 modules (titre + texte), résultat, image + dimensions.
+- **Homepage** (`#realisations`, entre Cas d'usage et Secteurs, fond ink) : cartes texte
+  **sans image** (demande explicite : les visuels vont uniquement sur les pages dédiées).
+  Slogan "Des projets livrés, pas des maquettes" refusé par l'utilisateur, remplacé.
+- **Page dédiée** `src/pages/realisations/ProjectPage.tsx` (`/realisations/:slug`) : hero
+  avec fiche (secteur/type/périmètre), visuel affiché en entier dans un cadre, contexte et
+  réponse, grille des 6 modules, résultat (fond lime), autres réalisations, CTA.
+  Classes `.case-*` dans `index.css`.
+- Images sources `company/*.png` converties en `public/realisations/*.webp` (1400×1050, même
+  ratio 4:3 que l'original, aucun recadrage).
+- Ancres homepage (`/#realisations`, `/#processus`) : scroll géré dans `Index.tsx`
+  (`useLocation` + délai pour laisser la mise en page se stabiliser) et
+  `scroll-margin-top` sur `.premium-home section[id]` pour le header fixe.
+
+## Positionnement : ce que Synapse vend (important)
+
+Synapse **conçoit et développe des solutions sur mesure** : applications internes, portails
+clients, agents IA intégrés aux logiciels, plateformes de pilotage, produits SaaS, intégrations.
+**L'automatisation n'est qu'une possibilité parmi d'autres, pas l'offre principale.** Ne jamais
+présenter Synapse comme une agence d'automatisation (retour très explicite de l'utilisateur).
+Pas besoin de se verticaliser par secteur dans les contenus transverses.
+
+## Section "Ce que nous construisons" et calculateur de ROI (fait)
+
+- Ancienne section "Cas d'usage" rejetée (trop orientée automatisation). Remplacée par
+  `src/components/sections/BuildCarousel.tsx` : **carrousel, une solution affichée à la fois**,
+  défilement automatique (6 s, pause au survol/focus/toucher), flèches gauche/droite, points
+  de progression, glissement tactile, flèches clavier. **Pas de liens** dans les cartes
+  (demande explicite). 6 solutions : application interne, portail client, agent IA intégré,
+  cockpit de pilotage, plateforme SaaS, flux fiables entre outils, chacune en
+  La situation / Ce que nous construisons / Ce qui change. Classes `.premium-carousel*`.
+- Section "Expertise sectorielle" supprimée de la homepage (redondante avec le menu).
+- Calculateur de ROI `src/components/sections/RoiCalculator.tsx` : **3 variables seulement**
+  (budget du projet 3 000 à 150 000 €, heures gagnées par mois, coût horaire chargé) →
+  gain mensuel/annuel, délai de remboursement, ROI à 12 mois. Deux versions précédentes
+  rejetées (trop orientée automatisation, puis trop de variables avec un budget partant de
+  10 000 €). Classes `.premium-calc*`.
 
 ## Travail restant / prochaines pages
 
