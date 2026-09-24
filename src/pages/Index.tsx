@@ -8,6 +8,7 @@ import { ClientLogos } from "@/components/sections/ClientLogos";
 import { BuildCarousel } from "@/components/sections/BuildCarousel";
 import { ProcessCommitments } from "@/components/sections/ProcessCommitments";
 import { RoiCalculator } from "@/components/sections/RoiCalculator";
+import { homeSections } from "@/config/homeSections";
 import { projects } from "@/data/projects";
 import { usePageSeo } from "@/hooks/use-page-seo";
 
@@ -95,16 +96,18 @@ const Index = () => {
           </div>
         </section>
 
-        <ClientLogos />
+        {homeSections.clientLogos === 1 && <ClientLogos />}
 
-        <section className="premium-proofbar" aria-label="Chiffres clés">
-          <div className="premium-shell premium-proofbar__grid">
-            <div><strong>5</strong><span>expertises réunies</span></div>
-            <div><strong>4</strong><span>étapes, du cadrage au déploiement</span></div>
-            <div><strong>48h</strong><span>pour un premier retour sur votre projet</span></div>
-            <div><strong>100%</strong><span>conçu autour de vos opérations</span></div>
-          </div>
-        </section>
+        {homeSections.proofBar === 1 && (
+          <section className="premium-proofbar" aria-label="Chiffres clés">
+            <div className="premium-shell premium-proofbar__grid">
+              <div><strong>5</strong><span>expertises réunies</span></div>
+              <div><strong>4</strong><span>étapes, du cadrage au déploiement</span></div>
+              <div><strong>48h</strong><span>pour un premier retour sur votre projet</span></div>
+              <div><strong>100%</strong><span>conçu autour de vos opérations</span></div>
+            </div>
+          </section>
+        )}
 
         <section className="premium-intro" id="expertises">
           <div className="premium-shell premium-two-col">

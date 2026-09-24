@@ -81,6 +81,14 @@ Sections supprimées car redondantes (demande utilisateur) : "Cas d'usage" (remp
 carrousel), "Expertise sectorielle" (doublon du menu Secteurs), "Concrètement / missions"
 (doublon du carrousel et des réalisations), "Notre standard" (doublon du process).
 
+### Masquer une section sans la supprimer
+
+`src/config/homeSections.ts` : interrupteurs numériques (`1` = affichée, `0` = masquée) utilisés
+dans `Index.tsx`. Actuellement masqués à la demande de l'utilisateur : `clientLogos` (bandeau
+"Ils nous font confiance") et `proofBar` (5 / 4 / 48h / 100%). Le code reste en place, il suffit
+de repasser la valeur à `1` pour réafficher. Utiliser ce mécanisme plutôt que supprimer du code
+quand l'utilisateur demande de masquer une section.
+
 ### Logos clients (`src/components/sections/ClientLogos.tsx`)
 
 Fichiers sources dans `public/clients/client-1.webp` … `client-6.webp` (convertis depuis les PNG
@@ -214,7 +222,11 @@ dans l'esprit, avec le style premium :
 
 ## Réalisations (fait)
 
-- `src/data/projects.ts` : 3 vrais projets clients (SingularityXP, IziMeals, Odalya), contenu
+- `src/data/projects.ts` : 3 vrais projets clients présentés sous des **noms génériques**
+  (Plateforme de pilotage client, Plateforme de restauration d'entreprise, Plateforme de
+  gestion locative) — demande de l'utilisateur : ne jamais afficher le nom du client, ni dans
+  le texte, ni dans les URL (`/realisations/plateforme-…`), ni dans les noms d'images
+  (`public/realisations/plateforme-….webp`). Contenu
   condensé depuis la matière brute de l'utilisateur (ne garder que le pertinent). Structure :
   secteur, type, périmètre, tagline, contexte (titre + texte), réponse (titre + texte),
   6 modules (titre + texte), résultat, image + dimensions.
